@@ -1,0 +1,87 @@
+@import 'styles/button';
+@import 'styles/layout';
+@import 'styles/typography';
+@import 'styles/input';
+@import 'styles/select';
+
+@import '~material-design-icons/iconfont/material-icons.css';
+
+@import '../node_modules/@angular/cdk/overlay';
+
+@include cdk-overlay;
+
+:root {
+  --font-family: 'Lato', sans-serif;
+  --font-color-very-light: #9fadb5;
+  --font-color-light: #9fadb5;
+  --font-color: #132941;
+
+  --content-very-light: #ffffff;
+  --content-light: #f7f7f7;
+  --content: #e6e6e6;
+  --content-dark: #666666;
+
+  --primary-light: #9de0bc;
+  --primary: #36b56f;
+  --primary-dark: #128043;
+
+  --secondary-light: #3579cf;
+  --secondary: #154a8d;
+  --secondary-dark: #05336d;
+
+  --warning-light: #ff993e;
+  --warning: #f47521;
+  --warning-dark: #d25603;
+
+  --danger-light: #ff4208;
+  --danger: #ed1c24;
+  --danger-dark: #b40007;
+}
+
+.primary-color {
+  color: var(--primary);
+}
+.secondary-color {
+  color: var(--secondary);
+}
+.warning-color {
+  color: var(--warning);
+}
+.danger-color {
+  color: var(--danger);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--font-color);
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: var(--font-color);
+  }
+  &.link-no-style {
+    color: var(--font-color);
+  }
+  &:not(.link-no-style):hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  &.link {
+    cursor: pointer;
+    text-decoration: underline;
+    -webkit-text-decoration-color: var(--primary);
+    text-decoration-color: var(--primary);
+    color: var(--primary);
+  }
+}
+
+button {
+  font-family: var(--font-family);
+}

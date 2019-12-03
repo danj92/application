@@ -1,0 +1,10 @@
+<form [formGroup]="form">
+  <p>Result: {{ form.value | json }}</p>
+  <label>
+    <select class="select" formControlName="orders">
+      <option *ngFor="let order of orders; let i = index" [value]="order.id">{{
+        order.name
+      }}</option>
+    </select>
+  </label>
+</form>

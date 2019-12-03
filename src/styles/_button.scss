@@ -1,0 +1,37 @@
+:root {
+  --btn-font-size: var(--font-normal);
+  --btn-text-color: var(--content-dark);
+  --btn-background: var(--content);
+}
+
+.btn {
+  font-size: var(--btn-font-size);
+  color: var(--btn-text-color);
+  background: var(--btn-background);
+  outline: none;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  min-width: 100px;
+  &[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  @extend .btn;
+  --btn-background: var(--primary);
+  --btn-text-color: var(--content-very-light);
+}
+
+.secondary {
+  @extend .btn;
+  --btn-background: var(--secondary);
+  --btn-text-color: var(--content-very-light);
+}
+
+.cancel {
+  @extend .btn;
+  --btn-text-color: var(--content-dark);
+}

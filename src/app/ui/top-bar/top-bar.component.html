@@ -1,0 +1,17 @@
+<div class="logo">
+  <a routerLink="/">Home</a>
+</div>
+<div class="navigation" *ngIf="features.playground">
+  <a routerLink="playground">playground</a>
+
+  <a [appMenu]="tmpMenuItem">
+    <i class="material-icons">more_vert</i>
+  </a>
+
+  <ng-template #tmpMenuItem>
+    <a appMenuItem routerLink="playground">playground 1</a>
+    <a appMenuItem routerLink="playground" [itemDisabled]="true">
+      playground 1
+    </a>
+  </ng-template>
+</div>

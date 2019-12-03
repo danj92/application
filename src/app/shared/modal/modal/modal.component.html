@@ -1,0 +1,10 @@
+<div class="title">
+  <h3>{{ title }}</h3>
+  <i class="material-icons" (click)="close()">close</i>
+</div>
+
+<div class="content">
+  <ng-container
+    *ngTemplateOutlet="templateRef; context: templateContext"
+  ></ng-container>
+</div>

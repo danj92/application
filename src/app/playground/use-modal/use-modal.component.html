@@ -1,0 +1,11 @@
+<button class="secondary" (click)="open()">Open modal</button>
+
+<ng-template #myModal let-value="name">
+  <p>{{ value }}</p>
+  <div class="action">
+    <button appModalCloseButton class="cancel">Cancel</button>
+    <button appModalCloseButton type="submit" class="primary">
+      Ok
+    </button>
+  </div>
+</ng-template>

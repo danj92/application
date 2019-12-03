@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary);
+  color: var(--content-very-light);
+  padding: 15px 10px;
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+  a {
+    color: var(--content-very-light);
+    text-decoration: none;
+  }
+}
