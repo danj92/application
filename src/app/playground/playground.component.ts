@@ -14,7 +14,10 @@ export class PlaygroundComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      name: ['', [Validators.required, Validators.email]],
+      name1: ['', [Validators.required, Validators.email]],
+      name2: ['', [Validators.required, Validators.email]],
+      name3: ['', [Validators.required, Validators.email]],
+      checkbox: ['', [Validators.required, Validators.email]],
     });
   }
 

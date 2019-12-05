@@ -12,7 +12,7 @@ Find application on the link https://danj92.github.io/app/
 
 ## Run Backend Locally
 
-?
+`json-server generate.js`
 
 ## Running unit tests
 

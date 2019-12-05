@@ -12,5 +12,8 @@
   a {
     color: var(--content-very-light);
     text-decoration: none;
+    &:not(:first-of-type) {
+      margin-left: 20px;
+    }
   }
 }

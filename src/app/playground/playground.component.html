@@ -1,115 +1,158 @@
 <div class="view">
-  <section>
-    <h1 class="article-title">How to use elements</h1>
-  </section>
-  <section>
-    <h1>Use icon</h1>
-    <p>
-      <code>< i class="material-icons"> face < /i ></code>
-      <i class="material-icons">face</i>
-    </p>
-  </section>
-  <section>
-    <h1>Input</h1>
-    <form [formGroup]="formGroup">
+  <form [formGroup]="formGroup">
+    <section>
+      <h1 class="article-title">How to use elements</h1>
+    </section>
+    <section>
+      <h1>Use icon</h1>
+      <p>
+        <code>< i class="material-icons"> face < /i ></code>
+        <i class="material-icons">face</i>
+      </p>
+    </section>
+    <section>
+      <h1>Input</h1>
+
       <div class="form-input">
         <ng-container
           *ngIf="
-            formGroup.controls.name.invalid && formGroup.controls.name.touched
+            formGroup.controls.name1.invalid &&
+            formGroup.controls.name1.touched
           "
         >
-          <span class="error" *ngIf="formGroup.controls.name.errors.required"
+          <span class="error" *ngIf="formGroup.controls.name1.errors.required"
             >Error required</span
           >
-          <span class="error" *ngIf="formGroup.controls.name.errors.email"
+          <span class="error" *ngIf="formGroup.controls.name1.errors.email"
             >Error email</span
           >
         </ng-container>
         <label>
-          <input placeholder="Name" formControlName="name" />
+          <input placeholder="Name" formControlName="name1" />
         </label>
       </div>
-    </form>
-  </section>
-  <section>
-    <h1>Button</h1>
-    <table>
-      <tr>
-        <th>Nazwa</th>
-        <th>Class</th>
-        <th>Przycisk</th>
-      </tr>
+    </section>
+    <section>
+      <h1>Button</h1>
+      <table>
+        <tr>
+          <th>Nazwa</th>
+          <th>Class</th>
+          <th>Przycisk</th>
+        </tr>
 
-      <tr>
-        <td>
-          primary
-        </td>
-        <td>
-          <code>class="primary"</code>
-        </td>
-        <td>
-          <button class="primary" (click)="toastSuccess()">Primary</button>
-        </td>
-      </tr>
+        <tr>
+          <td>
+            primary
+          </td>
+          <td>
+            <code>class="primary"</code>
+          </td>
+          <td>
+            <button class="primary" (click)="toastSuccess()">Primary</button>
+          </td>
+        </tr>
 
-      <tr>
-        <td>
-          secondary
-        </td>
-        <td>
-          <code>class="secondary"</code>
-        </td>
-        <td>
-          <button class="secondary" (click)="toastInfo()">Secondary</button>
-        </td>
-      </tr>
+        <tr>
+          <td>
+            secondary
+          </td>
+          <td>
+            <code>class="secondary"</code>
+          </td>
+          <td>
+            <button class="secondary" (click)="toastInfo()">Secondary</button>
+          </td>
+        </tr>
 
-      <tr>
-        <td>
-          cancel
-        </td>
-        <td>
-          <code>class="cancel"</code>
-        </td>
-        <td>
-          <button class="cancel" (click)="toastWarning()">Cancel</button>
-        </td>
-      </tr>
+        <tr>
+          <td>
+            cancel
+          </td>
+          <td>
+            <code>class="cancel"</code>
+          </td>
+          <td>
+            <button class="cancel" (click)="toastWarning()">Cancel</button>
+          </td>
+        </tr>
 
-      <tr>
-        <td>
-          disabled
-        </td>
-        <td>
-          <code>class="btn" disabled</code>
-        </td>
-        <td>
-          <button class="btn">Disabled</button>
-        </td>
-      </tr>
-    </table>
-  </section>
+        <tr>
+          <td>
+            disabled
+          </td>
+          <td>
+            <code>class="btn" disabled</code>
+          </td>
+          <td>
+            <button class="btn">Disabled</button>
+          </td>
+        </tr>
+      </table>
+    </section>
 
-  <section>
-    <h1>Modal</h1>
-    <app-use-modal></app-use-modal>
-  </section>
+    <section>
+      <h1>Modal</h1>
+      <app-use-modal></app-use-modal>
+    </section>
 
-  <section>
-    <h1>Select</h1>
-    <app-use-select></app-use-select>
-  </section>
+    <section>
+      <h1>Select</h1>
+      <app-use-select></app-use-select>
+    </section>
 
-  <section>
-    <h1>Drop down Menu</h1>
+    <section>
+      <h1>Drop down Menu</h1>
 
-    <button class="primary" [appMenu]="tmpMenuItem">Menu</button>
+      <button class="primary" [appMenu]="tmpMenuItem">Menu</button>
 
-    <ng-template #tmpMenuItem>
-      <a appMenuItem routerLink="playground1">Page not found</a>
-      <a appMenuItem routerLink="playground" [itemDisabled]="true"
-        >playground</a
-      >
-    </ng-template>
-  </section>
+      <ng-template #tmpMenuItem>
+        <a appMenuItem routerLink="playground1">Page not found</a>
+        <a appMenuItem routerLink="playground" [itemDisabled]="true"
+          >playground</a
+        >
+      </ng-template>
+    </section>
+
+    <section>
+      <textarea
+        rows="4"
+        cols="50"
+        placeholder="Type your comment..."
+      ></textarea>
+    </section>
+
+    <section>
+      <div class="select-input">
+        <div class="form-input">
+          <ng-container
+            *ngIf="
+              formGroup.controls.name2.invalid &&
+              formGroup.controls.name2.touched
+            "
+          >
+            <span
+              class="error"
+              *ngIf="formGroup.controls.name2.errors.required"
+              >Error required</span
+            >
+            <span class="error" *ngIf="formGroup.controls.name2.errors.email"
+              >Error email</span
+            >
+          </ng-container>
+          <label>
+            <input placeholder="Name" formControlName="name2" />
+          </label>
+        </div>
+        <button class="primary">select</button>
+      </div>
+    </section>
+
+    <section>
+      <label class="label-checkbox">
+        <input class="checkbox" type="checkbox" formControlName="checkbox" />
+        <span>Custom and Accessible</span>
+      </label>
+    </section>
+  </form>
 </div>

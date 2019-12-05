@@ -1,16 +1,17 @@
 :root {
   --btn-font-size: var(--font-normal);
   --btn-text-color: var(--content-dark);
-  --btn-background: var(--content);
+  --btn-background: var(--content-very-light);
+  --btn-height: var(--form-element);
 }
 
 .btn {
+  height: var(--btn-height);
   font-size: var(--btn-font-size);
   color: var(--btn-text-color);
   background: var(--btn-background);
+  border: 1px solid var(--primary);
   outline: none;
-  padding: 10px 20px;
-  border: none;
   cursor: pointer;
   min-width: 100px;
   &[disabled] {
@@ -29,6 +30,7 @@
   @extend .btn;
   --btn-background: var(--secondary);
   --btn-text-color: var(--content-very-light);
+  border: none;
 }
 
 .cancel {

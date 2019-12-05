@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CoreModule } from './core/core.module';
 import { UIModule } from './ui/ui.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppFormsModule } from './forms';
+
 
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent],
+  declarations: [AppComponent, DashboardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -19,6 +21,7 @@ import { UIModule } from './ui/ui.module';
     SharedModule,
     CoreModule,
     UIModule,
+    AppFormsModule
   ],
   bootstrap: [AppComponent],
 })

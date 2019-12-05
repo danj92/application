@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  margin-bottom: 45px;
+  &.invalid.required.touched {
+    .label {
+      color: red;
+    }
+  }
+}

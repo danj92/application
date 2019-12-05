@@ -3,6 +3,8 @@
 @import 'styles/typography';
 @import 'styles/input';
 @import 'styles/select';
+@import 'styles/textarea';
+@import 'styles/checkbox';
 
 @import '~material-design-icons/iconfont/material-icons.css';
 
@@ -11,6 +13,8 @@
 @include cdk-overlay;
 
 :root {
+  --form-element: 35px;
+
   --font-family: 'Lato', sans-serif;
   --font-color-very-light: #9fadb5;
   --font-color-light: #9fadb5;
@@ -21,9 +25,7 @@
   --content: #e6e6e6;
   --content-dark: #666666;
 
-  --primary-light: #9de0bc;
-  --primary: #36b56f;
-  --primary-dark: #128043;
+  --primary: #000000;
 
   --secondary-light: #3579cf;
   --secondary: #154a8d;
