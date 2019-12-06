@@ -1,5 +1,5 @@
 <div class="view">
-  <form [formGroup]="formGroup">
+  <form [formGroup]="formGroup" (submit)="submitForm()">
     <section>
       <h1 class="article-title">How to use elements</h1>
     </section>
@@ -12,25 +12,8 @@
     </section>
     <section>
       <h1>Input</h1>
-
-      <div class="form-input">
-        <ng-container
-          *ngIf="
-            formGroup.controls.name1.invalid &&
-            formGroup.controls.name1.touched
-          "
-        >
-          <span class="error" *ngIf="formGroup.controls.name1.errors.required"
-            >Error required</span
-          >
-          <span class="error" *ngIf="formGroup.controls.name1.errors.email"
-            >Error email</span
-          >
-        </ng-container>
-        <label>
-          <input placeholder="Name" formControlName="name1" />
-        </label>
-      </div>
+      <app-input label="Name" type="text" name="name1" [form]="formGroup">
+      </app-input>
     </section>
     <section>
       <h1>Button</h1>
@@ -122,37 +105,24 @@
       ></textarea>
     </section>
 
-    <section>
-      <div class="select-input">
-        <div class="form-input">
-          <ng-container
-            *ngIf="
-              formGroup.controls.name2.invalid &&
-              formGroup.controls.name2.touched
-            "
-          >
-            <span
-              class="error"
-              *ngIf="formGroup.controls.name2.errors.required"
-              >Error required</span
-            >
-            <span class="error" *ngIf="formGroup.controls.name2.errors.email"
-              >Error email</span
-            >
-          </ng-container>
-          <label>
-            <input placeholder="Name" formControlName="name2" />
-          </label>
-        </div>
-        <button class="primary">select</button>
-      </div>
-    </section>
-
-    <section>
+    <!-- <section>
       <label class="label-checkbox">
         <input class="checkbox" type="checkbox" formControlName="checkbox" />
         <span>Custom and Accessible</span>
       </label>
+    </section> -->
+
+    <section>
+      <app-checkbox name="checkbox" [form]="formGroup">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
+        aspernatur! Asperiores voluptate
+      </app-checkbox>
+
+      <app-checkbox name="checkbox2" [form]="formGroup">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
+        aspernatur! Asperiores voluptate
+      </app-checkbox>
     </section>
+    <button class="secondary">Submit</button>
   </form>
 </div>

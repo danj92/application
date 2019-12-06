@@ -10,14 +10,15 @@ import { ToastService } from '../core/toast.service';
 export class PlaygroundComponent implements OnInit {
   formGroup: FormGroup;
 
-  constructor(private fb: FormBuilder, private toast: ToastService) {}
+  constructor(private fb: FormBuilder, private toast: ToastService) { }
 
   ngOnInit() {
     this.formGroup = this.fb.group({
       name1: ['', [Validators.required, Validators.email]],
       name2: ['', [Validators.required, Validators.email]],
       name3: ['', [Validators.required, Validators.email]],
-      checkbox: ['', [Validators.required, Validators.email]],
+      checkbox: [false, [Validators.requiredTrue]],
+      checkbox2: [false],
     });
   }
 
@@ -31,5 +32,9 @@ export class PlaygroundComponent implements OnInit {
 
   toastWarning() {
     this.toast.warning('Warning');
+  }
+
+  submitForm() {
+    console.log(this.formGroup);
   }
 }

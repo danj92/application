@@ -19,7 +19,6 @@ import { ValidationMessages } from '../validation-messages';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormErrorsComponent implements OnDestroy {
-
   private _formControl: FormControl;
 
   subscription = new Subscription();
@@ -28,8 +27,8 @@ export class FormErrorsComponent implements OnDestroy {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private validationMsg: ValidationMessages
-  ) { }
+    private validationMsg: ValidationMessages,
+  ) {}
 
   ngOnDestroy() {
     this.clearSubscription();
@@ -42,11 +41,10 @@ export class FormErrorsComponent implements OnDestroy {
   @Input('control') set formControl(formControl: FormControl) {
     this._formControl = formControl;
 
-    // this.clearSubscription();
     this.computeErrors();
-    this.subscription.add(this.formControl.statusChanges.subscribe(
-      () => this.computeErrors(),
-    ));
+    this.subscription.add(
+      this.formControl.statusChanges.subscribe(() => this.computeErrors()),
+    );
   }
 
   get formControl() {
@@ -55,7 +53,6 @@ export class FormErrorsComponent implements OnDestroy {
 
   computeErrors() {
     if (this.formControl.touched && this.formControl.errors) {
-
       this.errors = Object.keys(this.formControl.errors).map(e => {
         const error = this.formControl.errors[e];
         return this.validationMsg[e] ? this.validationMsg[e](error) : error;

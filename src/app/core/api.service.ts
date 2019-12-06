@@ -8,10 +8,10 @@ export class ApiService {
   URL_CUSTOM = 'https://';
 
   peoples = {
-    get: (url: string) => this.getObservable<any>(url),
+    get: (url: string) => this.get<any>(url),
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private get<T>(url: string, params: any = {}): Promise<T> {
     return this.getObservable<T>(url, params).toPromise();

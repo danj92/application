@@ -1,16 +1,11 @@
 <label>
-  <div
-    *ngIf="label"
-    class="label"
-    [class.red]="isErrorVisible"
-    [title]="label"
-  >
+  <div *ngIf="label" class="label" [title]="label">
     {{ label }}
   </div>
 
   <input
     #input
-    class="focusable"
+    class="input"
     [type]="type"
     [name]="name"
     [formControl]="formControl"

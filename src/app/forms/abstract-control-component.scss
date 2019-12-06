@@ -1,9 +1,2 @@
 :host {
-  &.touched.invalid .ng-invalid {
-    border-color: red;
-  }
-  &.required .label:after {
-    content: '*';
-    color: red;
-  }
 }

@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  width: 50px;
+  &.required {
+    ::ng-deep agr-raw-checkbox .checkbox-label:after {
+      content: '*';
+      color: var(--danger);
+    }
+  }
+
+  .my-label {
+    display: flex;
+  }
+  .checkbox {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    color: red;
+    border: 1px solid green;
+    background-color: grey;
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+  &.invalid {
+    color: red;
+    .checkbox {
+      border: 1px solid red;
+    }
+  }
+  .checkbox-label {
+    margin-left: 10px;
+  }
+}

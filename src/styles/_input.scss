@@ -1,47 +1,12 @@
-// .form-input {
-//   display: flex;
-//   flex-direction: column-reverse;
-//   width: 100%;
-//   label {
-//     margin-bottom: 45px;
-//     &.required span:after {
-//       content: '*';
-//       color: var(--danger);
-//     }
-//     input {
-//       width: 100%;
-//       height: var(--form-element);
-//       border-style: solid;
-//       border-width: 1px;
-//       border-color: var(--content);
-//       outline: none;
-//       color: var(--content-dark);
-//       padding: 0 10px;
-//       &:focus {
-//         border-color: var(--secondary-light);
-//         color: var(--secondary-dark);
-//       }
-//     }
-//   }
+@import './blink-mixin';
 
-//   .error {
-//     color: var(--danger);
-//     font-size: var(--font-caption);
-//     & + label {
-//       input {
-//         border-color: var(--danger);
-//       }
-//     }
-//   }
-// }
+input:focus {
+  border-color: greenyellow !important;
+}
 
-// .space {
-//   display: flex;
-//   .form-input:not(:first-of-type) {
-//     margin-left: 10px;
-//   }
-// }
-
-// .select-input {
-//   display: flex;
-// }
+.blink {
+  // background: red !important;
+  // input {
+  @include blink(red);
+  // }
+}

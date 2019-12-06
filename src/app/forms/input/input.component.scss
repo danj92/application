@@ -1,9 +1,33 @@
 :host {
   display: block;
   margin-bottom: 45px;
+  position: relative;
+  .label {
+    margin-bottom: 10px;
+  }
+  .input {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 0 10px;
+    outline: none;
+    border-width: 1px;
+    border-color: var(--content);
+    border-style: solid;
+  }
+
   &.invalid.required.touched {
     .label {
-      color: red;
+      color: var(--danger);
     }
+  }
+
+  &.required .label:after {
+    content: '*';
+    color: var(--danger);
+  }
+
+  &.touched.invalid .ng-invalid {
+    border-color: var(--danger);
   }
 }

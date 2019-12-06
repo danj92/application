@@ -10,7 +10,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { isControlRequired } from './form-helpers';
 
 export class AbstractControlComponent<T> implements OnInit {
-
   @Input('form') formGroup: FormGroup;
 
   @Input('control') formControl: FormControl;
@@ -45,13 +44,6 @@ export class AbstractControlComponent<T> implements OnInit {
     return this.formControl.touched;
   }
 
-  // @HostBinding('class.label-invalid')
-  // get ble() {
-  //   if (this.isInvalid && this.isTouched) {
-  //     return true;
-  //   }
-  // }
-
   @HostBinding('class.filled')
   get isFilled() {
     return !!this.formControl.value;
@@ -79,6 +71,4 @@ export class AbstractControlComponent<T> implements OnInit {
       this.blur.next(event);
     }
   }
-
-
 }

@@ -1,0 +1,20 @@
+@mixin blink($color) {
+  @keyframes blink-secondary {
+    from {
+      background-color: $color;
+    }
+    to {
+      background-color: transparent;
+    }
+  }
+  &:not(.ignore-error-blink) {
+    animation: blink-secondary 0.7s linear;
+  }
+  input {
+    animation: blink-secondary 0.7s linear;
+  }
+}
+
+// @mixin blink($color) {
+//   background: $color;
+// }
