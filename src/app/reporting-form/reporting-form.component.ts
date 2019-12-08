@@ -16,12 +16,14 @@ export class ReportingFormComponent implements OnInit {
 
   @ViewChild('form2', { static: true }) form2: ElementRef<HTMLFormElement>;
 
-  constructor(private fb: FormBuilder, private api: ApiService) { }
+  constructor(private fb: FormBuilder, private api: ApiService) {}
 
   ngOnInit() {
     this.formGroup1 = this.fb.group({
       name1: ['', [Validators.required]],
-      name2: ['', [Validators.required, Validators.minLength(5)]],
+      name2: [{ value: 'Cześć', disabled: true }],
+      checkbox: [false, [Validators.requiredTrue]],
+      checkboxDisable: [{ value: false, disabled: true }],
     });
 
     this.formGroup2 = this.fb.group({
@@ -36,11 +38,9 @@ export class ReportingFormComponent implements OnInit {
       const sendForm = await wrapApiFormPost(
         this.formGroup1,
         () => this.api.peoples.get('users'),
-        { parentElement: this.form1.nativeElement }
+        { parentElement: this.form1.nativeElement },
       );
-    } catch (e) {
-
-    }
+    } catch (e) {}
   }
 
   async reportingForm2() {
@@ -49,10 +49,8 @@ export class ReportingFormComponent implements OnInit {
       const sendForm = await wrapApiFormPost(
         this.formGroup2,
         () => this.api.peoples.get('users'),
-        { parentElement: this.form2.nativeElement }
+        { parentElement: this.form2.nativeElement },
       );
-    } catch (e) {
-
-    }
+    } catch (e) {}
   }
 }

@@ -1,34 +1,60 @@
 :host {
-  display: flex;
-  width: 50px;
-  &.required {
-    ::ng-deep agr-raw-checkbox .checkbox-label:after {
-      content: '*';
-      color: var(--danger);
+  --checkbox-background: var(--primary);
+
+  .checkbox-field {
+    display: flex;
+    .checkbox {
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--input-border-color);
+      &:focus {
+        border-width: 2px;
+        --input-border-color: var(--input-border-color-active);
+        outline: none;
+      }
     }
   }
 
-  .my-label {
-    display: flex;
+  .label {
+    margin-left: 15px;
+    padding-top: 5px;
   }
-  .checkbox {
-    width: 20px;
-    min-width: 20px;
-    height: 20px;
-    color: red;
-    border: 1px solid green;
-    background-color: grey;
-    &.disabled {
-      cursor: not-allowed;
+
+  &.selected {
+    .checkbox-field {
+      .checkbox {
+        background: var(--checkbox-background);
+        i {
+          color: var(--content-very-light);
+        }
+      }
     }
   }
-  &.invalid {
-    color: red;
+
+  &.disabled {
+    color: var(--content);
+    .checkbox-field {
+      .checkbox {
+        --input-border-color: var(--content);
+        &:focus {
+          --input-border-color: none;
+        }
+      }
+    }
+  }
+
+  &.disabled.selected {
     .checkbox {
-      border: 1px solid red;
+      --checkbox-background: var(--content);
+      &:focus {
+        --input-border-color: var(--conten);
+      }
     }
-  }
-  .checkbox-label {
-    margin-left: 10px;
   }
 }

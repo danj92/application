@@ -1,9 +1,10 @@
 @import './blink-mixin';
 
-input:focus {
-  border-color: greenyellow !important;
+:root {
+  --input-border-color: var(--content);
+  --input-border-color-active: var(--primary);
+  --input-text: var(--content-dark);
 }
-
 .blink {
   // background: red !important;
   // input {

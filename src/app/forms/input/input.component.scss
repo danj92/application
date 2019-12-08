@@ -1,7 +1,7 @@
 :host {
   display: block;
   margin-bottom: 45px;
-  position: relative;
+  // position: relative;
   .label {
     margin-bottom: 10px;
   }
@@ -12,22 +12,23 @@
     padding: 0 10px;
     outline: none;
     border-width: 1px;
-    border-color: var(--content);
+    border-color: var(--input-border-color);
     border-style: solid;
-  }
-
-  &.invalid.required.touched {
-    .label {
-      color: var(--danger);
-    }
-  }
-
-  &.required .label:after {
-    content: '*';
-    color: var(--danger);
-  }
-
-  &.touched.invalid .ng-invalid {
-    border-color: var(--danger);
+    color: var(--input-text);
   }
 }
+
+// &.invalid.required.touched {
+//   .label {
+//     color: var(--danger);
+//   }
+// }
+
+// &.required .label:after {
+//   content: '*';
+//   color: var(--danger);
+// }
+
+// &.touched.invalid .ng-invalid {
+//   border-color: var(--danger);
+// }

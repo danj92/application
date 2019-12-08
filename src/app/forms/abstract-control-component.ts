@@ -55,6 +55,7 @@ export class AbstractControlComponent<T> implements OnInit {
   }
 
   get isErrorVisible() {
+    // console.log('Error', this.isTouched, this.isInvalid, this.isFocused)
     return this.isTouched && this.isInvalid && this.isFocused;
   }
 

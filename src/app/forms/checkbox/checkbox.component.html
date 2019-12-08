@@ -1,20 +1,13 @@
-<!-- <agr-raw-checkbox
-  #checkbox
-  tabindex="0"
-  [state]="state"
-  [disabled]="isDisabled"
-  [invalid]="isTouched && isInvalid"
+<div
+  class="checkbox-field"
   (keyup)="onKeyUp($event)"
   (keydown)="onKeyDown($event)"
-  (click)="toggleCheckbox()"
 >
-  <ng-content></ng-content>
-</agr-raw-checkbox> -->
-<label class="my-label">
-  <div class="checkbox">
+  <div class="checkbox" tabindex="0">
     <i class="material-icons" *ngIf="formControl.value">check</i>
   </div>
-  <span class="checkbox-label">
+  <span class="label">
     <ng-content></ng-content>
   </span>
-</label>
+</div>
+<app-form-errors [control]="formControl"> </app-form-errors>

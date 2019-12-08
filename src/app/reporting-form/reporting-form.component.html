@@ -6,62 +6,27 @@
       </app-input>
       <app-input label="Name" type="text" name="name2" [form]="formGroup1">
       </app-input>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid ullam
-        numquam doloremque laudantium nihil eligendi necessitatibus quos.
-        Molestiae alias aliquid, quas necessitatibus ratione similique, eos
-        cupiditate omnis dolorem mollitia architecto sunt eaque et. Consequatur
-        illo laboriosam illum ipsum repellat ad eaque eius iure vel nesciunt
-        blanditiis sunt obcaecati vitae labore, quis dolores totam accusantium
-        est. Similique iste esse odio quibusdam laudantium nulla. Commodi
-        pariatur molestias rem dolore praesentium. Harum dolor consectetur
-        culpa rerum consequatur. Laboriosam dolor quibusdam deleniti non
-        placeat voluptatibus minima harum! Incidunt nisi at optio sequi
-        repellat, deleniti earum facilis eaque quaerat, inventore
-        necessitatibus facere illo autem. Dignissimos ab optio cum, aliquam
-        reprehenderit tenetur fuga voluptates asperiores facilis iure ratione
-        dolore minus! Ipsa sapiente officiis quae nesciunt ab, consequatur
-        aperiam suscipit dolore! Similique et animi assumenda magnam, nulla
-        fugit iste placeat possimus, vitae adipisci reprehenderit minus, aut
-        blanditiis delectus totam. Veniam ut natus repellendus animi sint
-        reiciendis, illo placeat ipsa iusto alias dolorum odit officiis,
-        perspiciatis a sit ipsam. Consequuntur veniam voluptates impedit ad aut
-        provident ratione dolores dicta ducimus nihil eius placeat itaque saepe
-        ut, unde reprehenderit in exercitationem? Corrupti odio at nulla quia
-        sapiente saepe fugit reprehenderit dolor aperiam magni harum ad
-        cupiditate voluptatibus doloribus facilis, adipisci incidunt aliquam.
-        Mollitia quia enim quis animi alias odit distinctio ex inventore quasi
-        delectus sapiente, eaque, repudiandae optio sint rem magni velit dit
-        quo culpa hic tenetur maiores blanditiis fuga architecto provident.
-        Ullam, quas. Totam quis temporibus assumenda consequuntur, at dolores
-        iusto laboriosam, rem officia iure praesentium saepe eum quia
-        perspiciatis nulla! Eos, aliquid saepe eligendi cum molestias minima et
-        vero voluptates, obcaecati in optio accusantium, tempora illo facere
-        beatae impedit cupiditate illum? Aspernatur, id recusandae. Dolore odio
-        magni cum! Cupiditate nesciunt deleniti est aperiam ad earum adipisci
-        aliquam maxime asperiores. Dolore libero voluptatibus aliquid
-        accusantium perferendis pariatur, at amet illum dicta officia velit nam
-        fugiat aperiam cumque veniam architecto quae nobis neque. Dolor
-        repellendus itaque accusamus? Enim excepturi mollitia exercitationem
-        necessitatibus officiis repellat? Esse fugiat ipsam, quas quisquam
-        impedit nisi aliquid optio facilis officia nobis laudantium assumenda
-        voluptates nam neque velit perspiciatis iure aliquam, repellendus
-        suscipit! Suscipit quam nobis eligendi, explicabo est eius asperiores!
-      </p>
-      <!-- <button class="secondary">Submit</button> -->
-      <app-form-status [form]="formGroup1">Zapisz</app-form-status>
+      <app-checkbox name="checkbox" [form]="formGroup1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
+        aspernatur! Asperiores voluptate
+      </app-checkbox>
+      <app-checkbox name="checkboxDisable" [form]="formGroup1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
+        aspernatur! Asperiores voluptate
+      </app-checkbox>
+
+      <button class="secondary">Submit</button>
     </form>
   </section>
 
-  <section>
+  <!-- <section>
     <h1>Form2</h1>
     <form #form2 [formGroup]="formGroup2" (ngSubmit)="reportingForm2()">
       <app-input label="Name" type="text" name="name11" [form]="formGroup2">
       </app-input>
       <app-input label="Name" type="text" name="name22" [form]="formGroup2">
       </app-input>
-      <!-- <button class="secondary">Submit</button> -->
-      <app-form-status [form]="formGroup2">Zapisz</app-form-status>
+      <button class="secondary">Submit</button>
     </form>
-  </section>
+  </section> -->
 </div>

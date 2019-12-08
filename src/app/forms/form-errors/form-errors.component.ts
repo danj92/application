@@ -28,7 +28,7 @@ export class FormErrorsComponent implements OnDestroy {
   constructor(
     private cdr: ChangeDetectorRef,
     private validationMsg: ValidationMessages,
-  ) {}
+  ) { }
 
   ngOnDestroy() {
     this.clearSubscription();
@@ -39,8 +39,9 @@ export class FormErrorsComponent implements OnDestroy {
   }
 
   @Input('control') set formControl(formControl: FormControl) {
-    this._formControl = formControl;
+    console.log('No run');
 
+    this._formControl = formControl;
     this.computeErrors();
     this.subscription.add(
       this.formControl.statusChanges.subscribe(() => this.computeErrors()),

@@ -4,7 +4,7 @@ import { AbstractControlComponent } from '../abstract-control-component';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
+  styleUrls: ['../abstract-control-component.scss', './input.component.scss'],
 })
 export class InputComponent extends AbstractControlComponent<string> {
   @Input() label: string;
