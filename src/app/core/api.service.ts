@@ -11,6 +11,11 @@ export class ApiService {
     get: (url: string) => this.get<any>(url),
   };
 
+  requests = {
+    get: (url: string) => this.get<any>(url),
+    newRequests: (data: any) => this.post<any>('requests/', data),
+  };
+
   constructor(private http: HttpClient) { }
 
   private get<T>(url: string, params: any = {}): Promise<T> {

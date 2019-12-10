@@ -7,6 +7,13 @@ export interface SubmitFormOptions {
   parentElement?: ParentNode;
 }
 
+export class FormValidationError extends Error {
+  constructor(m = '') {
+    super(m);
+    Object.setPrototypeOf(this, FormValidationError.prototype);
+  }
+}
+
 export function isControlRequired(control: AbstractControl) {
   if (control.validator && control.enabled) {
     const result = control.validator(Validators.required as any);
@@ -23,6 +30,7 @@ export async function wrapApiFormPost<T>(
   if (formGroup.invalid) {
     formGroup.markAllAsTouched();
     markFirstInvalidElement(options.parentElement);
+    throw new FormValidationError();
   }
   try {
     return await callback();

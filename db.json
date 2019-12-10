@@ -1,5 +1,5 @@
 {
-  "Users": [
+  "users": [
     {
       "DisplayName": "Ali Gator (DABA)",
       "Name": "Ali",
@@ -51,7 +51,7 @@
       "Roles": ["WUBWUBWUB", "Drake"]
     }
   ],
-  "Requests": [
+  "requests": [
     {
       "RequestName": "Fables at the tables",
       "Requestor": 12355,

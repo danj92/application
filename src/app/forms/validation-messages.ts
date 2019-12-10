@@ -6,6 +6,10 @@ export class ValidationMessages {
     return 'To pole jest wymagane.';
   }
 
+  min() {
+    return 'No less than 250 000';
+  }
+
   email() {
     return 'Niepoprawny adres email.';
   }
