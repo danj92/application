@@ -15,11 +15,10 @@ export function isControlRequired(control: AbstractControl) {
   return false;
 }
 
-
 export async function wrapApiFormPost<T>(
   formGroup: FormGroup,
   callback: () => Promise<T>,
-  options: SubmitFormOptions = {}
+  options: SubmitFormOptions = {},
 ): Promise<T> {
   if (formGroup.invalid) {
     formGroup.markAllAsTouched();
@@ -28,9 +27,7 @@ export async function wrapApiFormPost<T>(
   try {
     return await callback();
   } catch (e) {
-    if (e.erorr) {
-      // ?
-    }
+    throw e;
   }
 }
 

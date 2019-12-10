@@ -1,6 +1,8 @@
 @import './responsive';
 
 :root {
+  --line-gap: 20px;
+
   --view-narrow-width: 786px;
   --view-wide-width: 1270px;
   --view-width: var(--view-narrow-width);
@@ -45,5 +47,12 @@
     button {
       width: 100%;
     }
+  }
+}
+
+.line {
+  display: flex;
+  > *:not(:last-child) {
+    margin-right: var(--line-gap);
   }
 }

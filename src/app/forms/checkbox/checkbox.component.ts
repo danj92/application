@@ -21,8 +21,6 @@ export class CheckboxComponent extends AbstractControlComponent<boolean> {
     this.formControl.markAsTouched();
     this.formControl.setValue(newValue);
     this.change.next(newValue);
-
-    console.log('click', this.formControl);
   }
 
   @HostBinding('class.invalid')

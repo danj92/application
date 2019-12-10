@@ -1,12 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-// import { filter, reverse } from 'lodash';
 
 @Pipe({
   name: 'reverse',
 })
 export class ReversePipe implements PipeTransform {
   transform(value) {
-    console.log('!!', value);
     if (!value) {
       return;
     }

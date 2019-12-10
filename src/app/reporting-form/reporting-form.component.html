@@ -1,32 +1,43 @@
 <div class="view">
   <section>
-    <h1>Form1</h1>
-    <form #form1 [formGroup]="formGroup1" (ngSubmit)="reportingForm1()">
-      <app-input label="Name" type="text" name="name1" [form]="formGroup1">
+    <h1>Form</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="reportingForm()">
+      <app-input
+        label="Request name"
+        type="text"
+        name="requestName"
+        [form]="formGroup"
+      >
       </app-input>
-      <app-input label="Name" type="text" name="name2" [form]="formGroup1">
+      <app-input
+        label="Requestor"
+        type="text"
+        name="requestor"
+        [form]="formGroup"
+      >
       </app-input>
-      <app-checkbox name="checkbox" [form]="formGroup1">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
-        aspernatur! Asperiores voluptate
-      </app-checkbox>
-      <app-checkbox name="checkboxDisable" [form]="formGroup1">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
-        aspernatur! Asperiores voluptate
-      </app-checkbox>
 
-      <button class="secondary">Submit</button>
+      <label class="radio">
+        <input type="radio" name="answer1" />
+        Yes
+      </label>
+
+      <label class="radio">
+        <input type="radio" name="answer2" />
+        Yes
+      </label>
+
+      <textarea
+        rows="4"
+        cols="50"
+        placeholder="Type your comment..."
+      ></textarea>
+      <p>No spoilers please</p>
+
+      <p>Need storyteller:</p>
+      <app-checkbox name="checkbox" [form]="formGroup">
+        Yes
+      </app-checkbox>
     </form>
   </section>
-
-  <!-- <section>
-    <h1>Form2</h1>
-    <form #form2 [formGroup]="formGroup2" (ngSubmit)="reportingForm2()">
-      <app-input label="Name" type="text" name="name11" [form]="formGroup2">
-      </app-input>
-      <app-input label="Name" type="text" name="name22" [form]="formGroup2">
-      </app-input>
-      <button class="secondary">Submit</button>
-    </form>
-  </section> -->
 </div>

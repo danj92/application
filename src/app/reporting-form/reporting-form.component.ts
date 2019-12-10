@@ -9,48 +9,46 @@ import { ApiService } from '../core/api.service';
   styleUrls: ['./reporting-form.component.scss'],
 })
 export class ReportingFormComponent implements OnInit {
-  formGroup1: FormGroup;
-  formGroup2: FormGroup;
-
-  @ViewChild('form1', { static: true }) form1: ElementRef<HTMLFormElement>;
-
-  @ViewChild('form2', { static: true }) form2: ElementRef<HTMLFormElement>;
+  formGroup: FormGroup;
 
   constructor(private fb: FormBuilder, private api: ApiService) {}
 
   ngOnInit() {
-    this.formGroup1 = this.fb.group({
-      name1: ['', [Validators.required]],
-      name2: [{ value: 'Cześć', disabled: true }],
-      checkbox: [false, [Validators.requiredTrue]],
-      checkboxDisable: [{ value: false, disabled: true }],
-    });
-
-    this.formGroup2 = this.fb.group({
-      name11: ['', [Validators.required]],
-      name22: ['', [Validators.required, Validators.minLength(5)]],
+    this.formGroup = this.fb.group({
+      requestName: ['', []],
+      requestor: ['', []],
+      goodEnding: ['', []],
+      description: ['', []],
+      needStoryteller: ['', []],
+      storyteller: ['', []],
+      wantedCharacters: ['', []],
+      deadline: ['', []],
+      budget: ['', []],
+      status: ['', []],
     });
   }
 
-  async reportingForm1() {
-    console.log(this.formGroup1.value);
-    try {
-      const sendForm = await wrapApiFormPost(
-        this.formGroup1,
-        () => this.api.peoples.get('users'),
-        { parentElement: this.form1.nativeElement },
-      );
-    } catch (e) {}
-  }
+  // Request name:
+  // Requestor:
+  // Good ending:
+  // Description:
+  // Need storyteller:
+  // Storyteller:
+  // Wanted characters:
+  // Deadline:
+  // Budget:
+  // Status:
 
-  async reportingForm2() {
-    console.log(this.formGroup2.value);
+  // Cancel
+  // Save as draft
+  // Submit
+
+  async reportingForm() {
     try {
-      const sendForm = await wrapApiFormPost(
-        this.formGroup2,
-        () => this.api.peoples.get('users'),
-        { parentElement: this.form2.nativeElement },
+      const sendForm = await wrapApiFormPost(this.formGroup, () =>
+        this.api.peoples.get('users'),
       );
+      console.log(this.formGroup);
     } catch (e) {}
   }
 }
