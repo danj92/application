@@ -10,6 +10,7 @@ import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorInterceptor } from './error.interceptor';
 import { CanLoadWhenFeatureFlagEnabledGuard } from './can-load-when-feature-flag-enabled.guard';
+import { CoreService } from './core.service';
 
 @NgModule({
   imports: [HttpClientModule, SharedModule],
@@ -17,6 +18,7 @@ import { CanLoadWhenFeatureFlagEnabledGuard } from './can-load-when-feature-flag
     SeoService,
     ToastService,
     ApiService,
+    CoreService,
     CanLoadWhenFeatureFlagEnabledGuard,
     {
       provide: HTTP_INTERCEPTORS,
