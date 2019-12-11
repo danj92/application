@@ -4,4 +4,12 @@
       <p>{{ request.requestName }}</p>
     </ng-container>
   </section>
+
+  <section>
+    <app-pagination
+      [allItems]="allRequests"
+      [limit]="5"
+      (paginate)="fetchRequests($event)"
+    ></app-pagination>
+  </section>
 </div>

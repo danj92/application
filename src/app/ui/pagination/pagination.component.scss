@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  .pagination {
+    padding: 10px 20px;
+    &:hover {
+      background: var(--content);
+    }
+  }
+}

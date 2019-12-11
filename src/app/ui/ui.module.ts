@@ -5,12 +5,20 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
+import { PaginationComponent } from './pagination/pagination.component';
+import { PaginationService } from './pagination/pagination.service';
 
-const COMPONENTS = [TopBarComponent, FooterComponent, ProgressBarComponent];
+const COMPONENTS = [
+  TopBarComponent,
+  FooterComponent,
+  ProgressBarComponent,
+  PaginationComponent
+];
 
 @NgModule({
   declarations: [COMPONENTS],
   imports: [CommonModule, RouterModule, SimpleMenuModule],
   exports: [COMPONENTS],
+  providers: [PaginationService]
 })
-export class UIModule {}
+export class UIModule { }

@@ -1,0 +1,10 @@
+<!-- <div><i class="material-icons">keyboard_arrow_left</i></div>
+<div><i class="material-icons">keyboard_arrow_right</i></div> -->
+
+<p
+  *ngFor="let page of pages | keyvalue"
+  (click)="calculatePages(+page.key + 1)"
+  class="pagination"
+>
+  {{ +page.key + 1 }}
+</p>
