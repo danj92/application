@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { wrapApiFormPost } from '../forms/form-helpers';
+import { wrapApiFormPost, FormValidationError } from '../forms/form-helpers';
 import { ApiService } from '../core/api.service';
 import { Router } from '@angular/router';
 import { ToastService } from '../core/toast.service';
@@ -18,23 +18,21 @@ export class ReportingFormComponent implements OnInit {
     private api: ApiService,
     private router: Router,
     private toast: ToastService,
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      requestName: ['', [Validators.required, Validators.maxLength(255)]],
-      requestor: ['', [Validators.required]],
-      goodEnding: ['true', [Validators.required]],
-      description: ['', [Validators.required]],
+      requestName: [''],
+      requestor: [''],
+      goodEnding: ['true'],
+      description: [''],
       needStoryteller: [false],
       storyteller: ['', []],
       wantedCharacters: ['', []],
       deadline: [new Date(), []],
-      budget: ['', [Validators.required, Validators.min(250000)]],
+      budget: ['', [Validators.required]],
       status: ['new', []],
     });
-
-    console.log(this.formGroup.value.needStoryteller.value)
   }
 
   get needStoryteller() {
@@ -43,8 +41,6 @@ export class ReportingFormComponent implements OnInit {
 
   saveAsDraft() {
     this.formGroup.controls.status.setValue('draft');
-    // create request to api
-    console.log(this.formGroup.value);
     this.router.navigate(['/']);
   }
 
@@ -52,15 +48,20 @@ export class ReportingFormComponent implements OnInit {
     this.formGroup.reset();
     this.router.navigate(['/']);
   }
-  async reportingForm() {
+
+  async createRequest() {
     try {
       await wrapApiFormPost(this.formGroup, () =>
-        this.api.requests.newRequests(this.formGroup.value)
+        this.api.requests.create(this.formGroup.value),
       );
-      // this.api.requests.newRequests(this.formGroup.value);
-      this.toast.success(`Hi, A new request has been creates by ..... Cheers, Story Team`);
-      console.log(this.formGroup.value);
+      this.toast.success('Request is created');
       this.router.navigate(['/']);
-    } catch (e) { }
+    } catch (e) {
+      if (!(e instanceof FormValidationError)) {
+        this.toast.error('Request is not created');
+        throw e;
+      }
+      return;
+    }
   }
 }

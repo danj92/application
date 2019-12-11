@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Request } from '../interface/request.interface';
+import { User } from '../interface/user.interface';
 
 @Injectable()
 export class ApiService {
   URL_PATH = 'http://localhost:3000/';
   URL_CUSTOM = 'https://';
 
-  peoples = {
-    get: (url: string) => this.get<any>(url),
+  users = {
+    get: (url: string) => this.get<User[]>(url),
   };
 
   requests = {
-    get: (url: string) => this.get<any>(url),
-    newRequests: (data: any) => this.post<any>('requests/', data),
+    get: (url: string) => this.get<Request[]>(url),
+    create: (data: Request) => this.post<Request>('requests/', data),
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   private get<T>(url: string, params: any = {}): Promise<T> {
     return this.getObservable<T>(url, params).toPromise();

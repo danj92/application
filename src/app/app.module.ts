@@ -8,12 +8,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { UIModule } from './ui/ui.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppFormsModule } from './forms';
 
-
 @NgModule({
-  declarations: [AppComponent, DashboardComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -21,7 +19,7 @@ import { AppFormsModule } from './forms';
     SharedModule,
     CoreModule,
     UIModule,
-    AppFormsModule
+    AppFormsModule,
   ],
   bootstrap: [AppComponent],
 })

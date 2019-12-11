@@ -1,5 +1,7 @@
 <div class="view">
   <section>
-    Daszboard
+    <ng-container *ngFor="let request of requests">
+      <p>{{ request.requestName }}</p>
+    </ng-container>
   </section>
 </div>
