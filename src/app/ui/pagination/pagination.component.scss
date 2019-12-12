@@ -1,8 +1,12 @@
 :host {
   .pagination {
     display: flex;
+    align-items: center;
+    span {
+      margin-right: 10px;
+    }
     app-input {
-      margin-left: 10px;
+      margin-bottom: 0;
       width: 60px;
     }
   }

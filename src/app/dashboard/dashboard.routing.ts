@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { AllRequestsResolverService } from './all-requests.resolver.service';
 import { RequestsResolverService } from './requests.resolver.service';
 
 export const dashboard: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    resolve: { requests: RequestsResolverService },
+    resolve: {
+      allRequests: AllRequestsResolverService,
+      requests: RequestsResolverService,
+    },
   },
 ];
 
@@ -15,4 +19,4 @@ export const dashboard: Routes = [
   imports: [RouterModule.forChild(dashboard)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class DashboardRoutingModule { }

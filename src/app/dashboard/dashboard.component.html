@@ -1,10 +1,15 @@
 <div class="view">
-  <section>
+  <button class="btn">Sort & Filter</button>
+  <button class="btn" (click)="fetchRequests()">Reload</button>
+  <button class="btn">Prepare table for excel export</button>
+
+  <section *ngIf="!waiting">
     <ng-container *ngFor="let request of requests">
       <p>{{ request.requestName }}</p>
     </ng-container>
   </section>
 
+  <app-spinner *ngIf="waiting"></app-spinner>
   <app-no-results
     *ngIf="requests?.length === 0"
     imagePath="/assets/no-results.svg"

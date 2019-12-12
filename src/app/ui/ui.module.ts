@@ -6,10 +6,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
 import { PaginationComponent } from './pagination/pagination.component';
-import { PaginationService } from './pagination/pagination.service';
 import { SharedModule } from '../shared/shared.module';
 import { NoResultsComponent } from './no-results/no-results.component';
 import { AppFormsModule } from '../forms';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -17,6 +17,7 @@ const COMPONENTS = [
   ProgressBarComponent,
   PaginationComponent,
   NoResultsComponent,
+  SpinnerComponent,
 ];
 
 @NgModule({
@@ -29,6 +30,6 @@ const COMPONENTS = [
     AppFormsModule,
   ],
   exports: [COMPONENTS],
-  providers: [PaginationService],
+  providers: [],
 })
-export class UIModule {}
+export class UIModule { }

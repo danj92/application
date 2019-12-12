@@ -6,8 +6,8 @@ export class ValidationMessages {
     return 'To pole jest wymagane.';
   }
 
-  min() {
-    return 'No less than 250 000';
+  min(data: { min: number }) {
+    return `No less than ${data.min}`;
   }
 
   email() {

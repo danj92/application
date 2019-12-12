@@ -4,13 +4,9 @@ import {
   Input,
   Output,
   EventEmitter,
-  ViewChild,
-  ElementRef,
 } from '@angular/core';
-import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
-import { fromEvent } from 'rxjs';
-import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-pagination',
@@ -18,15 +14,15 @@ import { Event } from '@angular/router';
   styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit {
-  _allItems: any[];
-
   DEBOUNCE_TIME = 300;
 
   pages = [];
 
   currentPage = 1;
 
-  goToPage = new FormControl(1);
+  _allItems: any[];
+
+  goToPage = new FormControl(1, Validators.min(1));
 
   @Output() paginate = new EventEmitter();
 
@@ -44,22 +40,29 @@ export class PaginationComponent implements OnInit {
     return this.allItems ? Math.ceil(this.allItems.length / this.limit) : 0;
   }
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.pages = [...Array(this.pageCount)];
 
     this.goToPage.valueChanges
-      .pipe(debounceTime(this.DEBOUNCE_TIME), distinctUntilChanged())
+      .pipe(
+        filter(i => i > 0),
+        debounceTime(this.DEBOUNCE_TIME),
+        distinctUntilChanged())
       .subscribe(page => {
-        console.log(page);
         this.currentPage = page;
         this.calculatePages(page);
       });
   }
 
   calculatePages(page: number) {
-    console.log('calculatePages');
     this.paginate.next({ page, limit: this.limit });
+  }
+
+  leaveInput() {
+    if (this.goToPage.value === '' || this.goToPage.value === '0') {
+      this.goToPage.setValue(1);
+    }
   }
 }

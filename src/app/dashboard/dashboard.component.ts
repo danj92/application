@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Request } from '../interface/request.interface';
 import { ApiService } from '../core/api.service';
-
-export interface PageOptions {
-  page: number;
-  limit: number;
-}
+import { ToastService } from '../core/toast.service';
+import { PageOptions } from '../interface/helper.interface';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,15 +15,32 @@ export class DashboardComponent implements OnInit {
 
   allRequests: Request[];
 
-  constructor(private route: ActivatedRoute, private api: ApiService) {}
+  waiting = false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private api: ApiService,
+    private toast: ToastService
+  ) { }
 
   async ngOnInit() {
-    this.allRequests = this.route.snapshot.data.requests;
-    this.requests = await this.api.requests.get();
+    this.allRequests = this.route.snapshot.data.allRequests;
+    this.requests = this.route.snapshot.data.requests;
   }
 
-  async fetchRequests(data: PageOptions) {
-    console.log('Dashboard');
-    this.requests = await this.api.requests.get(data.page, data.limit);
+  async fetchRequests(data?: PageOptions) {
+    this.waiting = true;
+    try {
+      if (data) {
+        this.requests = await this.api.requests.get(data.page, data.limit);
+      }
+      this.requests = await this.api.requests.get();
+    } catch (e) {
+      this.toast.error('Failed to load data');
+      return false;
+    } finally {
+      this.waiting = false;
+    }
+
   }
 }

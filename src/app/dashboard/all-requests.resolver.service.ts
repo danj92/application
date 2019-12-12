@@ -4,10 +4,10 @@ import { ApiService } from '../core/api.service';
 import { Request } from '../interface/request.interface';
 
 @Injectable()
-export class RequestsResolverService implements Resolve<Request[]> {
+export class AllRequestsResolverService implements Resolve<Request[]> {
   constructor(private api: ApiService) { }
 
   resolve(): Promise<Request[]> {
-    return this.api.requests.get();
+    return this.api.requests.getAll();
   }
 }
