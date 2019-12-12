@@ -5,6 +5,11 @@
     </ng-container>
   </section>
 
+  <app-no-results
+    *ngIf="requests?.length === 0"
+    imagePath="/assets/no-results.svg"
+  ></app-no-results>
+
   <section>
     <app-pagination
       [allItems]="allRequests"

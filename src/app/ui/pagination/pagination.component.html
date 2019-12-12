@@ -1,10 +1,16 @@
 <!-- <div><i class="material-icons">keyboard_arrow_left</i></div>
 <div><i class="material-icons">keyboard_arrow_right</i></div> -->
 
-<p
+<!-- <div
   *ngFor="let page of pages | keyvalue"
   (click)="calculatePages(+page.key + 1)"
   class="pagination"
 >
   {{ +page.key + 1 }}
-</p>
+</div> -->
+<div class="pagination">
+  <span>Page {{ currentPage }} of {{ pages.length }}</span>
+
+  <span>Go to page</span>
+  <app-input type="number" name="goToPage" [control]="goToPage"> </app-input>
+</div>

@@ -1,0 +1,5 @@
+<img *ngIf="imagePath" [src]="imagePath" alt="Brak wyników" />
+<div>
+  <p *ngIf="message" class="message">{{ message }}</p>
+  <p *ngIf="secondaryMessage">{{ secondaryMessage }}</p>
+</div>
