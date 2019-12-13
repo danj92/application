@@ -20,8 +20,12 @@ export class DashboardComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
-    private toast: ToastService
-  ) { }
+    private toast: ToastService,
+  ) {}
+
+  get haveRequests() {
+    return this.requests.length !== 0;
+  }
 
   async ngOnInit() {
     this.allRequests = this.route.snapshot.data.allRequests;
@@ -33,14 +37,14 @@ export class DashboardComponent implements OnInit {
     try {
       if (data) {
         this.requests = await this.api.requests.get(data.page, data.limit);
+      } else {
+        this.requests = await this.api.requests.get();
       }
-      this.requests = await this.api.requests.get();
     } catch (e) {
       this.toast.error('Failed to load data');
       return false;
     } finally {
       this.waiting = false;
     }
-
   }
 }

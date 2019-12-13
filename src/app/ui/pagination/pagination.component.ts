@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  Output,
-  EventEmitter,
-} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -40,7 +34,7 @@ export class PaginationComponent implements OnInit {
     return this.allItems ? Math.ceil(this.allItems.length / this.limit) : 0;
   }
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.pages = [...Array(this.pageCount)];
@@ -49,7 +43,8 @@ export class PaginationComponent implements OnInit {
       .pipe(
         filter(i => i > 0),
         debounceTime(this.DEBOUNCE_TIME),
-        distinctUntilChanged())
+        distinctUntilChanged(),
+      )
       .subscribe(page => {
         this.currentPage = page;
         this.calculatePages(page);

@@ -10,7 +10,7 @@ import { ToastService } from '../core/toast.service';
 export class PlaygroundComponent implements OnInit {
   formGroup: FormGroup;
 
-  constructor(private fb: FormBuilder, private toast: ToastService) { }
+  constructor(private fb: FormBuilder, private toast: ToastService) {}
 
   ngOnInit() {
     this.formGroup = this.fb.group({

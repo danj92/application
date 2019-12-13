@@ -11,7 +11,7 @@
 
   <app-spinner *ngIf="waiting"></app-spinner>
   <app-no-results
-    *ngIf="requests?.length === 0"
+    *ngIf="!haveRequests && !waiting"
     imagePath="/assets/no-results.svg"
   ></app-no-results>
 
