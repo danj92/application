@@ -19,6 +19,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: ':id',
+    loadChildren: () =>
+      import('./update-request/update-request.module').then(
+        m => m.UpdateRequestModule,
+      ),
+  },
+  {
     path: 'playground',
     canLoad: [CanLoadWhenFeatureFlagEnabledGuard],
     data: { featureFlag: environment.features.playground },
@@ -36,4 +43,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

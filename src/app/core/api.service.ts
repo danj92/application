@@ -19,6 +19,7 @@ export class ApiService {
       `requests?_page=${page}&_limit=${limit}`
     ),
     create: (data: Request) => this.post<Request>('requests/', data),
+    search: (params: string, limit: number) => this.get<Request[]>(`requests/?q=${params}&_limit=${limit}`),
   };
 
   constructor(private http: HttpClient) { }

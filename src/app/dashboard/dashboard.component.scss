@@ -1,0 +1,8 @@
+:host {
+  --view-width: --view-wide-width;
+  --table-row-height: 80px;
+
+  .cell {
+    --table-cell-width: 100px;
+  }
+}

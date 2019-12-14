@@ -67,16 +67,7 @@ body {
 
 a {
   text-decoration: none;
-  &:visited {
-    color: var(--font-color);
-  }
-  &.link-no-style {
-    color: var(--font-color);
-  }
-  &:not(.link-no-style):hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
+  color: var(--font-color);
   &.link {
     cursor: pointer;
     text-decoration: underline;
@@ -89,7 +80,3 @@ a {
 button {
   font-family: var(--font-family);
 }
-
-// input .blink-error {
-//   background: red;
-// }

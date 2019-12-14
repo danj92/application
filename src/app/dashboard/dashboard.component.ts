@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Request } from '../interface/request.interface';
 import { ApiService } from '../core/api.service';
 import { ToastService } from '../core/toast.service';
 import { PageOptions } from '../interface/helper.interface';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit {
   requests: Request[];
@@ -17,17 +19,20 @@ export class DashboardComponent implements OnInit {
 
   waiting = false;
 
+  search = new FormControl();
+
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
     private toast: ToastService,
-  ) {}
+  ) { }
 
   get haveRequests() {
     return this.requests.length !== 0;
   }
 
   async ngOnInit() {
+    console.log('Dashboard');
     this.allRequests = this.route.snapshot.data.allRequests;
     this.requests = this.route.snapshot.data.requests;
   }
@@ -45,6 +50,14 @@ export class DashboardComponent implements OnInit {
       return false;
     } finally {
       this.waiting = false;
+    }
+  }
+
+  async searchRequests() {
+    try {
+      this.requests = await this.api.requests.search(this.search.value.toLowerCase(), 5);
+    } catch (e) {
+      this.toast.error('Failed to load data');
     }
   }
 }

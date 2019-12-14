@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { UIModule } from './ui/ui.module';
 import { AppFormsModule } from './forms';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,4 +24,4 @@ import { AppFormsModule } from './forms';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,25 +1,83 @@
 <div class="view">
+  <a class="primary" role="button" routerLink="reporting-form"
+    >Create a new matter</a
+  >
+  <h1>My team active items</h1>
   <button class="btn">Sort & Filter</button>
   <button class="btn" (click)="fetchRequests()">Reload</button>
   <button class="btn">Prepare table for excel export</button>
 
-  <section *ngIf="!waiting">
-    <ng-container *ngFor="let request of requests">
-      <p>{{ request.requestName }}</p>
+  <app-input
+    label="Search"
+    type="text"
+    name="search"
+    [control]="search"
+    (keyup)="searchRequests($event)"
+  >
+  </app-input>
+
+  <div class="table table-grow-cells" *ngIf="!waiting">
+    <div class="thead">
+      <div class="cell cell-1">Id</div>
+      <div class="cell cell-2">Request name</div>
+      <div class="cell cell-3">Requestor</div>
+      <div class="cell cell-4">Good Ending</div>
+      <div class="cell cell-3">Description</div>
+      <div class="cell cell-5">Need Storyteller</div>
+      <div class="cell cell-6">Storyteller</div>
+      <div class="cell cell-7">Wanted Characters</div>
+      <div class="cell cell-8">Deadline</div>
+      <div class="cell cell-9">Budget</div>
+      <div class="cell cell-10">Status</div>
+    </div>
+    <ng-container *ngFor="let request of requests; let i = index">
+      <a class="row" [routerLink]="request.id">
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.id }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.requestName }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.requestor }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.goodEnding }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p class="ellipsis">{{ request.description }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.needStoryteller }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.Storyteller }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p class="ellipsis">{{ request.wantedCharacters }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.deadline }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.budget }}</p>
+        </div>
+        <div class="cell cell-{{ i + 1 }}" data-header="Thead 1:">
+          <p>{{ request.status }}</p>
+        </div>
+      </a>
     </ng-container>
-  </section>
 
-  <app-spinner *ngIf="waiting"></app-spinner>
-  <app-no-results
-    *ngIf="!haveRequests && !waiting"
-    imagePath="/assets/no-results.svg"
-  ></app-no-results>
+    <app-spinner *ngIf="waiting"></app-spinner>
+    <app-no-results
+      *ngIf="!haveRequests && !waiting"
+      imagePath="/assets/no-results.svg"
+    ></app-no-results>
+  </div>
 
-  <section>
-    <app-pagination
-      [allItems]="allRequests"
-      [limit]="5"
-      (paginate)="fetchRequests($event)"
-    ></app-pagination>
-  </section>
+  <app-pagination
+    [allItems]="allRequests"
+    [limit]="5"
+    (paginate)="fetchRequests($event)"
+  ></app-pagination>
 </div>
