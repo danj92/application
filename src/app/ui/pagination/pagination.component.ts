@@ -24,7 +24,6 @@ export class PaginationComponent implements OnInit {
   @Input() limit: number;
 
   @Input() set allItems(allItems) {
-    console.log('ded')
     this._allItems = allItems;
   }
 

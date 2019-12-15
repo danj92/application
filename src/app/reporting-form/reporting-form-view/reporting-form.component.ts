@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { wrapApiFormPost, FormValidationError } from '../forms/form-helpers';
-import { ApiService } from '../core/api.service';
+import { wrapApiFormPost, FormValidationError } from '../../forms/form-helpers';
+import { ApiService } from '../../core/api.service';
 import { Router } from '@angular/router';
-import { ToastService } from '../core/toast.service';
+import { ToastService } from '../../core/toast.service';
+import { ReportingFormService } from '../reporting-form.service';
+import { Request } from '../../interface/request.interface';
 
 @Component({
   selector: 'app-reporting-form',
@@ -11,28 +13,27 @@ import { ToastService } from '../core/toast.service';
   styleUrls: ['./reporting-form.component.scss'],
 })
 export class ReportingFormComponent implements OnInit {
+
+  @Input() preview = false;
+
+  @Input() request: Request[];
+
   formGroup: FormGroup;
 
   constructor(
     private fb: FormBuilder,
+    private reportingFormService: ReportingFormService,
     private api: ApiService,
     private router: Router,
     private toast: ToastService,
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.formGroup = this.fb.group({
-      requestName: [''],
-      requestor: [''],
-      goodEnding: ['true'],
-      description: [''],
-      needStoryteller: [false],
-      storyteller: ['', []],
-      wantedCharacters: ['', []],
-      deadline: [new Date(), []],
-      budget: ['', [Validators.required]],
-      status: ['new', []],
-    });
+    this.formGroup = this.reportingFormService.createForm();
+    // if (this.preview) {
+    //   this.reportingFormService.fillForm(this.request[0]);
+    //   this.formGroup.disable();
+    // }
   }
 
   get needStoryteller() {

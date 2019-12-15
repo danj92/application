@@ -6,5 +6,5 @@ export interface User {
   email: string;
   id: number;
   manager: boolean;
-  reoles: string[];
+  roles: string[];
 }

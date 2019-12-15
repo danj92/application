@@ -79,7 +79,6 @@ export class MenuService {
     const portal = new ComponentPortal(SimpleMenuComponent);
     const componentRef = overlayRef.attach(portal);
     const menu = componentRef.instance;
-    // console.log('templateRef', templateRef)
     menu.templateRef = templateRef;
     Object.assign(menu, options);
 

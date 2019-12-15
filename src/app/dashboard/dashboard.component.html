@@ -6,6 +6,13 @@
   <button class="btn">Sort & Filter</button>
   <button class="btn" (click)="fetchRequests()">Reload</button>
   <button class="btn">Prepare table for excel export</button>
+  <span>Request completed. Result content: {{ requests.length }} </span>
+
+  <app-pagination
+    [allItems]="allRequests"
+    [limit]="5"
+    (paginate)="fetchRequests($event)"
+  ></app-pagination>
 
   <app-input
     label="Search"

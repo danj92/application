@@ -1,0 +1,103 @@
+<div class="view">
+  <section>
+    <h1>Update</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="createRequest()">
+      <app-input
+        label="Request name"
+        type="text"
+        name="requestName"
+        [form]="formGroup"
+      >
+      </app-input>
+      <app-input
+        label="Requestor"
+        type="number"
+        name="requestor"
+        [form]="formGroup"
+      >
+      </app-input>
+
+      <div>
+        <p>Good Ending</p>
+        <label>
+          <input
+            type="radio"
+            name="goodEnding"
+            value="true"
+            formControlName="goodEnding"
+          />
+          <span>Yes</span>
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="goodEnding"
+            value="false"
+            formControlName="goodEnding"
+          />
+          <span>No</span>
+        </label>
+      </div>
+
+      <p>Description</p>
+      <textarea
+        rows="4"
+        cols="50"
+        placeholder="Type your comment..."
+        formControlName="description"
+      ></textarea>
+      <p>No spoilers please</p>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <p>Need storyteller:</p>
+      <app-checkbox name="needStoryteller" [form]="formGroup">
+        Yes
+      </app-checkbox>
+
+      <app-input
+        *ngIf="needStoryteller"
+        label="Storyteller"
+        type="number"
+        name="storyteller"
+        [form]="formGroup"
+      >
+      </app-input>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <p>wantedCharacters: auto; a-1; test-3;</p>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <p>Deadline</p>
+      <input type="date" formControlName="deadline" />
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <app-input label="Budget" type="number" name="budget" [form]="formGroup">
+      </app-input>
+
+      <div class="action">
+        <button class="cancel" type="button" (click)="cancel()">Cancel</button>
+        <button class="primary" type="button" (click)="saveAsDraft()">
+          Save as draft
+        </button>
+        <button class="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+</div>

@@ -32,7 +32,6 @@ export class DashboardComponent implements OnInit {
   }
 
   async ngOnInit() {
-    console.log('Dashboard');
     this.allRequests = this.route.snapshot.data.allRequests;
     this.requests = this.route.snapshot.data.requests;
   }

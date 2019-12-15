@@ -10,7 +10,7 @@ export class ApiService {
   URL_CUSTOM = 'https://';
 
   users = {
-    get: (url: string) => this.get<User[]>(url),
+    getRequestor: (id: number) => this.get<User[]>(`users/${id}`),
   };
 
   requests = {
@@ -18,6 +18,7 @@ export class ApiService {
     get: (page = 1, limit = 5) => this.get<Request[]>(
       `requests?_page=${page}&_limit=${limit}`
     ),
+    getSinglerequests: (id: string) => this.get<Request>(`requests?id=${id}`),
     create: (data: Request) => this.post<Request>('requests/', data),
     search: (params: string, limit: number) => this.get<Request[]>(`requests/?q=${params}&_limit=${limit}`),
   };
