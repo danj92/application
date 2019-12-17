@@ -1,8 +1,19 @@
 :host {
-  --view-width: --view-wide-width;
+  --view-width: 1800px;
   --table-row-height: 80px;
 
   .cell {
     --table-cell-width: 100px;
+  }
+
+  .reload {
+    margin-bottom: 45px;
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .table {
+    margin-bottom: 45px;
   }
 }

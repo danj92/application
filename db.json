@@ -8,7 +8,11 @@
       "email": "ali.gator@company.com",
       "id": 12345,
       "manager": true,
-      "roles": ["Manager", "Account Manager", "SPOC"]
+      "roles": [
+        "Manager",
+        "Account Manager",
+        "SPOC"
+      ]
     },
     {
       "displayName": "Baba Yaga (DABA)",
@@ -18,7 +22,10 @@
       "email": "baba.yaga@company.com",
       "id": 12350,
       "manager": false,
-      "roles": ["Owner", "Account Manager"]
+      "roles": [
+        "Owner",
+        "Account Manager"
+      ]
     },
     {
       "displayName": "Red Riding Hood (LFAB)",
@@ -28,7 +35,11 @@
       "email": "red.hood@company.com",
       "id": 12355,
       "manager": false,
-      "roles": ["Owner", "Compliance", "SPOC"]
+      "roles": [
+        "Owner",
+        "Compliance",
+        "SPOC"
+      ]
     },
     {
       "displayName": "Luke Spooke (RUB)",
@@ -38,7 +49,9 @@
       "email": "luke.spooke@company.com",
       "id": 12892,
       "manager": true,
-      "roles": ["Owner"]
+      "roles": [
+        "Owner"
+      ]
     },
     {
       "displayName": "Jack O�Lantern (RUB)",
@@ -48,12 +61,15 @@
       "email": "jack.olantern@company.com",
       "id": 12855,
       "manager": false,
-      "roles": ["WUBWUBWUB", "Drake"]
+      "roles": [
+        "WUBWUBWUB",
+        "Drake"
+      ]
     }
   ],
   "requests": [
     {
-      "requestName": "Fables at the tables",
+      "requestName": "Fables at the tables 3",
       "requestor": 12355,
       "goodEnding": "Depends",
       "description": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
@@ -62,7 +78,7 @@
       "wantedCharacters": "charA;charD;charFGKS",
       "deadline": 1570534960256,
       "budget": 500000,
-      "status": "Draft",
+      "status": "draft",
       "id": 12
     },
     {
@@ -263,6 +279,19 @@
       "budget": "",
       "status": "new",
       "id": 44
+    },
+    {
+      "requestName": "Request name",
+      "requestor": "2222",
+      "goodEnding": "true",
+      "description": "Description",
+      "needStoryteller": true,
+      "storyteller": "2211",
+      "wantedCharacters": "",
+      "deadline": "2019-12-18",
+      "budget": "250000",
+      "status": "new",
+      "id": 45
     }
   ]
 }

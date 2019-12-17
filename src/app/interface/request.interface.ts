@@ -9,4 +9,5 @@ export interface Request {
   deadline: Date;
   budget: number;
   status: string;
+  id: number;
 }

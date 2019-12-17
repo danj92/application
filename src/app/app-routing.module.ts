@@ -19,7 +19,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: ':id',
+    path: 'update',
     loadChildren: () =>
       import('./update-request/update-request.module').then(
         m => m.UpdateRequestModule,

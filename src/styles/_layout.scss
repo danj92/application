@@ -55,4 +55,7 @@
   > *:not(:last-child) {
     margin-right: var(--line-gap);
   }
+  &.line-justify-between {
+    justify-content: space-between;
+  }
 }

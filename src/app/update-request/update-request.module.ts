@@ -6,7 +6,7 @@ import { ReportingFormModule } from '../reporting-form/reporting-form.module';
 import { UpdateRequestResolverService } from './update-request.resolver.service';
 import { SharedModule } from '../shared/shared.module';
 import { AppFormsModule } from '../forms';
-import { UsersResolverService } from './users.serolver.service';
+import { UsersResolverService } from './users.resolver.service';
 
 @NgModule({
   declarations: [UpdateRequestComponent],

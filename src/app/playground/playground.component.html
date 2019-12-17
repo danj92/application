@@ -110,67 +110,53 @@
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
         aspernatur! Asperiores voluptate
       </app-checkbox>
-
-      <app-checkbox name="checkbox2" [form]="formGroup">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
-        aspernatur! Asperiores voluptate
-      </app-checkbox>
     </section>
     <button class="secondary">Submit</button>
   </form>
-</div>
 
-<h1>Table</h1>
-<div class="table table-grow-cells">
-  <div class="thead">
-    <div class="cell cell-1">Thead 1</div>
-    <div class="cell cell-2">Thead 2</div>
-    <div class="cell cell-3">Thead 3</div>
-    <div class="cell cell-4">Thead 4</div>
-  </div>
+  <h1>Table</h1>
+  <div class="table table-grow-cells">
+    <div class="thead">
+      <div class="cell cell-1">Thead 1</div>
+      <div class="cell cell-2">Thead 2</div>
+      <div class="cell cell-3">Thead 3</div>
+    </div>
 
-  <a class="row">
-    <div class="cell cell-1" data-header="Thead 1:">
-      <div class="can-use-ellipsis-in-container">
-        <p class="ellipsis">
-          Cell with static width --table-cell-width: 300px end ellipsis
-        </p>
+    <a class="row">
+      <div class="cell cell-1" data-header="Thead 1:">
+        <div class="can-use-ellipsis-in-container">
+          <p class="ellipsis">
+            Cell with static width --table-cell-width: 300px end ellipsis
+          </p>
+          <p>
+            Cell without ellipsis
+          </p>
+        </div>
+      </div>
+
+      <div class="cell cell-2" data-header="Thead 2:">
         <p>
-          Cell without ellipsis
+          2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+          necessitatibus?
         </p>
       </div>
-    </div>
+      <div class="cell cell-3" data-header="Thead 3:">
+        <p>
+          3 Lorem ipsum dolor sit amet.
+        </p>
+      </div>
+    </a>
 
-    <div class="cell cell-2" data-header="Thead 2:">
-      <p>
-        2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-        necessitatibus?
-      </p>
-    </div>
-    <div class="cell cell-3" data-header="Thead 3:">
-      <p>
-        3 Lorem ipsum dolor sit amet.
-      </p>
-    </div>
-    <div class="cell cell-4" data-header="Thead 4:">
-      <p>
-        4 Lorem ipsum dolor sit.
-      </p>
-    </div>
-  </a>
-
-  <a class="row">
-    <div class="cell cell-1" data-header="Thead 1:">
-      Lorem ipsum dolor sit amet.
-    </div>
-    <div class="cell cell-2" data-header="Thead 2:">
-      Lorem ipsum dolor sit amet consectetur.
-    </div>
-    <div class="cell cell-3" data-header="Thead 3:">
-      Lorem ipsum dolor sit amet.
-    </div>
-    <div class="cell cell-4" data-header="Thead 4:">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, aliquam!
-    </div>
-  </a>
+    <a class="row">
+      <div class="cell cell-1" data-header="Thead 1:">
+        Lorem ipsum dolor sit amet.
+      </div>
+      <div class="cell cell-2" data-header="Thead 2:">
+        Lorem ipsum dolor sit amet consectetur.
+      </div>
+      <div class="cell cell-3" data-header="Thead 3:">
+        Lorem ipsum dolor sit amet.
+      </div>
+    </a>
+  </div>
 </div>

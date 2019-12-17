@@ -8,6 +8,6 @@ export class UpdateRequestResolverService implements Resolve<Request> {
   constructor(private api: ApiService) { }
 
   resolve(route: ActivatedRouteSnapshot): Promise<Request> {
-    return this.api.requests.getSinglerequests(route.paramMap.get('id'));
+    return this.api.requests.getSingleRequests(route.paramMap.get('id'));
   }
 }

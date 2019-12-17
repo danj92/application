@@ -18,9 +18,14 @@ export class ApiService {
     get: (page = 1, limit = 5) => this.get<Request[]>(
       `requests?_page=${page}&_limit=${limit}`
     ),
-    getSinglerequests: (id: string) => this.get<Request>(`requests?id=${id}`),
+    getSingleRequests: (id: string) => this.get<Request>(`requests?id=${id}`),
     create: (data: Request) => this.post<Request>('requests/', data),
-    search: (params: string, limit: number) => this.get<Request[]>(`requests/?q=${params}&_limit=${limit}`),
+    search: (params: string, limit: number) => this.get<Request[]>(
+      `requests/?q=${params}&_limit=${limit}`
+    ),
+    update: (id: number, data: Request) => this.put<Request>(
+      `requests/${id}/`, data
+    ),
   };
 
   constructor(private http: HttpClient) { }

@@ -1,7 +1,10 @@
 <div class="view">
   <section>
     <h1>Update</h1>
-    <form [formGroup]="formGroup" (ngSubmit)="createRequest()">
+    <form
+      [formGroup]="formGroup"
+      (ngSubmit)="updateRequest(requestId, formGroup.value)"
+    >
       <app-input
         label="Request name"
         type="text"
@@ -91,7 +94,7 @@
       <app-input label="Budget" type="number" name="budget" [form]="formGroup">
       </app-input>
 
-      <div class="action">
+      <div class="action" *ngIf="isOwner">
         <button class="cancel" type="button" (click)="cancel()">Cancel</button>
         <button class="primary" type="button" (click)="saveAsDraft()">
           Save as draft
