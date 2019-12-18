@@ -4,7 +4,7 @@ import { Request } from '../interface/request.interface';
 import { ApiService } from '../core/api.service';
 import { ToastService } from '../core/toast.service';
 import { PageOptions } from '../interface/helper.interface';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormArrayName } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,11 +13,27 @@ import { FormControl } from '@angular/forms';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit {
+  displayedColumns: string[] = [
+    'Id',
+    'Request name',
+    'Requestor',
+    'Good Ending',
+    'Description',
+    'Need Storyteller Test',
+    'Storyteller',
+    'Wanted Characters',
+    'Deadline',
+    'Budget',
+    'Status',
+  ];
+
   requests: Request[];
 
   allRequests: Request[];
 
   waiting = false;
+
+  toggleIcon = false;
 
   search = new FormControl();
 
@@ -25,7 +41,7 @@ export class DashboardComponent implements OnInit {
     private route: ActivatedRoute,
     private api: ApiService,
     private toast: ToastService,
-  ) { }
+  ) {}
 
   get haveRequests() {
     return this.requests.length !== 0;
@@ -55,9 +71,47 @@ export class DashboardComponent implements OnInit {
 
   async searchRequests() {
     try {
-      this.requests = await this.api.requests.search(this.search.value.toLowerCase(), 5);
+      this.requests = await this.api.requests.search(
+        this.search.value.toLowerCase(),
+      );
     } catch (e) {
       this.toast.error('Failed to load data');
+    }
+  }
+
+  capitalizeFirstLetter(str: string) {
+    return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
+  }
+
+  createColumnName(column: string) {
+    const columnArr = column
+      .toLocaleLowerCase()
+      .replace(/[^A-Za-z0-9]/g, ' ')
+      .split(' ');
+
+    return columnArr.reduce((result, word) => {
+      return result + this.capitalizeFirstLetter(word.toLocaleLowerCase());
+    });
+  }
+
+  async sortColumn(column: string, event) {
+    console.log('event', event.target);
+    const columnName = this.createColumnName(column);
+
+    this.toggleIcon = !this.toggleIcon;
+
+    if (this.toggleIcon) {
+      try {
+        this.requests = await this.api.requests.sortASC(columnName);
+      } catch (e) {
+        this.toast.error(`Failed to sort "${column}"`);
+      }
+    } else {
+      try {
+        this.requests = await this.api.requests.sortDESC(columnName);
+      } catch (e) {
+        this.toast.error(`Failed to sort "${column}"`);
+      }
     }
   }
 }

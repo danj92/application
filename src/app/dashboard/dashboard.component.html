@@ -23,17 +23,13 @@
 
     <div class="table table-grow-cells" *ngIf="!waiting">
       <div class="thead">
-        <div class="cell cell-1">Id</div>
-        <div class="cell cell-2">Request name</div>
-        <div class="cell cell-3">Requestor</div>
-        <div class="cell cell-4">Good Ending</div>
-        <div class="cell cell-3">Description</div>
-        <div class="cell cell-5">Need Storyteller</div>
-        <div class="cell cell-6">Storyteller</div>
-        <div class="cell cell-7">Wanted Characters</div>
-        <div class="cell cell-8">Deadline</div>
-        <div class="cell cell-9">Budget</div>
-        <div class="cell cell-10">Status</div>
+        <ng-container *ngFor="let column of displayedColumns; let i = index">
+          <div class="cell cell-{{ i }}" (click)="sortColumn(column, $event)">
+            {{ column }}
+            <i class="material-icons" *ngIf="!toggleIcon">arrow_drop_down</i>
+            <i class="material-icons" *ngIf="toggleIcon">arrow_drop_up</i>
+          </div>
+        </ng-container>
       </div>
       <ng-container *ngFor="let request of requests; let i = index">
         <a class="row" routerLink="update/{{ request.id }}">
@@ -56,7 +52,7 @@
             <p>{{ request.needStoryteller }}</p>
           </div>
           <div class="cell cell-{{ i + 1 }}" data-header="Storyteller:">
-            <p>{{ request.Storyteller }}</p>
+            <p>{{ request.storyteller }}</p>
           </div>
           <div class="cell cell-{{ i + 1 }}" data-header="Wanted Characters:">
             <p class="ellipsis">{{ request.wantedCharacters }}</p>
