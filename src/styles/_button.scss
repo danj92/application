@@ -3,6 +3,7 @@
   --btn-text-color: var(--primary);
   --btn-background: var(--content-very-light);
   --btn-height: var(--form-element);
+  --btn-transition: 0.2s ease-out;
 }
 
 .btn {
@@ -14,6 +15,7 @@
   color: var(--btn-text-color);
   background: var(--btn-background);
   border: 1px solid var(--primary);
+  transition: var(--btn-transition);
   padding: 0 10px;
   outline: none;
   cursor: pointer;

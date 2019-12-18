@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { wrapApiFormPost, FormValidationError } from '../../forms/form-helpers';
+import {
+  wrapApiFormPost,
+  FormValidationError,
+} from '../../forms/form-helpers';
 import { ApiService } from '../../core/api.service';
 import { Router } from '@angular/router';
 import { ToastService } from '../../core/toast.service';
@@ -13,7 +16,6 @@ import { Request } from '../../interface/request.interface';
   styleUrls: ['./reporting-form.component.scss'],
 })
 export class ReportingFormComponent implements OnInit {
-
   @Input() preview = false;
 
   @Input() request: Request[];
@@ -26,14 +28,10 @@ export class ReportingFormComponent implements OnInit {
     private api: ApiService,
     private router: Router,
     private toast: ToastService,
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.formGroup = this.reportingFormService.createForm();
-    // if (this.preview) {
-    //   this.reportingFormService.fillForm(this.request[0]);
-    //   this.formGroup.disable();
-    // }
   }
 
   get needStoryteller() {
@@ -51,6 +49,7 @@ export class ReportingFormComponent implements OnInit {
   }
 
   async createRequest() {
+    console.log(this.formGroup.value);
     try {
       await wrapApiFormPost(this.formGroup, () =>
         this.api.requests.create(this.formGroup.value),
