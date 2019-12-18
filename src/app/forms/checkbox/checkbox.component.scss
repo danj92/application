@@ -1,6 +1,7 @@
 :host {
-  --checkbox-background: var(--primary);
-
+  --checkbox-background: var(--input-background);
+  margin-bottom: 20px;
+  display: block;
   .checkbox-field {
     display: flex;
     .checkbox {
@@ -13,6 +14,7 @@
       border-width: 1px;
       border-style: solid;
       border-color: var(--input-border-color);
+      background: var(--checkbox-background);
       &:focus {
         border-width: 2px;
         --input-border-color: var(--input-border-color-active);
@@ -26,10 +28,10 @@
     padding-top: 5px;
   }
 
-  &.selected {
+  &.filled {
     .checkbox-field {
       .checkbox {
-        background: var(--checkbox-background);
+        --checkbox-background: var(--primary);
         i {
           color: var(--content-very-light);
         }

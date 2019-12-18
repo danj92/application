@@ -12,20 +12,6 @@ const routes: Routes = [
       import('./dashboard/dashboard.module').then(m => m.DashboardModule),
   },
   {
-    path: 'reporting-form',
-    loadChildren: () =>
-      import('./reporting-form/reporting-form.module').then(
-        m => m.ReportingFormModule,
-      ),
-  },
-  {
-    path: 'update',
-    loadChildren: () =>
-      import('./update-request/update-request.module').then(
-        m => m.UpdateRequestModule,
-      ),
-  },
-  {
     path: 'playground',
     canLoad: [CanLoadWhenFeatureFlagEnabledGuard],
     data: { featureFlag: environment.features.playground },

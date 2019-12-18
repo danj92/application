@@ -3,7 +3,7 @@ export class ValidationMessages {
   constructor() { }
 
   required() {
-    return 'To pole jest wymagane.';
+    return 'This field is required.';
   }
 
   min(data: { min: number }) {
@@ -11,14 +11,18 @@ export class ValidationMessages {
   }
 
   email() {
-    return 'Niepoprawny adres email.';
+    return 'Incorrect email address.';
   }
 
   minlength(data: { actualLength: number, requiredLength: number }) {
-    return `Wymagane co najmniej ${data.requiredLength}, podano ${data.actualLength}`;
+    return `Required at least ${data.requiredLength}, but given ${data.actualLength}`;
+  }
+
+  maxlength(data: { actualLength: number, requiredLength: number }) {
+    return `No more than ${data.requiredLength}, but given ${data.actualLength}`;
   }
 
   true() {
-    return 'required True';
+    return 'Required True';
   }
 }

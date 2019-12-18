@@ -5,7 +5,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
-import { PaginationComponent } from './pagination/pagination.component';
 import { SharedModule } from '../shared/shared.module';
 import { NoResultsComponent } from './no-results/no-results.component';
 import { AppFormsModule } from '../forms';
@@ -15,7 +14,6 @@ const COMPONENTS = [
   TopBarComponent,
   FooterComponent,
   ProgressBarComponent,
-  PaginationComponent,
   NoResultsComponent,
   SpinnerComponent,
 ];

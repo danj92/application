@@ -33,10 +33,12 @@
     }
   }
 
-  &.disabled {
-    --radio-color: var(--content-very-dark);
+  &.disabled .radio {
+    --radio-color: var(--content-dark);
+    --background: var(--content-dark);
     --cursor: not-allowed;
   }
+
   .radio {
     display: flex;
     align-items: center;

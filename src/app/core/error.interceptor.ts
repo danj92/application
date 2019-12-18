@@ -40,10 +40,3 @@ export class ErrorInterceptor implements HttpInterceptor {
     );
   }
 }
-
-// export declare class DefaultUrlSerializer implements UrlSerializer {
-//   /** Parses a url into a `UrlTree` */
-//   parse(url: string): UrlTree;
-//   /** Converts a `UrlTree` into a url */
-//   serialize(tree: UrlTree): string;
-// }

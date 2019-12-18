@@ -1,7 +1,5 @@
 # Application
 
-Find application on the link https://danj92.github.io/app/
-
 ## Run Front-end locally
 
 - Install the Angular CLI globally:
@@ -12,7 +10,7 @@ Find application on the link https://danj92.github.io/app/
 
 ## Run Backend Locally
 
-`json-server generate.js`
+`json-server db.json`
 
 ## Running unit tests
 
@@ -22,4 +20,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## WIKI
+
 You may find all project details in our [WIKI](https://github.com/danj92/application/wiki)
+
+script for fake data in `json-server generate.js`
