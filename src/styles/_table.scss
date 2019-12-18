@@ -1,7 +1,10 @@
 :root {
   --table-row-height: auto;
-  --table-row-padding: 25px;
+  --table-row-padding: 10px;
+  --thead-color: var(--content);
 
+  --gap-column: 10px;
+  --mobile-gap-column: 10px;
   --table-cell-width: auto;
 }
 
@@ -14,7 +17,7 @@
   .thead {
     display: flex;
     padding: 5px var(--table-row-padding);
-    background-color: var(--content);
+    background-color: var(--thead-color);
   }
   .row {
     display: flex;
@@ -34,7 +37,7 @@
     min-width: var(--table-cell-width);
     width: var(--table-cell-width);
     &:not(:last-of-type) {
-      margin-right: 10px;
+      margin-right: var(--gap-column);
     }
     .can-use-ellipsis-in-container {
       overflow: hidden;
@@ -52,7 +55,7 @@
     }
     .row {
       flex-direction: column;
-      padding: 0;
+      padding: 10px;
     }
     .cell {
       display: grid;
@@ -60,7 +63,6 @@
       align-items: initial;
       margin-top: 4px;
       margin-bottom: 4px;
-      // margin-right: 0;
       min-width: 100%;
       width: 100%;
       &:not(:last-of-type) {
@@ -69,7 +71,7 @@
 
       &:before {
         content: attr(data-header);
-        margin-right: 10px;
+        margin-right: var(--mobile-gap-column);
       }
     }
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -6,6 +6,7 @@ import { FormControl, Validators } from '@angular/forms';
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent implements OnInit {
   DEBOUNCE_TIME = 300;
@@ -34,7 +35,7 @@ export class PaginationComponent implements OnInit {
     return this.allItems ? Math.ceil(this.allItems.length / this.limit) : 0;
   }
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.pages = [...Array(this.pageCount)];

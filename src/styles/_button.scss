@@ -6,11 +6,15 @@
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: var(--btn-height);
   font-size: var(--btn-font-size);
   color: var(--btn-text-color);
   background: var(--btn-background);
   border: 1px solid var(--primary);
+  padding: 0 10px;
   outline: none;
   cursor: pointer;
   min-width: 100px;

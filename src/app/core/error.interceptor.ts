@@ -13,7 +13,7 @@ import { ToastService } from './toast.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private toast: ToastService) {}
+  constructor(private toast: ToastService) { }
 
   intercept(
     req: HttpRequest<any>,
@@ -21,18 +21,18 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       tap(
-        () => {},
+        () => { },
         err => {
           if (err instanceof HttpErrorResponse) {
             if (!navigator.onLine) {
-              this.toast.error('Brak połączenia z internetem.');
+              this.toast.error('No internet connection.');
               return;
             }
             const response = err as HttpErrorResponse;
             if (response.status === 500) {
-              this.toast.error('Nieoczekiwany błąd serwera.');
+              this.toast.error('Unexpected server error.');
             } else if (response.status === 0) {
-              this.toast.error('Brak odpowiedzi od serwera.');
+              this.toast.error('No response from the server.');
             }
           }
         },
