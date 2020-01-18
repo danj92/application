@@ -8,6 +8,7 @@ import { UseSelectComponent } from './use-select/use-select.component';
 import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
 import { AppFormsModule } from '../forms';
 import { UseColorsComponent } from './use-colors/use-colors.component';
+import { UIModule } from '../ui/ui.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { UseColorsComponent } from './use-colors/use-colors.component';
     SimpleMenuModule,
     AppFormsModule,
     RouterModule.forChild(playgrounRoutes),
+    UIModule
   ],
   declarations: [PlaygroundComponent, UseModalComponent, UseSelectComponent, UseColorsComponent],
 })
-export class PlaygroundModule {}
+export class PlaygroundModule { }

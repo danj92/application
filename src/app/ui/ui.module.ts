@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NoResultsComponent } from './no-results/no-results.component';
 import { AppFormsModule } from '../forms';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { TabsComponent, TabComponent } from './tabs';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -16,10 +17,12 @@ const COMPONENTS = [
   ProgressBarComponent,
   NoResultsComponent,
   SpinnerComponent,
+  TabsComponent,
+  TabComponent,
 ];
 
 @NgModule({
-  declarations: [COMPONENTS],
+  declarations: [COMPONENTS, TabComponent],
   imports: [
     CommonModule,
     RouterModule,

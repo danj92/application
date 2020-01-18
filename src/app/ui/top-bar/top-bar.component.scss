@@ -15,6 +15,9 @@
   .logo {
     display: flex;
     align-items: center;
+    a {
+      margin-left: 10px;
+    }
   }
   .navigation {
     display: flex;
