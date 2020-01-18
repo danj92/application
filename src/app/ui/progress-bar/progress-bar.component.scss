@@ -3,17 +3,17 @@
   height: 5px;
   display: block;
   width: 100%;
-  background-color: var(--primary-light);
+  background-color: var(--secondary-light);
   overflow: hidden;
   .determinate {
     position: absolute;
     top: 0;
     bottom: 0;
-    background-color: var(--primary);
+    background-color: var(--secondary);
     transition: width 0.3s linear;
   }
   .indeterminate {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     &:before {
       content: '';
       position: absolute;

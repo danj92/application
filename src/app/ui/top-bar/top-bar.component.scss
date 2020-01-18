@@ -3,17 +3,21 @@
   justify-content: space-between;
   align-items: center;
   background: var(--primary);
-  color: var(--content-very-light);
   padding: 15px 10px;
-  .navigation {
+  a {
+    color: var(--content-very-light);
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 10px;
+    }
+  }
+  .logo {
     display: flex;
     align-items: center;
   }
-  a {
-    color: var(--content-very-light);
-    text-decoration: none;
-    &:not(:first-of-type) {
-      margin-left: 20px;
-    }
+  .navigation {
+    display: flex;
+    align-items: center;
   }
 }

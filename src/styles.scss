@@ -15,7 +15,6 @@
 
 :root {
   --form-element: 35px;
-  --space-bottom: 45px;
 
   --font-family: 'Lato', sans-serif;
   --font-color-very-light: #9fadb5;
@@ -27,11 +26,13 @@
   --content: #a8a8a7;
   --content-dark: #7c7c7b;
 
-  --primary: #000000;
+  --primary-light: #3579cf;
+  --primary: #154a8d;
+  --primary-dark: #05336d;
 
-  --secondary-light: #3579cf;
-  --secondary: #154a8d;
-  --secondary-dark: #05336d;
+  --secondary-light: #56d48f;
+  --secondary: #36b56f;
+  --secondary-dark: #128043;
 
   --warning-light: #ff993e;
   --warning: #f47521;

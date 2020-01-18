@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ReversePipe } from './reverse.pipe';
 import { ModalModule } from './modal/modal.module';
 
 const COMPONENTS = [
@@ -16,7 +15,7 @@ const COMPONENTS = [
 @NgModule({
   imports: [COMPONENTS],
   providers: [],
-  declarations: [PageNotFoundComponent, ReversePipe],
-  exports: [COMPONENTS, ReversePipe],
+  declarations: [PageNotFoundComponent],
+  exports: [COMPONENTS],
 })
-export class SharedModule {}
+export class SharedModule { }

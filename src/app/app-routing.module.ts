@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     loadChildren: () =>
-      import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+      import('./landing-page/landing-page.module').then(m => m.LandingPageModule),
   },
   {
     path: 'playground',

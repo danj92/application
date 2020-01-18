@@ -5,7 +5,7 @@
     padding: 10px;
     &:hover {
       text-decoration: initial;
-      color: var(--secondary);
+      color: var(--content-very-light);
       background: var(--content);
     }
     &.disabled {
