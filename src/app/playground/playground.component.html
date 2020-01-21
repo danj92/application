@@ -1,5 +1,15 @@
 <div class="view">
   <section>
+    <h1>Sidebar</h1>
+    <!-- <app-sidebar [tmpl]="navigationTmpl"></app-sidebar> -->
+
+    <ng-template #navigationTmpl>
+      <a>Route 1</a>
+      <a>Route 2</a>
+      <a>Route 3</a>
+    </ng-template>
+  </section>
+  <section>
     <h1>Tabs</h1>
     <app-tabs>
       <app-tab tabTitle="Tab 1">

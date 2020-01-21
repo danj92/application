@@ -10,6 +10,7 @@ import { NoResultsComponent } from './no-results/no-results.component';
 import { AppFormsModule } from '../forms';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TabsComponent, TabComponent } from './tabs';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -19,10 +20,11 @@ const COMPONENTS = [
   SpinnerComponent,
   TabsComponent,
   TabComponent,
+  SidebarComponent,
 ];
 
 @NgModule({
-  declarations: [COMPONENTS, TabComponent],
+  declarations: [COMPONENTS],
   imports: [
     CommonModule,
     RouterModule,
@@ -33,4 +35,4 @@ const COMPONENTS = [
   exports: [COMPONENTS],
   providers: [],
 })
-export class UIModule { }
+export class UIModule {}
