@@ -1,191 +1,22 @@
-<div class="view">
-  <section>
-    <h1>Sidebar</h1>
-    <!-- <app-sidebar [tmpl]="navigationTmpl"></app-sidebar> -->
-
-    <ng-template #navigationTmpl>
-      <a>Route 1</a>
-      <a>Route 2</a>
-      <a>Route 3</a>
-    </ng-template>
-  </section>
-  <section>
-    <h1>Tabs</h1>
-    <app-tabs>
-      <app-tab tabTitle="Tab 1">
-        <p>Content 1</p>
-      </app-tab>
-      <app-tab tabTitle="Tab 2">
-        <p>Content 2</p>
-      </app-tab>
-      <app-tab tabTitle="Tab 3">
-        <p>Content 3</p>
-      </app-tab>
-    </app-tabs>
-  </section>
-  <section>
-    <h1>Color</h1>
-    <app-use-colors></app-use-colors>
-  </section>
-
-  <form [formGroup]="formGroup" (submit)="submitForm()">
-    <section>
-      <h1 class="article-title">How to use elements</h1>
-    </section>
-    <section>
-      <h1>Use icon</h1>
-      <p>
-        <code>< i class="material-icons"> face < /i ></code>
-        <i class="material-icons">face</i>
-      </p>
-    </section>
-    <section>
-      <h1>Input</h1>
-      <app-input label="Name" type="text" name="name1" [form]="formGroup">
-      </app-input>
-    </section>
-    <section>
-      <h1>Button</h1>
-      <table>
-        <tr>
-          <th>Nazwa</th>
-          <th>Class</th>
-          <th>Przycisk</th>
-        </tr>
-
-        <tr>
-          <td>
-            primary
-          </td>
-          <td>
-            <code>class="primary"</code>
-          </td>
-          <td>
-            <button class="primary" (click)="toastSuccess()">Primary</button>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            secondary
-          </td>
-          <td>
-            <code>class="secondary"</code>
-          </td>
-          <td>
-            <button class="secondary" (click)="toastInfo()">Secondary</button>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            cancel
-          </td>
-          <td>
-            <code>class="cancel"</code>
-          </td>
-          <td>
-            <button class="cancel" (click)="toastWarning()">Cancel</button>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            disabled
-          </td>
-          <td>
-            <code>class="btn" disabled</code>
-          </td>
-          <td>
-            <button class="btn">Disabled</button>
-          </td>
-        </tr>
-      </table>
-    </section>
-
-    <section>
-      <h1>Modal</h1>
-      <app-use-modal></app-use-modal>
-    </section>
-
-    <section>
-      <h1>Select</h1>
-      <app-use-select></app-use-select>
-    </section>
-
-    <section>
-      <h1>Drop down Menu</h1>
-
-      <button class="primary" [appMenu]="tmpMenuItem">Menu</button>
-
-      <ng-template #tmpMenuItem>
-        <a appMenuItem routerLink="playground1">Page not found</a>
-        <a appMenuItem routerLink="playground" [itemDisabled]="true"
-          >playground</a
-        >
-      </ng-template>
-    </section>
-
-    <section>
-      <label>
-        Description
-        <textarea rows="4" cols="50" placeholder="Type your comment...">
-        </textarea>
-      </label>
-    </section>
-
-    <section>
-      <app-checkbox name="checkbox" [form]="formGroup">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
-        aspernatur! Asperiores voluptate
-      </app-checkbox>
-    </section>
-    <button class="secondary">Submit</button>
-  </form>
-
-  <h1>Table</h1>
-  <div class="table table-grow-cells">
-    <div class="thead">
-      <div class="cell cell-1">Thead 1</div>
-      <div class="cell cell-2">Thead 2</div>
-      <div class="cell cell-3">Thead 3</div>
+<div class="navigation-and-view">
+  <div class="navigation">
+    <div class="sidebar">
+      <div class="sidebar-scroll-area">
+        <a routerLink="colors" routerLinkActive="active">Colors</a>
+        <a routerLink="select" routerLinkActive="active">Select</a>
+        <a routerLink="modal" routerLinkActive="active">Modal</a>
+        <a routerLink="icons" routerLinkActive="active">Icons</a>
+        <a routerLink="forms" routerLinkActive="active">Forms</a>
+        <a routerLink="menu" routerLinkActive="active">Menu</a>
+        <a routerLink="spinners" routerLinkActive="active">Spinners</a>
+        <a routerLink="typography" routerLinkActive="active">Typography</a>
+        <a routerLink="tabs" routerLinkActive="active">Tabs</a>
+        <a routerLink="table" routerLinkActive="active">Table</a>
+      </div>
     </div>
+  </div>
 
-    <a class="row">
-      <div class="cell cell-1" data-header="Thead 1:">
-        <div class="can-use-ellipsis-in-container">
-          <p class="ellipsis">
-            Cell with static width --table-cell-width: 300px end ellipsis
-          </p>
-          <p>
-            Cell without ellipsis
-          </p>
-        </div>
-      </div>
-
-      <div class="cell cell-2" data-header="Thead 2:">
-        <p>
-          2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-          necessitatibus?
-        </p>
-      </div>
-      <div class="cell cell-3" data-header="Thead 3:">
-        <p>
-          3 Lorem ipsum dolor sit amet.
-        </p>
-      </div>
-    </a>
-
-    <a class="row">
-      <div class="cell cell-1" data-header="Thead 1:">
-        Lorem ipsum dolor sit amet.
-      </div>
-      <div class="cell cell-2" data-header="Thead 2:">
-        Lorem ipsum dolor sit amet consectetur.
-      </div>
-      <div class="cell cell-3" data-header="Thead 3:">
-        Lorem ipsum dolor sit amet.
-      </div>
-    </a>
+  <div class="view-container">
+    <router-outlet></router-outlet>
   </div>
 </div>

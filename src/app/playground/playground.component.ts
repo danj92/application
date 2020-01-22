@@ -12,15 +12,7 @@ export class PlaygroundComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private toast: ToastService) {}
 
-  ngOnInit() {
-    this.formGroup = this.fb.group({
-      name1: ['', [Validators.required, Validators.email]],
-      name2: ['', [Validators.required, Validators.email]],
-      name3: ['', [Validators.required, Validators.email]],
-      checkbox: [false, [Validators.requiredTrue]],
-      checkbox2: [false],
-    });
-  }
+  ngOnInit() {}
 
   toastInfo() {
     this.toast.info('Info');

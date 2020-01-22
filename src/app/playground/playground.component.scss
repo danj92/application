@@ -1,4 +1,14 @@
 :host {
+  .navigation-and-view {
+    display: flex;
+    .navigation {
+      width: 400px;
+    }
+    .view-container {
+      width: 100%;
+    }
+  }
+
   table {
     width: 100%;
     tr {
@@ -6,10 +16,19 @@
     }
   }
 
+  .sidebar-scroll-area {
+    display: flex;
+    flex-direction: column;
+  }
   // --table-row-height: 120px;
 
   .cell-1 {
     --table-cell-width: 300px;
+  }
+
+  .active {
+    background: var(--content);
+    color: var(--content-very-light);
   }
   // --gap-column: 40px;
   // --mobile-gap-column: 50px;
