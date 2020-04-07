@@ -17,6 +17,8 @@ import { UseFormsComponent } from './use-forms/use-forms.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
 import { UseTabsComponent } from './use-tabs/use-tabs.component';
 import { UseTableComponent } from './use-table/use-table.component';
+import { UseStepperComponent } from './use-stepper/use-stepper.component';
+import { UseScheduleComponent } from './use-schedule/use-schedule.component';
 
 @NgModule({
   imports: [
@@ -26,6 +28,6 @@ import { UseTableComponent } from './use-table/use-table.component';
     RouterModule.forChild(playgrounRoutes),
     UIModule
   ],
-  declarations: [PlaygroundComponent, UseModalComponent, UseSelectComponent, UseColorsComponent, UseButtonsComponent, UseIconsComponent, UseMenuComponent, UseSpinnersComponent, UseFormsComponent, UseTypographyComponent, UseTabsComponent, UseTableComponent],
+  declarations: [PlaygroundComponent, UseModalComponent, UseSelectComponent, UseColorsComponent, UseButtonsComponent, UseIconsComponent, UseMenuComponent, UseSpinnersComponent, UseFormsComponent, UseTypographyComponent, UseTabsComponent, UseTableComponent, UseStepperComponent, UseScheduleComponent],
 })
 export class PlaygroundModule { }

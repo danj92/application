@@ -20,7 +20,7 @@ export class SpinnerComponent implements OnInit {
 
   @Input() delayed = true;
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     if (this.delayed) {

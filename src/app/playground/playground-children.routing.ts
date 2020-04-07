@@ -10,6 +10,9 @@ import { UseSpinnersComponent } from './use-spinners/use-spinners.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
 import { UseTabsComponent } from './use-tabs/use-tabs.component';
 import { UseTableComponent } from './use-table/use-table.component';
+import { UseStepperComponent } from './use-stepper/use-stepper.component';
+import { UseScheduleComponent } from './use-schedule/use-schedule.component';
+import { UseButtonsComponent } from './use-buttons/use-buttons.component';
 
 export const playgroundChildrenRoutes: Routes = [
   {
@@ -49,8 +52,20 @@ export const playgroundChildrenRoutes: Routes = [
     component: UseTabsComponent,
   },
   {
+    path: 'buttons',
+    component: UseButtonsComponent,
+  },
+  {
     path: 'table',
     component: UseTableComponent,
+  },
+  {
+    path: 'stepper',
+    component: UseStepperComponent,
+  },
+  {
+    path: 'schedule',
+    component: UseScheduleComponent,
   },
   {
     path: '',

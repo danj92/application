@@ -1,0 +1,69 @@
+:host {
+  .schedule {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: [times] 100px;
+    grid-auto-columns: auto;
+    // grid-template-rows:
+    // 	[tracks] auto
+    // 	[time-0800] 1fr
+    // 	[time-0830] 1fr
+    // 	[time-0900] 1fr
+    // 	[time-0930] 1fr
+    // 	[time-1000] 1fr
+    // 	[time-1030] 1fr
+    // 	[time-1100] 1fr
+    // 	[time-1130] 1fr
+    // 	[time-1200] 1fr;
+
+    // grid-template-columns:
+    // 	[times] 100px
+    // 	[track-1-start] 1fr
+    // 	[track-1-end track-2-start] 1fr
+    // 	[track-2-end track-3-start] 1fr
+    // 	[track-3-end track-4-start] 1fr
+    // 	[track-4-end];
+  }
+
+  .inline-grid {
+    display: grid;
+  }
+
+  .my-height {
+    height: 83%;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+  }
+
+  .my-relative {
+    position: relative;
+    border: 1px solid red;
+  }
+
+  .track-1 {
+    background-color: #1259b2;
+    color: #fff;
+  }
+
+  .track-2 {
+    background-color: #687f00;
+    color: #fff;
+  }
+
+  .track-3 {
+    background-color: #544d69;
+    color: #fff;
+  }
+
+  .track-4 {
+    background-color: #c35500;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .schedule {
+      display: block;
+    }
+  }
+}
