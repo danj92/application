@@ -3,20 +3,18 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-tab',
   templateUrl: './tab.component.html',
-  styleUrls: ['./tab.component.scss']
+  styleUrls: ['./tab.component.scss'],
 })
 export class TabComponent implements OnInit {
-
   @Input() tabTitle: string;
 
   // @Output() select = new EventEmitter<void>();
 
   isVisible = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   hide() {
     this.isVisible = false;
@@ -26,5 +24,4 @@ export class TabComponent implements OnInit {
     this.isVisible = true;
     // this.select.next();
   }
-
 }

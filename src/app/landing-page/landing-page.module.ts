@@ -7,4 +7,4 @@ import { LandingPageRoutingModule } from './landing-page.routing';
   imports: [LandingPageRoutingModule],
   providers: [],
 })
-export class LandingPageModule { }
+export class LandingPageModule {}

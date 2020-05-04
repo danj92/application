@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  HostBinding,
-  ElementRef,
-} from '@angular/core';
+import { Component, OnInit, Input, HostBinding, ElementRef } from '@angular/core';
 
 import { RadioGroupService } from '../radio-group.service';
 import { RadioOption } from '../radio-option.interface';

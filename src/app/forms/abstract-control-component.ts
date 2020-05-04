@@ -1,4 +1,11 @@
-import { Input, Output, EventEmitter, OnInit, HostBinding, Directive } from '@angular/core';
+import {
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  HostBinding,
+  Directive,
+} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { isControlRequired } from './form-helpers';

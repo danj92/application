@@ -8,9 +8,8 @@ describe('NoResultsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoResultsComponent ]
-    })
-    .compileComponents();
+      declarations: [NoResultsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

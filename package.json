@@ -7,7 +7,10 @@
     "build": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint && node_modules/.bin/stylelint 'src/**/*.scss'",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prettier": "prettier --ignore-path ./.gitignore --check \"**/*.{ts,html,scss,js,json}\"",
+    "format": "prettier --write --ignore-path ./.gitignore \"**/*.{ts,html,scss,js,json}\"",
+    "stylelint": "stylelint --ignore-path ./.gitignore \"**/*.{scss,css}\""
   },
   "private": true,
   "dependencies": {
@@ -45,9 +48,45 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "prettier": "^1.19.1",
     "protractor": "~5.4.0",
-    "stylelint": "^12.0.0",
+    "stylelint": "^12.0.1",
+    "stylelint-config-prettier": "^8.0.1",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.8.3"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Opera versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-prettier"
+    ],
+    "rules": {
+      "indentation": 2,
+      "linebreaks": "unix",
+      "max-empty-lines": 1,
+      "no-eol-whitespace": true,
+      "no-missing-end-of-source-newline": true,
+      "color-hex-case": "lower",
+      "declaration-colon-space-after": "always-single-line",
+      "declaration-colon-space-before": "never",
+      "declaration-empty-line-before": "never",
+      "declaration-block-semicolon-newline-after": "always",
+      "block-no-empty": true,
+      "no-duplicate-selectors": true,
+      "length-zero-no-unit": true,
+      "declaration-block-no-duplicate-properties": true
+    }
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "printWidth": 88,
+    "endOfLine": "lf",
+    "tabWidth": 2,
+    "singleQuote": true
   }
 }

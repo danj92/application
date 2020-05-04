@@ -13,15 +13,12 @@ import { ToastService } from './toast.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private toast: ToastService) { }
+  constructor(private toast: ToastService) {}
 
-  intercept(
-    req: HttpRequest<any>,
-    next: HttpHandler,
-  ): Observable<HttpEvent<any>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       tap(
-        () => { },
+        () => {},
         err => {
           if (err instanceof HttpErrorResponse) {
             if (!navigator.onLine) {

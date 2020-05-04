@@ -14,4 +14,4 @@ export const landingPage: Routes = [
   imports: [RouterModule.forChild(landingPage)],
   exports: [RouterModule],
 })
-export class LandingPageRoutingModule { }
+export class LandingPageRoutingModule {}

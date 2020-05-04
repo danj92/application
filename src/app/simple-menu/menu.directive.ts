@@ -1,13 +1,10 @@
-import {
-  Directive, TemplateRef, Input, HostListener, ElementRef
-} from '@angular/core';
+import { Directive, TemplateRef, Input, HostListener, ElementRef } from '@angular/core';
 import { MenuOptions, WidthStrategy, MenuSize, ScrollStrategy } from './menu.interface';
 import { MenuService } from './menu.service';
 import { SimpleMenuComponent } from './simple-menu/simple-menu.component';
 
-@Directive({selector: '[appMenu]'})
+@Directive({ selector: '[appMenu]' })
 export class MenuDirective {
-
   @Input('appMenu') templateRef: TemplateRef<any>;
 
   @Input() menuOptions: MenuOptions;
@@ -28,11 +25,11 @@ export class MenuDirective {
 
   constructor(
     private menuService: MenuService,
-    private elementRef: ElementRef<HTMLElement>) {}
+    private elementRef: ElementRef<HTMLElement>,
+  ) {}
 
   @HostListener('click', ['$event'])
   async onClick(event: MouseEvent) {
-
     event.stopPropagation();
 
     if (this.menuComponent) {
@@ -52,7 +49,6 @@ export class MenuDirective {
         },
       };
     }
-
 
     const menuOptions: MenuOptions = {
       connectTo: this.elementRef.nativeElement,

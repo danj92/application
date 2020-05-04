@@ -4,15 +4,14 @@ import { TabComponent } from './tab/tab.component';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss']
+  styleUrls: ['./tabs.component.scss'],
 })
 export class TabsComponent implements AfterContentInit {
-
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
   activeTab: TabComponent;
 
-  constructor() { }
+  constructor() {}
 
   ngAfterContentInit() {
     this.activateTab(this.tabs.first);
@@ -29,5 +28,4 @@ export class TabsComponent implements AfterContentInit {
   activateFirstTab() {
     this.activateTab(this.tabs.first);
   }
-
 }

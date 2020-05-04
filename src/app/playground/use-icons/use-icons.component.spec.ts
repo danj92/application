@@ -8,9 +8,8 @@ describe('UseIconsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UseIconsComponent ]
-    })
-    .compileComponents();
+      declarations: [UseIconsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

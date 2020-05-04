@@ -1,7 +1,6 @@
 <form [formGroup]="formGroup">
   <h1>Input</h1>
-  <app-input label="Name" type="text" name="name1" [form]="formGroup">
-  </app-input>
+  <app-input label="Name" type="text" name="name1" [form]="formGroup"> </app-input>
 
   <section>
     <h1>Select</h1>
@@ -11,15 +10,14 @@
   <section>
     <label>
       Description
-      <textarea rows="4" cols="50" placeholder="Type your comment...">
-      </textarea>
+      <textarea rows="4" cols="50" placeholder="Type your comment..."> </textarea>
     </label>
   </section>
 
   <section>
     <app-checkbox name="checkbox" [form]="formGroup">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa
-      aspernatur! Asperiores voluptate
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa aspernatur!
+      Asperiores voluptate
     </app-checkbox>
   </section>
   <button class="secondary">Submit</button>

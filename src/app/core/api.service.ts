@@ -7,7 +7,7 @@ export class ApiService {
   URL_PATH = 'http://localhost:3000/';
   URL_CUSTOM = 'https://';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   private get<T>(url: string, params: any = {}): Promise<T> {
     return this.getObservable<T>(url, params).toPromise();
@@ -19,10 +19,7 @@ export class ApiService {
     });
   }
 
-  private getCustomObservable<T>(
-    url: string,
-    params: any = {},
-  ): Observable<T> {
+  private getCustomObservable<T>(url: string, params: any = {}): Observable<T> {
     return this.http.get<T>(`${this.URL_CUSTOM}${url}`, {
       params,
     });

@@ -1,13 +1,21 @@
-import { Component, OnInit, TemplateRef, ViewContainerRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  TemplateRef,
+  ViewContainerRef,
+  ViewChild,
+  HostListener,
+  OnDestroy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-simple-menu',
   templateUrl: './simple-menu.component.html',
-  styleUrls: ['./simple-menu.component.scss']
+  styleUrls: ['./simple-menu.component.scss'],
 })
 export class SimpleMenuComponent implements OnInit, OnDestroy {
-
-  @ViewChild('content', {static: true, read: ViewContainerRef}) content: ViewContainerRef;
+  @ViewChild('content', { static: true, read: ViewContainerRef })
+  content: ViewContainerRef;
 
   templateRef: TemplateRef<any>;
 
@@ -17,7 +25,7 @@ export class SimpleMenuComponent implements OnInit, OnDestroy {
     this.closingResolve = resolve;
   });
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     if (!this.templateRef) {
@@ -39,5 +47,4 @@ export class SimpleMenuComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.hide();
   }
-
 }

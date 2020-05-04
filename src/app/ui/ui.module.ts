@@ -25,13 +25,7 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [COMPONENTS],
-  imports: [
-    CommonModule,
-    RouterModule,
-    SimpleMenuModule,
-    SharedModule,
-    AppFormsModule,
-  ],
+  imports: [CommonModule, RouterModule, SimpleMenuModule, SharedModule, AppFormsModule],
   exports: [COMPONENTS],
   providers: [],
 })

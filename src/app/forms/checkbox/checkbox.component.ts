@@ -5,10 +5,7 @@ import { AbstractControlComponent } from '../abstract-control-component';
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: [
-    '../abstract-control-component.scss',
-    './checkbox.component.scss',
-  ],
+  styleUrls: ['../abstract-control-component.scss', './checkbox.component.scss'],
 })
 export class CheckboxComponent extends AbstractControlComponent<boolean> {
   @HostListener('click')

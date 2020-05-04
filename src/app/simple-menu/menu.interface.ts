@@ -1,7 +1,4 @@
-import {
-  OverlayConfig,
-  ConnectedPosition,
-} from '@angular/cdk/overlay';
+import { OverlayConfig, ConnectedPosition } from '@angular/cdk/overlay';
 
 export type WidthStrategy = 'fixed' | 'matchParent';
 

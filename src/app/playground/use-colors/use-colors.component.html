@@ -9,10 +9,7 @@
       <code>{{ shade }}</code>
     </td>
     <td *ngFor="let baseColor of BASE_COLORS" [title]="baseColor + shade">
-      <div
-        class="bgr"
-        [style.background]="getColorName(baseColor, shade)"
-      ></div>
+      <div class="bgr" [style.background]="getColorName(baseColor, shade)"></div>
       <div>{{ getColorValue(baseColor + shade) }}</div>
     </td>
   </tr>

@@ -26,8 +26,23 @@ import { UseScheduleComponent } from './use-schedule/use-schedule.component';
     SimpleMenuModule,
     AppFormsModule,
     RouterModule.forChild(playgrounRoutes),
-    UIModule
+    UIModule,
   ],
-  declarations: [PlaygroundComponent, UseModalComponent, UseSelectComponent, UseColorsComponent, UseButtonsComponent, UseIconsComponent, UseMenuComponent, UseSpinnersComponent, UseFormsComponent, UseTypographyComponent, UseTabsComponent, UseTableComponent, UseStepperComponent, UseScheduleComponent],
+  declarations: [
+    PlaygroundComponent,
+    UseModalComponent,
+    UseSelectComponent,
+    UseColorsComponent,
+    UseButtonsComponent,
+    UseIconsComponent,
+    UseMenuComponent,
+    UseSpinnersComponent,
+    UseFormsComponent,
+    UseTypographyComponent,
+    UseTabsComponent,
+    UseTableComponent,
+    UseStepperComponent,
+    UseScheduleComponent,
+  ],
 })
-export class PlaygroundModule { }
+export class PlaygroundModule {}
