@@ -1,8 +1,9 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 import { RadioOption } from './radio-option.interface';
 import { FormControl } from '@angular/forms';
 
+@Injectable()
 export class RadioGroupService {
   initialValue: string;
 

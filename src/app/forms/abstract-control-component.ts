@@ -1,14 +1,9 @@
-import {
-  Input,
-  Output,
-  EventEmitter,
-  OnInit,
-  HostBinding,
-} from '@angular/core';
+import { Input, Output, EventEmitter, OnInit, HostBinding, Directive } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { isControlRequired } from './form-helpers';
 
+@Directive()
 export class AbstractControlComponent<T> implements OnInit {
   @Input('form') formGroup: FormGroup;
 
