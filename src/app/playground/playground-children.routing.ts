@@ -13,6 +13,7 @@ import { UseTableComponent } from './use-table/use-table.component';
 import { UseStepperComponent } from './use-stepper/use-stepper.component';
 import { UseScheduleComponent } from './use-schedule/use-schedule.component';
 import { UseButtonsComponent } from './use-buttons/use-buttons.component';
+import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
 
 export const playgroundChildrenRoutes: Routes = [
   {
@@ -67,6 +68,11 @@ export const playgroundChildrenRoutes: Routes = [
     path: 'schedule',
     component: UseScheduleComponent,
   },
+  {
+    path: 'custom-select',
+    component: UseCustomSelectComponent,
+  },
+
   {
     path: '',
     redirectTo: 'colors',

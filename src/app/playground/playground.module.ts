@@ -19,6 +19,7 @@ import { UseTabsComponent } from './use-tabs/use-tabs.component';
 import { UseTableComponent } from './use-table/use-table.component';
 import { UseStepperComponent } from './use-stepper/use-stepper.component';
 import { UseScheduleComponent } from './use-schedule/use-schedule.component';
+import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { UseScheduleComponent } from './use-schedule/use-schedule.component';
     UseTableComponent,
     UseStepperComponent,
     UseScheduleComponent,
+    UseCustomSelectComponent,
   ],
 })
 export class PlaygroundModule {}

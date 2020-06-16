@@ -1,0 +1,8 @@
+<pre> {{ form.value | json }}</pre>
+
+<form [formGroup]="form">
+  <app-custom-select
+    [products]="products"
+    formControlName="product"
+  ></app-custom-select>
+</form>

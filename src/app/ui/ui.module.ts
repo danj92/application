@@ -11,6 +11,7 @@ import { AppFormsModule } from '../forms';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TabsComponent, TabComponent } from './tabs';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CustomSelectComponent } from './custom-select/custom-select.component';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -21,6 +22,7 @@ const COMPONENTS = [
   TabsComponent,
   TabComponent,
   SidebarComponent,
+  CustomSelectComponent,
 ];
 
 @NgModule({
