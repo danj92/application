@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-use-custom-select',
@@ -9,16 +9,21 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class UseCustomSelectComponent implements OnInit {
   form: FormGroup;
 
-  products = [
-    { name: 'Bananas', price: 30, stock: 'in stock' },
-    { name: 'Apples', price: 42, stock: 'N/A' },
+  options = [
+    { title: 'Bananas', value: 'ban' },
+    { title: 'Apples', value: 'app' },
   ];
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.form = this.fb.group({
-      product: '',
+      option: ['', [Validators.required]],
     });
+  }
+
+  checkValue() {
+    // this.form.controls.option.markAsPending();
+    console.log(this.form.controls.option);
   }
 }

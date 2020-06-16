@@ -1,15 +1,15 @@
 <div class="select-data-container">
-  <button class="btn btn-primary" (click)="toggleList()">Choose product</button>
+  <button class="btn btn-primary" (click)="toggleList()">Choose option</button>
   <ul class="list" [ngClass]="{ 'show-list': isListVisible }">
     <li
-      *ngFor="let product of products"
-      (click)="selectProduct(product)"
+      *ngFor="let option of options"
+      (click)="selectOption(option)"
       class="list-item well"
-      [ngClass]="getCssForSelectedProduct(product)"
+      [class.selected]="isSelected(option)"
     >
-      <span>NAME: {{ product.name }}</span>
-      <span>PRICE: {{ product.price }}</span>
-      <span>STOCK: {{ product.stock }}</span>
+      <span>Title: {{ option.title }}</span>
+      <span>Value: {{ option.value }}</span>
     </li>
   </ul>
+  <p class="invalid">Invalid</p>
 </div>

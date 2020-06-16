@@ -1,8 +1,7 @@
+<button (click)="checkValue()">Value</button>
+
 <pre> {{ form.value | json }}</pre>
 
 <form [formGroup]="form">
-  <app-custom-select
-    [products]="products"
-    formControlName="product"
-  ></app-custom-select>
+  <app-custom-select [options]="options" formControlName="option"></app-custom-select>
 </form>
