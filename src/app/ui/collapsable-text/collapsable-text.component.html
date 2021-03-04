@@ -1,0 +1,4 @@
+<p class="transformed-text">{{ transformedText }}</p>
+<span class="toggle {{ position }}" (click)="toggle($event)" *ngIf="needsToBeCut">
+  <i class="material-icons"> {{ isCollapsed ? 'expand_more' : 'expand_less' }} </i>
+</span>

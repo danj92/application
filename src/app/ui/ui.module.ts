@@ -12,6 +12,9 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { TabsComponent, TabComponent } from './tabs';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CustomSelectComponent } from './custom-select/custom-select.component';
+import { CollapsableTextComponent } from './collapsable-text/collapsable-text.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
+import { TooltipDirective } from './tooltip.directive';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -23,6 +26,9 @@ const COMPONENTS = [
   TabComponent,
   SidebarComponent,
   CustomSelectComponent,
+  CollapsableTextComponent,
+  TooltipComponent,
+  TooltipDirective,
 ];
 
 @NgModule({
@@ -30,5 +36,6 @@ const COMPONENTS = [
   imports: [CommonModule, RouterModule, SimpleMenuModule, SharedModule, AppFormsModule],
   exports: [COMPONENTS],
   providers: [],
+  entryComponents: [TooltipComponent],
 })
 export class UIModule {}

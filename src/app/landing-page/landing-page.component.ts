@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
+  description =
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates, tempora.';
+
   constructor() {}
 
   ngOnInit() {}
