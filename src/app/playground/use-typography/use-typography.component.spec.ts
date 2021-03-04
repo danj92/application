@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UseTypographyComponent } from './use-typography.component';
 
@@ -6,7 +6,7 @@ describe('UseTypographyComponent', () => {
   let component: UseTypographyComponent;
   let fixture: ComponentFixture<UseTypographyComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [UseTypographyComponent],
     }).compileComponents();
