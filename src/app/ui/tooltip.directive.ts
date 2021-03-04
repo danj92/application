@@ -12,7 +12,7 @@ import {
 
 import { Subscription } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
-import { ResponsivenessService } from '../shared/responsiveness.service';
+import { ResponsivenessService } from '../core/responsiveness.service';
 
 import { TooltipComponent } from '../ui/tooltip/tooltip.component';
 
