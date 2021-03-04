@@ -1,0 +1,28 @@
+:host {
+  .transformed-text {
+    line-height: 25px;
+  }
+  .toggle {
+    width: 100%;
+    display: flex;
+    mat-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
+      width: 17px;
+      height: 17px;
+      color: #bcbcbc;
+      cursor: pointer;
+    }
+    &.left {
+      justify-content: flex-start;
+    }
+    &.right {
+      justify-content: flex-end;
+    }
+    &.center {
+      justify-content: center;
+    }
+  }
+}

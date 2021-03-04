@@ -14,6 +14,8 @@ import { UseStepperComponent } from './use-stepper/use-stepper.component';
 import { UseScheduleComponent } from './use-schedule/use-schedule.component';
 import { UseButtonsComponent } from './use-buttons/use-buttons.component';
 import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
+import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
+import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 
 export const playgroundChildrenRoutes: Routes = [
   {
@@ -72,7 +74,14 @@ export const playgroundChildrenRoutes: Routes = [
     path: 'custom-select',
     component: UseCustomSelectComponent,
   },
-
+  {
+    path: 'collapsable-text',
+    component: UseCollapsableTextComponent,
+  },
+  {
+    path: 'tooltip',
+    component: UseTooltipComponent,
+  },
   {
     path: '',
     redirectTo: 'colors',

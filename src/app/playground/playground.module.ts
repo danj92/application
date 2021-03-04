@@ -20,6 +20,8 @@ import { UseTableComponent } from './use-table/use-table.component';
 import { UseStepperComponent } from './use-stepper/use-stepper.component';
 import { UseScheduleComponent } from './use-schedule/use-schedule.component';
 import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
+import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
+import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 
 @NgModule({
   imports: [
@@ -45,6 +47,8 @@ import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.
     UseStepperComponent,
     UseScheduleComponent,
     UseCustomSelectComponent,
+    UseCollapsableTextComponent,
+    UseTooltipComponent,
   ],
 })
 export class PlaygroundModule {}
