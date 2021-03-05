@@ -1,0 +1,9 @@
+:host {
+  .use-header {
+    border-bottom: 1px solid var(--divider-color);
+    padding-bottom: 10px;
+  }
+  section {
+    margin: 20px 0;
+  }
+}

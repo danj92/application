@@ -60,19 +60,24 @@ h6 {
   font-size: var(--font-caption);
   color: var(--font-color-light);
   margin-top: 0;
-  max-width: var(--view-narrow-width);
-  line-height: 1.2em;
+  line-height: 15px;
+}
+
+p {
+  margin: 10px 0;
+  font-size: var(--font-normal);
+  line-height: 1.5;
+  &.hint {
+    @include hint;
+  }
 }
 
 .secondary-text {
-  color: var(--content-very-dark);
+  color: var(--content-dark);
 }
 
 .caption {
   font-size: var(--font-caption);
-}
-.font-normal {
-  font-size: var(--font-normal);
 }
 .bigger {
   font-size: var(--font-bigger);
@@ -97,13 +102,13 @@ h6 {
   text-transform: capitalize;
 }
 
-.very-light {
-  font-weight: 100;
-}
 .light {
   font-weight: 300;
 }
 .normal {
+  font-weight: 400;
+}
+.no-bold {
   font-weight: 400;
 }
 .bold {
@@ -112,15 +117,9 @@ h6 {
 .fat {
   font-weight: 900;
 }
-.no-bold {
-  font-weight: 400;
-}
 
 .center {
   text-align: center;
-}
-.justify {
-  text-align: justify;
 }
 
 .ellipsis {
@@ -129,6 +128,23 @@ h6 {
   text-overflow: ellipsis;
 }
 
-.no-wrap {
-  white-space: nowrap;
+.primary-color {
+  color: var(--primary);
+}
+.secondary-color {
+  color: var(--secondary);
+}
+.warning-color {
+  color: var(--warning);
+}
+.danger-color {
+  color: var(--danger);
+}
+
+blockquote {
+  background-color: var(--content-light);
+  color: var(--font-color);
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
 }

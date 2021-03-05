@@ -55,9 +55,16 @@
   > *:not(:last-child) {
     margin-right: var(--line-gap);
   }
+  &.line-align-items {
+    align-items: center;
+  }
   &.line-justify-between {
     justify-content: space-between;
   }
+  &.line-justify-center {
+    justify-content: center;
+  }
+
 }
 
 .error {
