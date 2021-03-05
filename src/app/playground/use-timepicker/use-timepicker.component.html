@@ -1,0 +1,19 @@
+<h1>Timepicker</h1>
+
+<form [formGroup]="formGroup">
+  <app-timepicker tabindex="0" formControlName="time"></app-timepicker>
+  <div
+    class="error"
+    *ngIf="formGroup.get('time').hasError('required') && formGroup.get('time').touched"
+  >
+    ERROR required ERROR required ERROR required ERROR required ERROR required ERROR
+    required
+  </div>
+</form>
+<br />
+<br />
+<br />
+<br />
+<button (click)="sendTime()">Send form</button>
+<button (click)="patchSomeValue()">Patch Value -> 11:22</button>
+<button (click)="patchEmptyValue()">Patch Value -> empty</button>

@@ -17,6 +17,7 @@
   </app-custom-select>
 
   <div
+    class="error"
     *ngIf="
       formGroup.get('name').invalid &&
       (formGroup.get('name').dirty || formGroup.get('name').touched)

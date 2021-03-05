@@ -21,6 +21,7 @@ import { UseScheduleComponent } from './use-schedule/use-schedule.component';
 import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
 import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
+import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
     UseCustomSelectComponent,
     UseCollapsableTextComponent,
     UseTooltipComponent,
+    UseTimepickerComponent,
   ],
 })
 export class PlaygroundModule {}

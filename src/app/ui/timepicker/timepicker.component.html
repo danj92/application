@@ -1,0 +1,41 @@
+<form [formGroup]="formGroup">
+  <label class="timepicker-label">{{ label }}</label>
+  <div class="timepicker">
+    <app-custom-select
+      #select
+      *ngIf="hours.length"
+      formControlName="hour"
+      (blurInput)="onTouchedSelect()"
+      placeholder="--"
+      [showIcon]="false"
+      [disabledControl]="disabled"
+      overlayClass="timepicker-overlay"
+    >
+      <ng-container *ngFor="let hour of hours">
+        <app-custom-select-option
+          [key]="hour"
+          [value]="hour"
+        ></app-custom-select-option>
+      </ng-container>
+    </app-custom-select>
+
+    <div class="colon" [class.disabled]="disabled">:</div>
+
+    <app-custom-select
+      *ngIf="minutes.length"
+      formControlName="minutes"
+      (blur)="onTouchedSelect()"
+      placeholder="--"
+      [showIcon]="false"
+      [disabledControl]="disabled"
+      overlayClass="timepicker-overlay"
+    >
+      <ng-container *ngFor="let minute of minutes">
+        <app-custom-select-option
+          [key]="minute"
+          [value]="minute"
+        ></app-custom-select-option>
+      </ng-container>
+    </app-custom-select>
+  </div>
+</form>

@@ -18,6 +18,7 @@ import { DropdownComponent } from './custom-dropdown/dropdown/dropdown.component
 import { CustomSelectOptionComponent } from './custom-dropdown/custom-select-option/custom-select-option.component';
 import { CustomSelectComponent } from './custom-dropdown/custom-select/custom-select.component';
 import { PortalModule } from '@angular/cdk/portal';
+import { TimepickerComponent } from './timepicker/timepicker.component';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -34,6 +35,7 @@ const COMPONENTS = [
   CustomSelectComponent,
   CustomSelectOptionComponent,
   DropdownComponent,
+  TimepickerComponent,
 ];
 
 @NgModule({
