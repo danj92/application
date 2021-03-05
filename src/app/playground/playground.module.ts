@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { playgrounRoutes } from './playground.routing';
 import { SharedModule } from '../shared/shared.module';
 import { UseModalComponent } from './use-modal/use-modal.component';
-import { UseSelectComponent } from './use-select/use-select.component';
 import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
 import { AppFormsModule } from '../forms';
 import { UseColorsComponent } from './use-colors/use-colors.component';
@@ -34,7 +33,6 @@ import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
   declarations: [
     PlaygroundComponent,
     UseModalComponent,
-    UseSelectComponent,
     UseColorsComponent,
     UseButtonsComponent,
     UseIconsComponent,

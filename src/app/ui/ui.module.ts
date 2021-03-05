@@ -11,10 +11,13 @@ import { AppFormsModule } from '../forms';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { TabsComponent, TabComponent } from './tabs';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { CustomSelectComponent } from './custom-select/custom-select.component';
 import { CollapsableTextComponent } from './collapsable-text/collapsable-text.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { TooltipDirective } from './tooltip.directive';
+import { DropdownComponent } from './custom-dropdown/dropdown/dropdown.component';
+import { CustomSelectOptionComponent } from './custom-dropdown/custom-select-option/custom-select-option.component';
+import { CustomSelectComponent } from './custom-dropdown/custom-select/custom-select.component';
+import { PortalModule } from '@angular/cdk/portal';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -25,15 +28,24 @@ const COMPONENTS = [
   TabsComponent,
   TabComponent,
   SidebarComponent,
-  CustomSelectComponent,
   CollapsableTextComponent,
   TooltipComponent,
   TooltipDirective,
+  CustomSelectComponent,
+  CustomSelectOptionComponent,
+  DropdownComponent,
 ];
 
 @NgModule({
   declarations: [COMPONENTS],
-  imports: [CommonModule, RouterModule, SimpleMenuModule, SharedModule, AppFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    PortalModule,
+    SimpleMenuModule,
+    SharedModule,
+    AppFormsModule,
+  ],
   exports: [COMPONENTS],
   providers: [],
   entryComponents: [TooltipComponent],

@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  padding: 0 15px;
+  height: 40px;
+  align-items: center;
+  line-height: 40px;
+  background-color: var(--content-very-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  &.selected {
+    color: var(--primary);
+    background-color: var(--content);
+    font-weight: bold;
+    &:hover,
+    &.active {
+      background-color: var(--content-light);
+    }
+  }
+
+  &:hover,
+  &.active {
+    outline: none;
+    background-color: var(--content-light);
+  }
+
+  &.disabled {
+    color: var(--content-dark);
+    cursor: auto;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: var(--content-very-light);
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: var(--content-very-light);
+      }
+    }
+  }
+}

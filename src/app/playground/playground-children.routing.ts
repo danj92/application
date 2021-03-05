@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 
 import { UseColorsComponent } from './use-colors/use-colors.component';
-import { UseSelectComponent } from './use-select/use-select.component';
 import { UseModalComponent } from './use-modal/use-modal.component';
 import { UseIconsComponent } from './use-icons/use-icons.component';
 import { UseFormsComponent } from './use-forms/use-forms.component';
@@ -21,10 +20,6 @@ export const playgroundChildrenRoutes: Routes = [
   {
     path: 'colors',
     component: UseColorsComponent,
-  },
-  {
-    path: 'select',
-    component: UseSelectComponent,
   },
   {
     path: 'modal',

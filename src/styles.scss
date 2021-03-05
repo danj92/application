@@ -6,6 +6,7 @@
 @import 'styles/textarea';
 @import 'styles/checkbox';
 @import 'styles/table';
+@import 'styles/custom_overlay';
 
 @import '~material-design-icons/iconfont/material-icons.css';
 
@@ -41,6 +42,10 @@
   --danger-light: #ff4208;
   --danger: #ed1c24;
   --danger-dark: #b40007;
+
+  --divider-color: #dadfe4;
+  --shadow: #00000029;
+  --box-shadow: 0 3px 6px var(--shadow);
 }
 
 .primary-color {
