@@ -13,6 +13,10 @@
 <br />
 <br />
 <br />
-<button (click)="sendTime()">Send form</button>
-<button (click)="patchSomeValue()">Patch Value -> 11:22</button>
-<button (click)="patchEmptyValue()">Patch Value -> empty</button>
+<div class="action">
+  <button class="primary" (click)="patchSomeValue()">Patch value</button>
+  <button class="primary" (click)="patchEmptyValue()">Patch empty value</button>
+</div>
+
+<p>Value:</p>
+<p>{{ this.formGroup.value | json }}</p>

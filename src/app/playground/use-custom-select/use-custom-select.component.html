@@ -22,12 +22,13 @@
     Pole jest wymagane required.
   </div>
 
-  <div class="btn-act">
-    <button type="button" (click)="checkForm()">Check Form</button>
-    <button type="button" (click)="sendNewValue()">Send -> 2</button>
-    <button type="button" (click)="sendNull()">Send -> null</button>
-
-    <button type="button" (click)="makeTouch()">Touch</button>
-    <button type="button" (click)="makeDisable()">Disable</button>
+  <div class="action">
+    <button type="button" class="btn" (click)="sendNewValue()">Select 2 option</button>
+    <button type="button" class="btn" (click)="sendNull()">Set null</button>
+    <button type="button" class="btn" (click)="makeTouch()">Touch</button>
+    <button type="button" class="btn" (click)="makeDisable()">Disable</button>
   </div>
 </form>
+
+<p>Value:</p>
+<p>{{ this.formGroup.value | json }}</p>

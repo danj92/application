@@ -1,6 +1,6 @@
 <h1>Forms</h1>
 <form [formGroup]="formGroup">
-  <app-input label="Name" type="text" name="name1" [form]="formGroup"> </app-input>
+  <app-input label="Name" type="text" name="name" [form]="formGroup"> </app-input>
 
   <section>
     <label>
@@ -15,5 +15,6 @@
       Asperiores voluptate
     </app-checkbox>
   </section>
-  <button class="secondary">Submit</button>
 </form>
+<p>Value:</p>
+<p>{{ this.formGroup.value | json }}</p>

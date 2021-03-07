@@ -13,11 +13,8 @@ export class UseFormsComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      name1: ['', [Validators.required, Validators.email]],
-      name2: ['', [Validators.required, Validators.email]],
-      name3: ['', [Validators.required, Validators.email]],
+      name: ['', [Validators.required]],
       checkbox: [false, [Validators.requiredTrue]],
-      checkbox2: [false],
     });
   }
 }
