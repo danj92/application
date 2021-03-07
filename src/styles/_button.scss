@@ -4,6 +4,7 @@
   --btn-background: var(--content-very-light);
   --btn-height: var(--form-element);
   --btn-transition: 0.2s ease-out;
+  --btn-border-color: var(--primary);
 }
 
 .btn {
@@ -14,14 +15,15 @@
   font-size: var(--btn-font-size);
   color: var(--btn-text-color);
   background: var(--btn-background);
-  border: 1px solid var(--primary);
+  border-width: 1px;
+  border-color: var(--btn-border-color);
   transition: var(--btn-transition);
   padding: 0 10px;
   outline: none;
   cursor: pointer;
   min-width: 100px;
   &[disabled] {
-    opacity: 0.8;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 }

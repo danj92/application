@@ -1,0 +1,6 @@
+:host {
+  --table-cell-width: 200px;
+  .cell-2 {
+    --table-cell-width: 100px;
+  }
+}
