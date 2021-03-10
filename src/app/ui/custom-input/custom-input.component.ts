@@ -22,14 +22,19 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class CustomInputComponent implements ControlValueAccessor {
-  onChange = _ => {};
-  onTouched = () => {};
+export class CustomInputComponent implements ControlValueAccessor, OnInit {
+  @Input()
+  public label: string;
 
   @ViewChild('input', { static: true, read: ElementRef })
   inputElementRef: ElementRef;
 
+  onChange = _ => {};
+  onTouched = () => {};
+
   constructor(private _renderer: Renderer2) {}
+
+  ngOnInit() {}
 
   writeValue(value: string) {
     this._renderer.setProperty(this.inputElementRef.nativeElement, 'value', value);
@@ -57,7 +62,6 @@ export class CustomInputComponent implements ControlValueAccessor {
 
   onInputChange() {
     const value = this.inputElementRef.nativeElement.value;
-    console.log('value', value);
     this.onChange(value);
   }
 }

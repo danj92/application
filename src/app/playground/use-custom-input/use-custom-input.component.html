@@ -1,5 +1,8 @@
 <form [formGroup]="formGroup">
-  <app-custom-input [formControlName]="'name'"></app-custom-input>
+  <app-custom-input
+    label="Labelka nad inputem"
+    [formControlName]="'name'"
+  ></app-custom-input>
 </form>
 
 <button (click)="save()">Button</button>

@@ -1,1 +1,4 @@
-<input type="text" (blur)="onBlur()" (input)="onInputChange()" #input />
+<label>
+  <span *ngIf="label">{{ label }}</span>
+  <input #input type="text" (blur)="onBlur()" (input)="onInputChange()" />
+</label>

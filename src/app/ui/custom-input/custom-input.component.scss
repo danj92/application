@@ -1,0 +1,23 @@
+:host {
+    label {
+      display: inline-flex;
+      flex-direction: column;
+      font-size: 11px;
+    }
+    &.required {
+      label {
+        color: var(--content-very-dark);
+        &:after {
+          color: var(--danger);
+          content: '*';
+          margin-left: 5px;
+        }
+      }
+    }
+    &.disabled {
+      cursor: default;
+    }
+    &.ng-touched.ng-invalid {
+      border-color: var(--danger);
+  }
+}
