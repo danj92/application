@@ -22,6 +22,7 @@ import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.
 import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
+import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
 
 @NgModule({
   imports: [
@@ -49,6 +50,7 @@ import { UseTimepickerComponent } from './use-timepicker/use-timepicker.componen
     UseCollapsableTextComponent,
     UseTooltipComponent,
     UseTimepickerComponent,
+    UseCustomInputComponent,
   ],
 })
 export class PlaygroundModule {}

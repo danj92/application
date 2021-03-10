@@ -16,6 +16,7 @@ import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.
 import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
+import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
 
 export const playgroundChildrenRoutes: Routes = [
   {
@@ -69,6 +70,10 @@ export const playgroundChildrenRoutes: Routes = [
   {
     path: 'custom-select',
     component: UseCustomSelectComponent,
+  },
+  {
+    path: 'custom-input',
+    component: UseCustomInputComponent,
   },
   {
     path: 'collapsable-text',

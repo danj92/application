@@ -37,10 +37,11 @@ const COMPONENTS = [
   CustomSelectOptionComponent,
   DropdownComponent,
   TimepickerComponent,
+  CustomInputComponent,
 ];
 
 @NgModule({
-  declarations: [COMPONENTS, CustomInputComponent],
+  declarations: [COMPONENTS],
   imports: [
     CommonModule,
     RouterModule,
