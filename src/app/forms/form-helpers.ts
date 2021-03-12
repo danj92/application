@@ -14,14 +14,6 @@ export class FormValidationError extends Error {
   }
 }
 
-export function isControlRequired(control: AbstractControl) {
-  if (control.validator && control.enabled) {
-    const result = control.validator(Validators.required as any);
-    return result && result.required;
-  }
-  return false;
-}
-
 export async function wrapApiFormPost<T>(
   formGroup: FormGroup,
   callback: () => Promise<T>,

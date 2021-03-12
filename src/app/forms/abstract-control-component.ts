@@ -7,8 +7,7 @@ import {
   Directive,
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-
-import { isControlRequired } from './form-helpers';
+import { isControlRequired } from '../ui/custom-control-helper';
 
 @Directive()
 export class AbstractControlComponent<T> implements OnInit {

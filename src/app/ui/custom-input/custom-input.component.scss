@@ -1,23 +1,49 @@
 :host {
-    label {
+
+      label {
       display: inline-flex;
       flex-direction: column;
-      font-size: 11px;
-    }
-    &.required {
-      label {
-        color: var(--content-very-dark);
-        &:after {
-          color: var(--danger);
-          content: '*';
-          margin-left: 5px;
+      font-size: 11px; 
+        span {
+          padding-bottom: 10px;
+        }
+      input {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        padding: 0 10px;
+        outline: none;
+        border-width: 1px;
+        border-color: var(--input-border-color);
+        border-style: solid;
+        color: var(--input-text);
+
+      }
+      }
+
+      &.required {
+        span {
+          color: var(--content-very-dark);
+          &:after {
+            color: var(--danger);
+            content: '*';
+            margin-left: 5px;
+          }
         }
       }
-    }
-    &.disabled {
-      cursor: default;
-    }
-    &.ng-touched.ng-invalid {
-      border-color: var(--danger);
-  }
+      &.disabled {
+        cursor: default;
+      }
+      &.ng-touched.ng-invalid {
+        label {
+           color: var(--danger);
+        }
+        input {
+          border-width: 1px;
+          border-color: var(--danger);
+        }
+
+     }
+
+
 }

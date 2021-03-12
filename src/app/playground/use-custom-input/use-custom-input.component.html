@@ -1,10 +1,21 @@
 <form [formGroup]="formGroup">
   <app-custom-input
     label="Labelka nad inputem"
-    [formControlName]="'name'"
+    formControlName="name"
   ></app-custom-input>
+
+  <p
+    class="error"
+    *ngIf="
+      formGroup.get('name').invalid &&
+      (formGroup.get('name').dirty || formGroup.get('name').touched)
+    "
+  >
+    Pole jest wymagane
+  </p>
 </form>
 
+<p>disabled="true" a jakszo kontrolka bude maty disabled</p>
 <button (click)="save()">Button</button>
 
 <code>{{ formGroup.value | json }}</code>

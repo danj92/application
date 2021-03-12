@@ -7,8 +7,16 @@ import {
   Renderer2,
   ViewChild,
   ElementRef,
+  AfterViewInit,
+  Injector,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NgControl,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
+import { isControlRequired } from '../custom-control-helper';
 
 @Component({
   selector: 'app-custom-input',
@@ -22,19 +30,43 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class CustomInputComponent implements ControlValueAccessor, OnInit {
+export class CustomInputComponent
+  implements ControlValueAccessor, OnInit, AfterViewInit {
   @Input()
   public label: string;
+
+  @Input()
+  public disabled = false;
+
+  @HostBinding('class.disabled')
+  get isDisabled() {
+    return this.disabled;
+  }
+
+  @HostBinding('class.required')
+  public required = false;
 
   @ViewChild('input', { static: true, read: ElementRef })
   inputElementRef: ElementRef;
 
+  private control: FormControl;
+
   onChange = _ => {};
   onTouched = () => {};
 
-  constructor(private _renderer: Renderer2) {}
+  constructor(private _renderer: Renderer2, private injector: Injector) {}
 
   ngOnInit() {}
+
+  ngAfterViewInit() {
+    const ngControl: NgControl = this.injector.get(NgControl, null);
+    if (ngControl) {
+      this.control = ngControl.control as FormControl;
+      setTimeout(() => {
+        this.required = isControlRequired(this.control);
+      });
+    }
+  }
 
   writeValue(value: string) {
     this._renderer.setProperty(this.inputElementRef.nativeElement, 'value', value);
