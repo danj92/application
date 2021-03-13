@@ -32,17 +32,6 @@ import { isControlRequired } from '../custom-control-helper';
 })
 export class CustomInputComponent
   implements ControlValueAccessor, OnInit, AfterViewInit {
-  @Input()
-  public label: string;
-
-  @Input()
-  public disabled = false;
-
-  @HostBinding('class.disabled')
-  get isDisabled() {
-    return this.disabled;
-  }
-
   @HostBinding('class.required')
   public required = false;
 

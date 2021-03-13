@@ -20,6 +20,7 @@ import { CustomSelectComponent } from './custom-dropdown/custom-select/custom-se
 import { PortalModule } from '@angular/cdk/portal';
 import { TimepickerComponent } from './timepicker/timepicker.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
+import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -38,6 +39,7 @@ const COMPONENTS = [
   DropdownComponent,
   TimepickerComponent,
   CustomInputComponent,
+  CustomCheckboxComponent,
 ];
 
 @NgModule({

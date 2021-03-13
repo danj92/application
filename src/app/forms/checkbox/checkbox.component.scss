@@ -5,9 +5,9 @@
   .checkbox-field {
     display: flex;
     .checkbox {
-      width: 30px;
-      min-width: 30px;
-      height: 30px;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -34,6 +34,7 @@
         --checkbox-background: var(--primary);
         i {
           color: var(--content-very-light);
+          font-size: 15px;
         }
       }
     }

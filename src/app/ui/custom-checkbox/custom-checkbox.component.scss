@@ -1,0 +1,54 @@
+:host {
+
+  &.required {
+    span {
+      color: var(--content-very-dark);
+      &:after {
+        color: var(--danger);
+        content: '*';
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &.ng-touched.ng-invalid {
+    span {
+      color: var(--danger);
+    }
+    .custom-checkbox {
+      border-width: 1px;
+      border-color: var(--danger);
+    }
+  }
+
+  label {
+  display: flex;
+  align-items: center;
+  .checkbox-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .custom-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid var(--content);
+
+    border-radius: 3px;
+    .filling {
+      width: 10px;
+      height: 10px;
+      border-radius: 1px;
+      background: var(--primary);
+    }
+  }
+  }
+
+
+}

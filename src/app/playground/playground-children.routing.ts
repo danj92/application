@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 import { UseColorsComponent } from './use-colors/use-colors.component';
 import { UseModalComponent } from './use-modal/use-modal.component';
 import { UseIconsComponent } from './use-icons/use-icons.component';
-import { UseFormsComponent } from './use-forms/use-forms.component';
 import { UseMenuComponent } from './use-menu/use-menu.component';
 import { UseSpinnersComponent } from './use-spinners/use-spinners.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
@@ -17,6 +16,7 @@ import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsa
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
 import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
+import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
 
 export const playgroundChildrenRoutes: Routes = [
   {
@@ -30,10 +30,6 @@ export const playgroundChildrenRoutes: Routes = [
   {
     path: 'icons',
     component: UseIconsComponent,
-  },
-  {
-    path: 'forms',
-    component: UseFormsComponent,
   },
   {
     path: 'menu',
@@ -75,6 +71,11 @@ export const playgroundChildrenRoutes: Routes = [
     path: 'custom-input',
     component: UseCustomInputComponent,
   },
+  {
+    path: 'custom-checkbox',
+    component: UseCheckboxComponent,
+  },
+
   {
     path: 'collapsable-text',
     component: UseCollapsableTextComponent,

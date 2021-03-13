@@ -12,7 +12,6 @@ import { UseButtonsComponent } from './use-buttons/use-buttons.component';
 import { UseIconsComponent } from './use-icons/use-icons.component';
 import { UseMenuComponent } from './use-menu/use-menu.component';
 import { UseSpinnersComponent } from './use-spinners/use-spinners.component';
-import { UseFormsComponent } from './use-forms/use-forms.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
 import { UseTabsComponent } from './use-tabs/use-tabs.component';
 import { UseTableComponent } from './use-table/use-table.component';
@@ -23,6 +22,7 @@ import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsa
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
 import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
+import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
 
 @NgModule({
   imports: [
@@ -40,7 +40,6 @@ import { UseCustomInputComponent } from './use-custom-input/use-custom-input.com
     UseIconsComponent,
     UseMenuComponent,
     UseSpinnersComponent,
-    UseFormsComponent,
     UseTypographyComponent,
     UseTabsComponent,
     UseTableComponent,
@@ -51,6 +50,7 @@ import { UseCustomInputComponent } from './use-custom-input/use-custom-input.com
     UseTooltipComponent,
     UseTimepickerComponent,
     UseCustomInputComponent,
+    UseCheckboxComponent,
   ],
 })
 export class PlaygroundModule {}

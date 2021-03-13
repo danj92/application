@@ -1,0 +1,14 @@
+<label>
+  <div>
+    <input
+      class="checkbox-input"
+      type="checkbox"
+      [ngModel]="checked"
+      (ngModelChange)="onModelChange($event)"
+    />
+    <div class="custom-checkbox">
+      <div class="filling" *ngIf="checked"></div>
+    </div>
+  </div>
+  <span><ng-content></ng-content></span>
+</label>

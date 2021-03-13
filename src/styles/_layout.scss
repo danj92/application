@@ -66,6 +66,18 @@
 
 }
 
+  .form-field {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
 .error {
   color: var(--danger);
+  font-size: var(--font-caption);
 }
+
+  .header {
+    border-bottom: 1px solid var(--divider-color);
+    padding-bottom: 10px;
+  }

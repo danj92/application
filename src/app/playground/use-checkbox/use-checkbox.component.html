@@ -1,0 +1,41 @@
+<h1 class="header">ControlValueAccessor</h1>
+<p><code>< app-custom-checkbox [formControlName] [formControl] [(ngModel)] ></code></p>
+
+<p>[(ngModel)]="myNgModel""</p>
+<app-custom-checkbox [(ngModel)]="myNgModel">Form control</app-custom-checkbox>
+
+<p>Value: {{ myNgModel | json }}</p>
+
+<br />
+<br />
+<br />
+
+<form [formGroup]="formGroup">
+  <p>[formControlName]="checkbox1"</p>
+
+  <app-custom-checkbox formControlName="checkbox1">
+    Form control name
+  </app-custom-checkbox>
+
+  <br />
+  <br />
+  <br />
+
+  <p>[formControl]="myFormControl"</p>
+  <app-custom-checkbox [formControl]="myFormControl">Form control</app-custom-checkbox>
+
+  <p>Value: {{ myFormControl.value | json }}</p>
+
+  <br />
+  <br />
+  <br />
+
+  <h1 class="header">The old method</h1>
+  <p><code>< app-input [form] ></code></p>
+  <app-checkbox name="checkbox2" [form]="formGroup">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, culpa aspernatur!
+    Asperiores voluptate
+  </app-checkbox>
+</form>
+
+<p>Value: {{ formGroup.value | json }}</p>

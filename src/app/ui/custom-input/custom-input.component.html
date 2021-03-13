@@ -1,10 +1,4 @@
 <label>
-  <span *ngIf="label">{{ label }}</span>
-  <input
-    #input
-    type="text"
-    (blur)="onBlur()"
-    (input)="onInputChange()"
-    [disabled]="disabled"
-  />
+  <span><ng-content></ng-content></span>
+  <input #input type="text" (blur)="onBlur()" (input)="onInputChange()" />
 </label>
