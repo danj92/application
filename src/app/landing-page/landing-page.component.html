@@ -4,7 +4,67 @@
     <ul>
       <li>Config prettier and tslint. Automatically change " => to '</li>
       <li>Carousel / Slider with foto</li>
-      <li>textarea/input/checkbox</li>
+      <li>textarea/radio</li>
+      <li>provide: NG_VALIDATORS,</li>
+      <li>wydy Acces,</li>
     </ul>
+  </section>
+
+  <section>
+    <form [formGroup]="formGroup">
+      <div class="form-field">
+        <app-custom-input formControlName="lastname">
+          Bind form control name
+        </app-custom-input>
+      </div>
+      <div class="form-field">
+        <app-custom-input formControlName="name">
+          Bind form control name
+        </app-custom-input>
+
+        <span
+          class="error"
+          *ngIf="
+            formGroup.get('name').invalid &&
+            (formGroup.get('name').dirty || formGroup.get('name').touched)
+          "
+        >
+          Pole jest wymagane
+        </span>
+      </div>
+
+      <div class="form-field">
+        <app-custom-checkbox formControlName="checkbox">Checkbox</app-custom-checkbox>
+        <span
+          class="error"
+          *ngIf="
+            formGroup.get('checkbox').invalid &&
+            (formGroup.get('checkbox').dirty || formGroup.get('checkbox').touched)
+          "
+        >
+          Pole jest wymagane
+        </span>
+      </div>
+
+      <app-radio-group name="myRadio" [form]="formGroup">
+        <app-radio-option value="radio1">
+          radio 1
+        </app-radio-option>
+
+        <p class="input-hint">
+          Lorem ipsum dolor sit amet.
+        </p>
+
+        <app-radio-option value="radio2">
+          radio 2
+        </app-radio-option>
+
+        <p class="input-hint">
+          Lorem ipsum dolor sit amet.
+        </p>
+      </app-radio-group>
+    </form>
+
+    <button (click)="save()">Save</button>
   </section>
 </div>

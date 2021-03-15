@@ -2,7 +2,6 @@
 
   &.required {
     span {
-      color: var(--content-very-dark);
       &:after {
         color: var(--danger);
         content: '*';
@@ -16,7 +15,6 @@
       color: var(--danger);
     }
     .custom-checkbox {
-      border-width: 1px;
       border-color: var(--danger);
     }
   }
@@ -24,6 +22,7 @@
   label {
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
   .checkbox-input {
     position: absolute;
     opacity: 0;

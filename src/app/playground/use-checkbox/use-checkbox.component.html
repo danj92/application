@@ -12,17 +12,31 @@
 
 <form [formGroup]="formGroup">
   <p>[formControlName]="checkbox1"</p>
-
-  <app-custom-checkbox formControlName="checkbox1">
-    Form control name
-  </app-custom-checkbox>
+  <div class="form-field">
+    <app-custom-checkbox formControlName="checkbox1">
+      Form control name
+    </app-custom-checkbox>
+    <span
+      class="error"
+      *ngIf="
+        formGroup.get('checkbox1').invalid &&
+        (formGroup.get('checkbox1').dirty || formGroup.get('checkbox1').touched)
+      "
+    >
+      Pole wymaga true
+    </span>
+  </div>
 
   <br />
   <br />
   <br />
 
   <p>[formControl]="myFormControl"</p>
-  <app-custom-checkbox [formControl]="myFormControl">Form control</app-custom-checkbox>
+  <div class="form-field">
+    <app-custom-checkbox [formControl]="myFormControl">
+      Form control
+    </app-custom-checkbox>
+  </div>
 
   <p>Value: {{ myFormControl.value | json }}</p>
 

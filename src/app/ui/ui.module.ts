@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -55,5 +55,6 @@ const COMPONENTS = [
   exports: [COMPONENTS],
   providers: [],
   entryComponents: [TooltipComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class UIModule {}
