@@ -1,0 +1,18 @@
+<span class="radio-description">{{ label }}</span>
+<div class="container">
+  <ng-container *ngFor="let item of items">
+    <label class="container">
+      <input
+        #radio
+        [ngModel]="value"
+        (ngModelChange)="handleChange($event)"
+        type="radio"
+        [value]="item.value"
+        [name]="name"
+        [disabled]="isDisabled"
+      />
+      <span class="radio"></span>
+      <span class="name">{{ item.name }}</span>
+    </label>
+  </ng-container>
+</div>

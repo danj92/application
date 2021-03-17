@@ -21,6 +21,7 @@ import { PortalModule } from '@angular/cdk/portal';
 import { TimepickerComponent } from './timepicker/timepicker.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
+import { RadioGrpComponent } from './radio-grp/radio-grp.component';
 
 const COMPONENTS = [
   TopBarComponent,
@@ -40,6 +41,7 @@ const COMPONENTS = [
   TimepickerComponent,
   CustomInputComponent,
   CustomCheckboxComponent,
+  RadioGrpComponent,
 ];
 
 @NgModule({

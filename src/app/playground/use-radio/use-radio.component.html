@@ -1,0 +1,73 @@
+<h1 class="header">ControlValueAccessor</h1>
+
+<p>[name] [label] [items] [formControl] [formControlName]</p>
+
+<code>
+  items1 = [ name: 'radio 1', value: 'radio1'];
+</code>
+
+<br />
+<br />
+<br />
+
+<form [formGroup]="formGroup">
+  <app-radio-grp
+    name="test1"
+    [label]="label"
+    [items]="items1"
+    formControlName="name"
+  ></app-radio-grp>
+</form>
+
+<p>Value: {{ formGroup.get('name').value | json }}</p>
+
+<br />
+<br />
+<br />
+
+<p>[formControl] => [ disabled: true ]</p>
+<app-radio-grp
+  name="test2"
+  label="Form Control:"
+  [items]="items2"
+  [formControl]="itemsFormControl"
+></app-radio-grp>
+
+<br />
+<br />
+<br />
+
+<form [formGroup]="secondFormGroup">
+  <app-radio-grp
+    name="test4"
+    label="Form Control name:"
+    [items]="items3"
+    formControlName="lastname"
+  ></app-radio-grp>
+</form>
+
+<p>Value: {{ secondFormGroup.get('lastname').value | json }}</p>
+
+<br />
+<br />
+<br />
+
+<h1 class="header">The old method</h1>
+
+<app-radio-group name="myRadio" [form]="oldFormGroup">
+  <app-radio-option value="oldRadio1">
+    radio 1
+  </app-radio-option>
+
+  <p class="input-hint">
+    Lorem ipsum dolor sit amet.
+  </p>
+
+  <app-radio-option value="oldRadio2">
+    radio 2
+  </app-radio-option>
+
+  <p class="input-hint">
+    Lorem ipsum dolor sit amet.
+  </p>
+</app-radio-group>

@@ -23,6 +23,7 @@ import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
 import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
 import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
+import { UseRadioComponent } from './use-radio/use-radio.component';
 
 @NgModule({
   imports: [
@@ -51,6 +52,7 @@ import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
     UseTimepickerComponent,
     UseCustomInputComponent,
     UseCheckboxComponent,
+    UseRadioComponent,
   ],
 })
 export class PlaygroundModule {}
