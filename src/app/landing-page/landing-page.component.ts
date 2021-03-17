@@ -16,7 +16,6 @@ export class LandingPageComponent implements OnInit {
       name: ['', [Validators.required]],
       lastname: [''],
       checkbox: ['', [Validators.requiredTrue]],
-      myRadio: [],
     });
   }
 
