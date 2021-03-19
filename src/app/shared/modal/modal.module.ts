@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ModalComponent } from './modal/modal.component';
-import { ModalService } from './modal.service';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
 import { ModalCloseButtonDirective } from './modal-close-button';
+import { ModalService } from './modal.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [ModalComponent, ModalCloseButtonDirective],

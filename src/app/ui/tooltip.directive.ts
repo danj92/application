@@ -12,8 +12,8 @@ import {
 
 import { Subscription } from 'rxjs';
 import { filter, take } from 'rxjs/operators';
-import { ResponsivenessService } from '../core/responsiveness.service';
 
+import { ResponsivenessService } from '../core/responsiveness.service';
 import { TooltipComponent } from '../ui/tooltip/tooltip.component';
 
 @Directive({ selector: '[appTooltip]' })

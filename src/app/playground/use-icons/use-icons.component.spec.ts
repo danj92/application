@@ -6,11 +6,13 @@ describe('UseIconsComponent', () => {
   let component: UseIconsComponent;
   let fixture: ComponentFixture<UseIconsComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [UseIconsComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [UseIconsComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UseIconsComponent);

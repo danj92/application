@@ -1,4 +1,5 @@
 import { Directive, TemplateRef, Input, HostListener, ElementRef } from '@angular/core';
+
 import { MenuOptions, WidthStrategy, MenuSize, ScrollStrategy } from './menu.interface';
 import { MenuService } from './menu.service';
 import { SimpleMenuComponent } from './simple-menu/simple-menu.component';

@@ -7,20 +7,26 @@ import {
   Directive,
 } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+
 import { isControlRequired } from '../ui/custom-control-helper';
 
 @Directive()
-export class AbstractControlComponent<T> implements OnInit {
+export class AbstractControlDirective<T> implements OnInit {
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('form') formGroup: FormGroup;
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('control') formControl: FormControl;
 
   @Input() name = '';
 
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() blur = new EventEmitter<Event>();
 
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() focus = new EventEmitter<Event>();
 
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() change = new EventEmitter<T>();
 
   @HostBinding('class.focused')

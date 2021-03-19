@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { environment } from 'src/environments/environment';
+
+import { environment } from '../../src/environments/environment';
 import { CanLoadWhenFeatureFlagEnabledGuard } from './core/can-load-when-feature-flag-enabled.guard';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {

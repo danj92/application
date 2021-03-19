@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 import { Toast } from '../toast.interface';
 
 const ICON = {
@@ -12,12 +13,8 @@ const ICON = {
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
 })
-export class ToastComponent implements OnInit {
+export class ToastComponent {
   @Input() toast: Toast;
-
-  constructor() {}
-
-  ngOnInit() {}
 
   get icon() {
     return ICON[this.toast.type];

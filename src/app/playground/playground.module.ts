@@ -1,29 +1,30 @@
 import { NgModule } from '@angular/core';
-import { PlaygroundComponent } from './playground.component';
 import { RouterModule } from '@angular/router';
-import { playgrounRoutes } from './playground.routing';
-import { SharedModule } from '../shared/shared.module';
-import { UseModalComponent } from './use-modal/use-modal.component';
-import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
+
 import { AppFormsModule } from '../forms';
-import { UseColorsComponent } from './use-colors/use-colors.component';
+import { SharedModule } from '../shared/shared.module';
+import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
 import { UIModule } from '../ui/ui.module';
+import { PlaygroundComponent } from './playground.component';
+import { playgrounRoutes } from './playground.routing';
 import { UseButtonsComponent } from './use-buttons/use-buttons.component';
+import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
+import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
+import { UseColorsComponent } from './use-colors/use-colors.component';
+import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
+import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
 import { UseIconsComponent } from './use-icons/use-icons.component';
 import { UseMenuComponent } from './use-menu/use-menu.component';
-import { UseSpinnersComponent } from './use-spinners/use-spinners.component';
-import { UseTypographyComponent } from './use-typography/use-typography.component';
-import { UseTabsComponent } from './use-tabs/use-tabs.component';
-import { UseTableComponent } from './use-table/use-table.component';
-import { UseStepperComponent } from './use-stepper/use-stepper.component';
-import { UseScheduleComponent } from './use-schedule/use-schedule.component';
-import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
-import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
-import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
-import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
-import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
-import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
+import { UseModalComponent } from './use-modal/use-modal.component';
 import { UseRadioComponent } from './use-radio/use-radio.component';
+import { UseScheduleComponent } from './use-schedule/use-schedule.component';
+import { UseSpinnersComponent } from './use-spinners/use-spinners.component';
+import { UseStepperComponent } from './use-stepper/use-stepper.component';
+import { UseTableComponent } from './use-table/use-table.component';
+import { UseTabsComponent } from './use-tabs/use-tabs.component';
+import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
+import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
+import { UseTypographyComponent } from './use-typography/use-typography.component';
 
 @NgModule({
   imports: [

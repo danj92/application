@@ -6,11 +6,13 @@ describe('UseMenuComponent', () => {
   let component: UseMenuComponent;
   let fixture: ComponentFixture<UseMenuComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [UseMenuComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [UseMenuComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UseMenuComponent);

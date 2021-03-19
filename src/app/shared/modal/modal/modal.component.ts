@@ -1,15 +1,13 @@
+import { OverlayRef } from '@angular/cdk/overlay';
 import {
   Component,
-  OnInit,
   Output,
   EventEmitter,
   HostListener,
   TemplateRef,
   HostBinding,
-  Input,
 } from '@angular/core';
 
-import { OverlayRef } from '@angular/cdk/overlay';
 import { ModalSize } from './modal-options';
 
 @Component({
@@ -17,7 +15,7 @@ import { ModalSize } from './modal-options';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent {
   @Output() closed = new EventEmitter<void>();
 
   title: string;
@@ -30,17 +28,12 @@ export class ModalComponent implements OnInit {
   templateRef: TemplateRef<any>;
 
   templateContext: any;
-
-  constructor() {}
-
   @HostListener('document:keydown', ['$event'])
   handleKeydown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
       this.close();
     }
   }
-
-  ngOnInit() {}
 
   close() {
     this.overlayRef.dispose();

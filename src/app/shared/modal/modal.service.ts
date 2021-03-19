@@ -1,10 +1,10 @@
-import { Injectable, TemplateRef } from '@angular/core';
 import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-
-import { ModalComponent } from './modal/modal.component';
-import { ModalOptions } from './modal/modal-options';
+import { Injectable, TemplateRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+
+import { ModalOptions } from './modal/modal-options';
+import { ModalComponent } from './modal/modal.component';
 
 @Injectable({
   providedIn: 'root',

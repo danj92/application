@@ -1,13 +1,5 @@
-import {
-  Component,
-  HostBinding,
-  Injector,
-  Input,
-  QueryList,
-  Renderer2,
-  ViewChildren,
-} from '@angular/core';
-import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, HostBinding, Input, QueryList, ViewChildren } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export interface RadioItem {
   name: string;
@@ -38,9 +30,9 @@ export class RadioGrpComponent implements ControlValueAccessor {
 
   value: string;
 
-  constructor() {}
-
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange = _ => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouched = () => {};
 
   registerOnChange(fn: any) {

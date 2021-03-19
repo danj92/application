@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+
 import { MessageType } from './toasts/toast.interface';
 
 @Injectable()
 export class ToastService {
-  constructor() {}
   messages = [];
 
   info(message: string) {

@@ -15,14 +15,15 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      // name: ['', [Validators.required]],
+      name: ['', [Validators.required]],
       lastname: [''],
-      // checkbox: ['', [Validators.requiredTrue]],
+      checkbox: ['', [Validators.requiredTrue]],
     });
   }
 
   save() {
     this.formGroup.markAllAsTouched();
+    // eslint-disable-next-line no-console
     console.log(this.formGroup.value);
   }
 }

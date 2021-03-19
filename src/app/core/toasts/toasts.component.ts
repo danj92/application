@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastService } from '../toast.service';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { Component } from '@angular/core';
+
+import { ToastService } from '../toast.service';
 
 @Component({
   selector: 'app-toasts',
@@ -19,8 +20,6 @@ import { trigger, style, animate, transition } from '@angular/animations';
     ]),
   ],
 })
-export class ToastsComponent implements OnInit {
+export class ToastsComponent {
   constructor(public toasts: ToastService) {}
-
-  ngOnInit() {}
 }

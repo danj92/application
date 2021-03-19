@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Component } from '@angular/core';
+
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
 })
-export class TopBarComponent implements OnInit {
+export class TopBarComponent {
   features = environment.features;
-
-  constructor() {}
-
-  ngOnInit() {}
 }

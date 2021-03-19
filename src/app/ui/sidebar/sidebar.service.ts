@@ -1,5 +1,6 @@
-import { SidebarComponent } from './sidebar.component';
 import { TemplateRef } from '@angular/core';
+
+import { SidebarComponent } from './sidebar.component';
 
 export class SidebarService {
   sidebar: SidebarComponent;

@@ -6,11 +6,13 @@ describe('FormErrorsComponent', () => {
   let component: FormErrorsComponent;
   let fixture: ComponentFixture<FormErrorsComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [FormErrorsComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [FormErrorsComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FormErrorsComponent);

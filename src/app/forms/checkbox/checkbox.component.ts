@@ -1,13 +1,13 @@
 import { Component, HostBinding, HostListener } from '@angular/core';
 
-import { AbstractControlComponent } from '../abstract-control-component';
+import { AbstractControlDirective } from '../abstract-control-component';
 
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
   styleUrls: ['../abstract-control-component.scss', './checkbox.component.scss'],
 })
-export class CheckboxComponent extends AbstractControlComponent<boolean> {
+export class CheckboxComponent extends AbstractControlDirective<boolean> {
   @HostListener('click')
   toggleCheckbox() {
     if (this.formControl.disabled) {

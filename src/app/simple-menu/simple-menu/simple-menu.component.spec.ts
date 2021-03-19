@@ -6,11 +6,13 @@ describe('SimpleMenuComponent', () => {
   let component: SimpleMenuComponent;
   let fixture: ComponentFixture<SimpleMenuComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [SimpleMenuComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [SimpleMenuComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SimpleMenuComponent);

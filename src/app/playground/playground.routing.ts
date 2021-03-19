@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { PlaygroundComponent } from './playground.component';
+
 import { playgroundChildrenRoutes } from './playground-children.routing';
+import { PlaygroundComponent } from './playground.component';
 
 export const playgrounRoutes: Routes = [
   {

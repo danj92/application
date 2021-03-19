@@ -7,7 +7,3 @@ export function isControlRequired(control: AbstractControl) {
   }
   return false;
 }
-
-export function isDisabled(control: AbstractControl) {
-  console.log('!!', control);
-}
