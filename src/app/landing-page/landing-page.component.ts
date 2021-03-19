@@ -9,13 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LandingPageComponent implements OnInit {
   formGroup: FormGroup;
 
+  test1: string;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.formGroup = this.fb.group({
-      name: ['', [Validators.required]],
+      // name: ['', [Validators.required]],
       lastname: [''],
-      checkbox: ['', [Validators.requiredTrue]],
+      // checkbox: ['', [Validators.requiredTrue]],
     });
   }
 
