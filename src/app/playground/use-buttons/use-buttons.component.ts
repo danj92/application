@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ToastService } from '../../core/toast.service';
+import { ToastService } from 'app/core/toast.service';
 
 @Component({
   selector: 'app-use-buttons',

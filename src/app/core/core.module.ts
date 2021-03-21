@@ -11,6 +11,8 @@ import { ToastService } from './toast.service';
 import { ToastComponent } from './toasts/toast/toast.component';
 import { ToastsComponent } from './toasts/toasts.component';
 
+const COMPONENTS = [ToastComponent, ToastsComponent];
+
 @NgModule({
   imports: [HttpClientModule, SharedModule],
   providers: [
@@ -24,8 +26,8 @@ import { ToastsComponent } from './toasts/toasts.component';
       multi: true,
     },
   ],
-  declarations: [ToastComponent, ToastsComponent],
-  exports: [ToastComponent, ToastsComponent],
+  declarations: [COMPONENTS],
+  exports: [COMPONENTS],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
