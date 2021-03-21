@@ -9,6 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LandingPageComponent implements OnInit {
   formGroup: FormGroup;
 
+  test1: string;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
@@ -21,6 +23,7 @@ export class LandingPageComponent implements OnInit {
 
   save() {
     this.formGroup.markAllAsTouched();
+    // eslint-disable-next-line no-console
     console.log(this.formGroup.value);
   }
 }

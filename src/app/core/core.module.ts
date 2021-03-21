@@ -1,15 +1,17 @@
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { SharedModule } from '../shared/shared.module';
+import { ApiService } from './api.service';
+import { CanLoadWhenFeatureFlagEnabledGuard } from './can-load-when-feature-flag-enabled.guard';
+import { ErrorInterceptor } from './error.interceptor';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { SeoService } from './seo.service';
-import { ToastComponent } from './toasts/toast/toast.component';
 import { ToastService } from './toast.service';
-import { SharedModule } from '../shared/shared.module';
+import { ToastComponent } from './toasts/toast/toast.component';
 import { ToastsComponent } from './toasts/toasts.component';
-import { ApiService } from './api.service';
-import { HttpClientModule } from '@angular/common/http';
-import { ErrorInterceptor } from './error.interceptor';
-import { CanLoadWhenFeatureFlagEnabledGuard } from './can-load-when-feature-flag-enabled.guard';
+
+const COMPONENTS = [ToastComponent, ToastsComponent];
 
 @NgModule({
   imports: [HttpClientModule, SharedModule],
@@ -24,8 +26,8 @@ import { CanLoadWhenFeatureFlagEnabledGuard } from './can-load-when-feature-flag
       multi: true,
     },
   ],
-  declarations: [ToastComponent, ToastsComponent],
-  exports: [ToastComponent, ToastsComponent],
+  declarations: [COMPONENTS],
+  exports: [COMPONENTS],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

@@ -6,11 +6,13 @@ describe('UseSpinnersComponent', () => {
   let component: UseSpinnersComponent;
   let fixture: ComponentFixture<UseSpinnersComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [UseSpinnersComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [UseSpinnersComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UseSpinnersComponent);

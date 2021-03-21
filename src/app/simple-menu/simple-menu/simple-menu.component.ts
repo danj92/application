@@ -21,11 +21,9 @@ export class SimpleMenuComponent implements OnInit, OnDestroy {
 
   closingResolve: () => void;
 
-  closingPromise = new Promise<void>((resolve, reject) => {
+  closingPromise = new Promise<void>((resolve, _) => {
     this.closingResolve = resolve;
   });
-
-  constructor() {}
 
   ngOnInit() {
     if (!this.templateRef) {

@@ -1,7 +1,7 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
+import { AbstractControlDirective } from '../abstract-control-component';
 import { RadioGroupService } from './radio-group.service';
-import { AbstractControlComponent } from '../abstract-control-component';
 
 @Component({
   selector: 'app-radio-group',
@@ -9,9 +9,11 @@ import { AbstractControlComponent } from '../abstract-control-component';
   styleUrls: ['../abstract-control-component.scss', './radio-group.component.scss'],
   providers: [RadioGroupService],
 })
-export class RadioGroupComponent extends AbstractControlComponent<string> {
+export class RadioGroupComponent extends AbstractControlDirective<string>
+  implements OnInit {
   @Input() value: string;
 
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() change = this.radioGroupService.change;
 
   constructor(private radioGroupService: RadioGroupService) {

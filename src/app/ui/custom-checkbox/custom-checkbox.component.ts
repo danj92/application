@@ -1,17 +1,11 @@
-import {
-  AfterViewInit,
-  Component,
-  HostBinding,
-  Injector,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { AfterViewInit, Component, HostBinding, Injector } from '@angular/core';
 import {
   ControlValueAccessor,
   FormControl,
   NgControl,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
+
 import { isControlRequired } from '../custom-control-helper';
 
 @Component({
@@ -26,18 +20,15 @@ import { isControlRequired } from '../custom-control-helper';
     },
   ],
 })
-export class CustomCheckboxComponent
-  implements ControlValueAccessor, OnInit, AfterViewInit {
+export class CustomCheckboxComponent implements ControlValueAccessor, AfterViewInit {
   @HostBinding('class.required')
   public required = false;
 
-  checked: boolean = false;
+  checked = false;
 
   private control: FormControl;
 
   constructor(private injector: Injector) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit() {
     const ngControl: NgControl = this.injector.get(NgControl, null);
@@ -49,7 +40,9 @@ export class CustomCheckboxComponent
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange = _ => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouched = () => {};
 
   registerOnChange(fn: any) {

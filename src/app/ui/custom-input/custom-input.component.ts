@@ -1,9 +1,6 @@
 import {
   Component,
-  OnInit,
-  forwardRef,
   HostBinding,
-  Input,
   Renderer2,
   ViewChild,
   ElementRef,
@@ -16,6 +13,7 @@ import {
   NgControl,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
+
 import { isControlRequired } from '../custom-control-helper';
 
 @Component({
@@ -30,8 +28,7 @@ import { isControlRequired } from '../custom-control-helper';
     },
   ],
 })
-export class CustomInputComponent
-  implements ControlValueAccessor, OnInit, AfterViewInit {
+export class CustomInputComponent implements ControlValueAccessor, AfterViewInit {
   @HostBinding('class.required')
   public required = false;
 
@@ -40,12 +37,12 @@ export class CustomInputComponent
 
   private control: FormControl;
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onChange = _ => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   onTouched = () => {};
 
   constructor(private _renderer: Renderer2, private injector: Injector) {}
-
-  ngOnInit() {}
 
   ngAfterViewInit() {
     const ngControl: NgControl = this.injector.get(NgControl, null);

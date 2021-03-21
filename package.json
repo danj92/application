@@ -6,11 +6,15 @@
     "start": "ng serve",
     "build": "ng build --aot --prod",
     "test": "ng test",
-    "lint": "ng lint && node_modules/.bin/stylelint 'src/**/*.scss'",
     "e2e": "ng e2e",
-    "prettier": "prettier --ignore-path ./.gitignore --check \"**/*.{ts,html,scss,js,json}\"",
-    "format": "prettier --write --ignore-path ./.gitignore \"**/*.{ts,html,scss,js,json}\"",
-    "stylelint": "stylelint --ignore-path ./.gitignore \"**/*.{scss,css}\""
+    "lint": "npm run lint:ng && npm run lint:prettier && npm run lint:stylelint",
+    "lint:ng": "ng lint",
+    "lint:prettier": "prettier --ignore-path ./.gitignore --check \"**/*.{ts,html,scss,js,json}\"",
+    "lint:stylelint": "stylelint --ignore-path ./.gitignore \"**/*.{scss,css}\"",
+    "format": "npm run format:ng && npm run format:prettier && npm run format:stylelint",
+    "format:ng": "ng lint --fix",
+    "format:prettier": "prettier --list-different --write --ignore-path ./.gitignore \"**/*.{ts,html,scss,js,json}\"",
+    "format:stylelint": "stylelint --fix --ignore-path ./.gitignore \"**/*.{scss,css}\""
   },
   "private": true,
   "dependencies": {
@@ -30,13 +34,27 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.3",
+    "@angular-eslint/builder": "2.0.2",
+    "@angular-eslint/eslint-plugin": "2.0.2",
+    "@angular-eslint/eslint-plugin-template": "2.0.2",
+    "@angular-eslint/schematics": "2.0.2",
+    "@angular-eslint/template-parser": "2.0.2",
     "@angular/cli": "~11.2.3",
     "@angular/compiler-cli": "~12.0.0-next.3",
     "@angular/language-service": "~12.0.0-next.3",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "4.16.1",
+    "@typescript-eslint/parser": "4.16.1",
     "codelyzer": "^6.0.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "30.7.6",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-unused-imports": "^1.1.0",
     "faker": "^4.1.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
@@ -49,9 +67,8 @@
     "prettier": "^1.19.1",
     "protractor": "~7.0.0",
     "stylelint": "^12.0.1",
-    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-prettier": "^8.0.2",
     "ts-node": "~7.0.0",
-    "tslint": "~6.1.0",
     "typescript": "~4.0.7"
   },
   "browserslist": [
@@ -87,6 +104,14 @@
     "printWidth": 88,
     "endOfLine": "lf",
     "tabWidth": 2,
-    "singleQuote": true
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
   }
 }

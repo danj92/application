@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-use-colors',
   templateUrl: './use-colors.component.html',
   styleUrls: ['./use-colors.component.scss'],
 })
-export class UseColorsComponent implements OnInit {
+export class UseColorsComponent {
   MISSING_COLOR =
     'repeating-linear-gradient(45deg, transparent, ' +
     'transparent 5px, #dddddd 5px, #dddddd 10px)';
@@ -20,10 +20,6 @@ export class UseColorsComponent implements OnInit {
   ];
 
   SHADES = ['-very-light', '-light', '', '-dark'];
-
-  constructor() {}
-
-  ngOnInit() {}
 
   getColorValue(colorName: string) {
     return getComputedStyle(document.body).getPropertyValue(colorName);

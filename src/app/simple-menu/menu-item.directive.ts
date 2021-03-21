@@ -1,4 +1,5 @@
 import { Directive, HostListener, Input, HostBinding } from '@angular/core';
+
 import { MenuService } from './menu.service';
 
 @Directive({ selector: '[appMenuItem]' })
@@ -22,7 +23,7 @@ export class MenuItemDirective {
   }
 
   @HostListener('click', ['$event'])
-  onClick(event: MouseEvent) {
+  onClick() {
     if (!this.isDisabled) {
       this.menuService.hide();
     }

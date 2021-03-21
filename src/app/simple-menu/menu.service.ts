@@ -1,7 +1,8 @@
-import { Injectable, TemplateRef } from '@angular/core';
-import { MenuOptions } from './menu.interface';
 import { Overlay, ConnectedPosition, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
+import { Injectable, TemplateRef } from '@angular/core';
+
+import { MenuOptions } from './menu.interface';
 import { SimpleMenuComponent } from './simple-menu/simple-menu.component';
 
 const DEFAULT_POSITIONS: ConnectedPosition[] = [

@@ -6,11 +6,13 @@ describe('UseTypographyComponent', () => {
   let component: UseTypographyComponent;
   let fixture: ComponentFixture<UseTypographyComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [UseTypographyComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [UseTypographyComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(UseTypographyComponent);

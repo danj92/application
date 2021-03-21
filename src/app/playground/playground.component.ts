@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+
 import { ToastService } from '../core/toast.service';
 
 @Component({
@@ -7,12 +8,10 @@ import { ToastService } from '../core/toast.service';
   templateUrl: './playground.component.html',
   styleUrls: ['./playground.component.scss'],
 })
-export class PlaygroundComponent implements OnInit {
+export class PlaygroundComponent {
   formGroup: FormGroup;
 
-  constructor(private fb: FormBuilder, private toast: ToastService) {}
-
-  ngOnInit() {}
+  constructor(private toast: ToastService) {}
 
   toastInfo() {
     this.toast.info('Info');
@@ -27,6 +26,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   submitForm() {
+    // eslint-disable-next-line no-console
     console.log(this.formGroup);
   }
 }

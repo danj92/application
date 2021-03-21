@@ -5,7 +5,6 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
-
 import { FormControl } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
@@ -38,6 +37,7 @@ export class FormErrorsComponent implements OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('control') set formControl(formControl: FormControl) {
     this._formControl = formControl;
     this.computeErrors();
