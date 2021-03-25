@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   backendUrl: null, // proxied by angular-cli. See `frontend/proxy.conf.js`
+  // URL of development API
+  apiUrl: 'http://localhost:3000',
   features: {
     playground: true,
   },

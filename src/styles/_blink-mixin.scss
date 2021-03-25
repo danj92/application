@@ -8,13 +8,14 @@
     }
   }
   &:not(.ignore-error-blink) {
-    animation: blink-secondary 0.7s linear;
-  }
-  input {
-    animation: blink-secondary 0.7s linear;
+    input {
+      animation: blink-secondary 0.5s linear;
+    }
+    .custom-checkbox {
+      animation: blink-secondary 0.5s linear;
+    }
+    .custom-radio {
+      animation: blink-secondary 0.5s linear;
+    }
   }
 }
-
-// @mixin blink($color) {
-//   background: $color;
-// }

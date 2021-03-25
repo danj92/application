@@ -3,7 +3,6 @@
     <h1>Landing page</h1>
     <ul>
       <li>Carousel / Slider with foto</li>
-      <li>textarea</li>
       <li>provide: NG_VALIDATORS,</li>
       <li>wydy Acces,</li>
       <li>app service</li>
@@ -13,46 +12,24 @@
       <li>Typescript types</li>
       <li>beposredne importy .ts / scss</li>
       <li>import from app/</li>
+      <li>Pagination</li>
+      <li>Use promise or observable api service</li>
+      <li>Firebase</li>
+      <li>bilder modal</li>
+      <li>toast not work</li>
+      <li>seo</li>
+      <li>fix scroll in timepicker (colors)</li>
+      <li>ngx</li>
+      <li>index.ts</li>
     </ul>
   </section>
 
-  <section>
-    <form [formGroup]="formGroup">
-      <div class="form-field">
-        <app-custom-input formControlName="lastname">
-          Bind form control name
-        </app-custom-input>
-      </div>
-      <div class="form-field">
-        <app-custom-input formControlName="name">
-          Bind form control name
-        </app-custom-input>
+  <p>lorem500</p>
 
-        <span
-          class="error"
-          *ngIf="
-            formGroup.get('name').invalid &&
-            (formGroup.get('name').dirty || formGroup.get('name').touched)
-          "
-        >
-          Pole jest wymagane
-        </span>
-      </div>
+  <button (click)="postUser()">Post user</button>
+  <button (click)="putUser()">Put user</button>
+  <button (click)="patchUser()">Patch User</button>
 
-      <div class="form-field">
-        <app-custom-checkbox formControlName="checkbox">Checkbox</app-custom-checkbox>
-        <span
-          class="error"
-          *ngIf="
-            formGroup.get('checkbox').invalid &&
-            (formGroup.get('checkbox').dirty || formGroup.get('checkbox').touched)
-          "
-        >
-          Pole jest wymagane
-        </span>
-      </div>
-    </form>
-
-    <button (click)="save()">Save</button>
-  </section>
+  <button (click)="getUsers()">Get Users</button>
+  <button (click)="deleteUser()">Delete User</button>
 </div>

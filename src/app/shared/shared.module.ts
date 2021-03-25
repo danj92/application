@@ -9,7 +9,6 @@ const COMPONENTS = [CommonModule, FormsModule, ReactiveFormsModule, ModalModule]
 
 @NgModule({
   imports: [COMPONENTS],
-  providers: [],
   declarations: [PageNotFoundComponent],
   exports: [COMPONENTS],
 })

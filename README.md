@@ -11,6 +11,8 @@
 ## Run Backend Locally
 
 `json-server db.json`
+or
+npm run json-server
 
 ## Running unit tests
 

@@ -7,30 +7,26 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 import { ToastService } from './toast.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private toast: ToastService) {}
+  constructor(private toastsService: ToastService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
-      tap(err => {
-        if (err instanceof HttpErrorResponse) {
-          if (!navigator.onLine) {
-            this.toast.error('No internet connection.');
-            return;
-          }
-          const response = err as HttpErrorResponse;
-          if (response.status === 500) {
-            this.toast.error('Unexpected server error.');
-          } else if (response.status === 0) {
-            this.toast.error('No response from the server.');
-          }
+      catchError((error: HttpErrorResponse) => {
+        if (!navigator.onLine) {
+          this.toastsService.error('Brak połączenia z internetem.');
+        } else if (error.status === 500) {
+          this.toastsService.error('Nieoczekiwany błąd serwera.');
         }
+        return throwError(error);
       }),
     );
   }
