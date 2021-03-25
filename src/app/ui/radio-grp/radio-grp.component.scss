@@ -1,22 +1,22 @@
 :host {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
   &.disabled {
     .container {
       label {
         cursor: not-allowed;
         opacity: 0.6;
         input:checked {
-          & + .radio {
+          & + .custom-radio {
             border-color: var(--content);
           }
-          & + .radio:before {
+          & + .custom-radio:before {
             background: var(--content);
           }
         }
       }
     }
-  }  
+  }
   .radio-description {
     display: block;
     font-size: 12px;
@@ -42,7 +42,7 @@
         cursor: pointer;
         height: 0;
         width: 0;
-          & + .radio {
+        & + .custom-radio {
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -55,11 +55,11 @@
       }
 
       input:checked {
-        & + .radio {
+        & + .custom-radio {
           border-color: var(--primary);
         }
-        & + .radio:before {
-          content: "";
+        & + .custom-radio:before {
+          content: '';
           position: absolute;
           display: inline-flex;
           width: 10px;

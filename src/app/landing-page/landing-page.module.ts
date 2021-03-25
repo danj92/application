@@ -1,4 +1,3 @@
-// import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppFormsModule } from '../forms';
@@ -10,13 +9,7 @@ import { LandingPageRoutingModule } from './landing-page.routing';
 
 @NgModule({
   declarations: [LandingPageComponent],
-  imports: [
-    LandingPageRoutingModule,
-    UIModule,
-    SharedModule,
-    AppFormsModule,
-    // HttpClientModule,
-  ],
+  imports: [LandingPageRoutingModule, UIModule, SharedModule, AppFormsModule],
   providers: [LandingPageApiService],
 })
 export class LandingPageModule {}

@@ -1,9 +1,6 @@
 :host {
-  .test {
-    padding: auto;
-  }
-
-  .test {
-    max-width: 10px;
+  form {
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -5,7 +5,9 @@
   --input-border-color-active: var(--primary);
   --input-text: var(--content-dark);
   --input-background: white;
+  --input-bottom-space: 10px;
 }
 .blink {
   @include blink(red);
+  // background: red;
 }

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { wrapApiFormPost } from 'app/forms/form-helpers';
 
 import { LandingPageApiService } from './landing-page-api-service';
 
@@ -7,10 +10,27 @@ import { LandingPageApiService } from './landing-page-api-service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent {
-  constructor(private api: LandingPageApiService) {}
+export class LandingPageComponent implements OnInit {
+  formGroup: FormGroup;
 
-  getUsers() {
+  items1 = [
+    { name: 'radio 1', value: 'radio1' },
+    { name: 'radio 2', value: 'radio2' },
+  ];
+
+  constructor(private api: LandingPageApiService, private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.formGroup = this.fb.group({
+      radio: ['', [Validators.required]],
+      time: ['', [Validators.required]],
+      select: ['', [Validators.required]],
+      checkbox: ['', [Validators.requiredTrue]],
+      name: ['', [Validators.required]],
+    });
+  }
+
+  async getUsers() {
     const users = this.api.getUsers();
     console.log('users', users);
   }
@@ -32,17 +52,24 @@ export class LandingPageComponent {
     const user = {
       displayName: 'Andriy Danylko PUT',
     };
-    this.api.putUser(12353, user);
+    this.api.putUser(12354, user);
   }
 
   patchUser() {
     const user = {
       displayName: 'Andriy Danylko PATCH',
     };
-    this.api.patchUser(12353, user);
+    this.api.patchUser(12354, user);
   }
 
   deleteUser() {
-    this.api.deleteUser(12353);
+    this.api.deleteUser(12354);
+  }
+
+  save() {
+    console.log(this.formGroup.value);
+    wrapApiFormPost(this.formGroup, () => {
+      return this.api.getUsers();
+    });
   }
 }

@@ -23,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         if (!navigator.onLine) {
           this.toastsService.error('Brak połączenia z internetem.');
-        } else if (error.status === 404) {
+        } else if (error.status === 500) {
           this.toastsService.error('Nieoczekiwany błąd serwera.');
         }
         return throwError(error);

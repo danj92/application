@@ -3,7 +3,7 @@
   display: block;
   outline: none;
   font-family: 'Roboto';
-
+  max-width: 300px;
   label {
     font-size: 11px;
     color: var(--content-very-dark);
@@ -17,6 +17,7 @@
     border-bottom: 1px solid var(--divider-color);
     margin-bottom: 10px;
     app-custom-select {
+      width: 100%;
       ::ng-deep .select-view {
         input {
           border-bottom: none;

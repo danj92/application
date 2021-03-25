@@ -63,6 +63,9 @@
   &.line-justify-center {
     justify-content: center;
   }
+  &.line-direction-column {
+    flex-direction: column;
+  }
 }
 
 .form-field {
