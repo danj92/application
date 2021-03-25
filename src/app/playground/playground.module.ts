@@ -11,6 +11,7 @@ import { UseButtonsComponent } from './use-buttons/use-buttons.component';
 import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
 import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
 import { UseColorsComponent } from './use-colors/use-colors.component';
+import { UseControlsComponent } from './use-controls/use-controls.component';
 import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
 import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
 import { UseIconsComponent } from './use-icons/use-icons.component';
@@ -54,6 +55,7 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     UseCustomInputComponent,
     UseCheckboxComponent,
     UseRadioComponent,
+    UseControlsComponent,
   ],
 })
 export class PlaygroundModule {}

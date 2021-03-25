@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { wrapApiFormPost } from 'app/forms/form-helpers';
+import { Component } from '@angular/core';
 
 import { LandingPageApiService } from './landing-page-api-service';
 
@@ -10,28 +7,12 @@ import { LandingPageApiService } from './landing-page-api-service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent implements OnInit {
-  formGroup: FormGroup;
-
-  items1 = [
-    { name: 'radio 1', value: 'radio1' },
-    { name: 'radio 2', value: 'radio2' },
-  ];
-
-  constructor(private api: LandingPageApiService, private fb: FormBuilder) {}
-
-  ngOnInit() {
-    this.formGroup = this.fb.group({
-      radio: ['', [Validators.required]],
-      time: ['', [Validators.required]],
-      select: ['', [Validators.required]],
-      checkbox: ['', [Validators.requiredTrue]],
-      name: ['', [Validators.required]],
-    });
-  }
+export class LandingPageComponent {
+  constructor(private api: LandingPageApiService) {}
 
   async getUsers() {
     const users = this.api.getUsers();
+    // eslint-disable-next-line no-console
     console.log('users', users);
   }
 
@@ -64,12 +45,5 @@ export class LandingPageComponent implements OnInit {
 
   deleteUser() {
     this.api.deleteUser(12354);
-  }
-
-  save() {
-    console.log(this.formGroup.value);
-    wrapApiFormPost(this.formGroup, () => {
-      return this.api.getUsers();
-    });
   }
 }

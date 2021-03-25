@@ -1,6 +1,7 @@
 :host {
   display: block;
-
+  margin-bottom: var(--input-bottom-space);
+  width: 100%;
   &.required {
     label {
       font-size: 11px;
@@ -50,7 +51,6 @@
       padding-left: 15px;
       padding-bottom: 13px;
       padding-top: 13px;
-      margin-bottom: 10px;
       border-bottom: 1px solid var(--divider-color);
       font-size: 15px;
       cursor: pointer;

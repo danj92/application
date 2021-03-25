@@ -1,5 +1,6 @@
 :host {
-
+  display: block;
+  margin-bottom: var(--input-bottom-space);
   &.required {
     span {
       &:after {
@@ -20,34 +21,31 @@
   }
 
   label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  .checkbox-input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  .custom-checkbox {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border: 1px solid var(--content);
+    .checkbox-input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .custom-checkbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border: 1px solid var(--content);
 
-    border-radius: 3px;
-    .filling {
-      width: 10px;
-      height: 10px;
-      border-radius: 1px;
-      background: var(--primary);
+      border-radius: 3px;
+      .filling {
+        width: 10px;
+        height: 10px;
+        border-radius: 1px;
+        background: var(--primary);
+      }
     }
   }
-  }
-
-
 }

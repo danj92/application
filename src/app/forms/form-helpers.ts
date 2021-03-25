@@ -7,13 +7,6 @@ export interface SubmitFormOptions {
   parentElement?: ParentNode;
 }
 
-// export class FormValidationError extends Error {
-//   constructor(m = '') {
-//     super(m);
-//     Object.setPrototypeOf(this, FormValidationError.prototype);
-//   }
-// }
-
 export async function wrapApiFormPost<T>(
   formGroup: FormGroup,
   callback: () => Promise<T>,
@@ -22,7 +15,6 @@ export async function wrapApiFormPost<T>(
   if (formGroup.invalid) {
     formGroup.markAllAsTouched();
     markFirstInvalidElement(options.parentElement);
-    // throw new FormValidationError();
   }
   try {
     return await callback();
@@ -33,9 +25,8 @@ export async function wrapApiFormPost<T>(
 
 export function markFirstInvalidElement(parentElement?: ParentNode) {
   parentElement = parentElement || document;
-  const selector = 'form .ng-invalid';
+  const selector = 'form .ng-invalid input';
   const el = parentElement.querySelector<HTMLElement>(selector);
-  console.log('el', el);
   if (el) {
     el.scrollIntoView({ block: 'center' });
     el.classList.remove('blink');
