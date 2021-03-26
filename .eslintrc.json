@@ -17,7 +17,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.json", "e2e/tsconfig.e2e.json"],
+        "project": ["tsconfig.json"],
         "sourceType": "module",
         "ecmaVersion": 7,
         "createDefaultProgram": true
