@@ -1,0 +1,24 @@
+name: My-tests-e2e
+env:
+  APPLICATION_NAME: 'MyTest'
+
+on:
+  push:
+    branches:
+      - master
+
+job:
+  my_testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print 1
+        run: echo "Print 1"
+
+  my_deploy:
+    runs-on: ubuntu-latest
+    needs: [my_testing]
+
+    steps:
+      - name: Print 2
+        run: echo "Print 2"
