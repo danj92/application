@@ -1,13 +1,11 @@
-name: My-tests-e2e
-env:
-  APPLICATION_NAME: 'MyTest'
+name: Frontend CI
 
 on:
   push:
     branches:
       - master
 
-job:
+jobs:
   my_testing:
     runs-on: ubuntu-latest
 
