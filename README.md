@@ -27,3 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 You may find all project details in our [WIKI](https://github.com/danj92/application/wiki)
 
 script for fake data in `json-server generate.js`
+
+## Satus of Last Deployment:<br>
+
+<img src="https://github.com/adv4000/application/workflows/Frontend_CI/badge.svg?branch-master"><br>

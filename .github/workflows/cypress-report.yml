@@ -1,4 +1,4 @@
-name: Frontend CI
+name: Frontend_CI
 
 env:
   APPLICATION_NAME: 'APP'
