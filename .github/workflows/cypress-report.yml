@@ -1,5 +1,9 @@
 name: Frontend CI
 
+env:
+  APPLICATION_NAME: 'APP'
+  DEPLOY_PACKAGE_NAME: 'app-deploy-ver-${{github.sha}}'
+
 on:
   push:
     branches:
@@ -12,6 +16,11 @@ jobs:
     steps:
       - name: Print 1
         run: echo "Print 1"
+
+      - name: Print environmen
+        run: |
+          echo "Application name: ${{ env.APPLICATION_NAME }}"
+          echo "Deploy package name: ${{ env.DEPLOY_PACKAGE_NAME }}"
 
   my_deploy:
     runs-on: ubuntu-latest
