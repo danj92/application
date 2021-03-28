@@ -22,6 +22,9 @@ jobs:
           echo "Application name: ${{ env.APPLICATION_NAME }}"
           echo "Deploy package name: ${{ env.DEPLOY_PACKAGE_NAME }}"
 
+      - name: Clone repo
+        uses: actions/checkout@v1
+
       - name: List current folder
         run: ls -la
 
