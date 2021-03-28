@@ -31,3 +31,4 @@ script for fake data in `json-server generate.js`
 ## Satus of Last Deployment:<br>
 
 <img src="https://github.com/adv4000/application/workflows/Frontend_CI/badge.svg?branch-master"><br>
+<img src="https://img.shields.io/appveyor/build/danj92/application"><br>
