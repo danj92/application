@@ -11,7 +11,7 @@ on:
 
 jobs:
   my_testing:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestRR
 
     steps:
       - name: Print 1

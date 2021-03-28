@@ -30,6 +30,4 @@ script for fake data in `json-server generate.js`
 
 ## Satus of Last Deployment:<br>
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fdanj92%2Fapplication%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/danj92/application/goto?ref=master)
-
-[![YourActionName Actions Status](https://github.com/danj92/application/workflows/Frontend_CI/badge.svg)](https://github.com/danj92/application/actions)
+[![Frontend_CI ](https://github.com/danj92/application/workflows/Frontend_CI/badge.svg)](https://github.com/danj92/application/actions)
