@@ -1,19 +1,17 @@
-name: Tests
-on:
-  push:
-    branches:
-      - master
+name: Cypress Tests
+
+on: [push]
 
 jobs:
-  build-and-test:
+  cypress-run:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/stup-node@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          build: npm run build
+          start: npm start
