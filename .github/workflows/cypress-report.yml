@@ -1,37 +1,29 @@
-name: Frontend_CI
-
-env:
-  APPLICATION_NAME: 'APP'
-  DEPLOY_PACKAGE_NAME: 'app-deploy-ver-${{github.sha}}'
+name: Test
 
 on:
+  pull_request:
   push:
     branches:
       - master
 
 jobs:
-  my_testing:
-    runs-on: ubuntu-latestRR
-
-    steps:
-      - name: Print 1
-        run: echo "Print 1"
-
-      - name: Print environmen
-        run: |
-          echo "Application name: ${{ env.APPLICATION_NAME }}"
-          echo "Deploy package name: ${{ env.DEPLOY_PACKAGE_NAME }}"
-
-      - name: Clone repo
-        uses: actions/checkout@v1
-
-      - name: List current folder
-        run: ls -la
-
-  my_deploy:
+  lint:
     runs-on: ubuntu-latest
-    needs: [my_testing]
-
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
-      - name: Print 2
-        run: echo "Print 2"
+      - uses: actions/checkout@v2
+      - uses: actions/stup-node@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+      - run: npm ci
+
+      - name: Lint
+      - run: npm run lint
+
+      - name: Run tests
+      - run: npm test
