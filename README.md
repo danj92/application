@@ -30,4 +30,4 @@ script for fake data in `json-server generate.js`
 
 ## Satus of Last Deployment:<br>
 
-[![Frontend_CI ](https://github.com/danj92/application/workflows/Frontend_CI/badge.svg)](https://github.com/danj92/application/actions)
+[![Cypress_tests ](https://github.com/danj92/application/workflows/Cypress_tests/badge.svg)](https://github.com/danj92/application/actions)
