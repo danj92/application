@@ -21,9 +21,11 @@ jobs:
 
       - name: Install Dependencies
       - run: npm ci
-
-      - name: Lint
-      - run: npm run lint
-
-      - name: Run tests
-      - run: npm test
+      # - name: Lint
+      # - run: npm run lint
+      # - name: Run tests
+      # - run: npm test
+      # - name: Run e2e
+      #   with:
+      #     command: npm run cy:run
+      #     wait-on: 'http://localhost:4200'
