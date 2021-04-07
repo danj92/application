@@ -1,11 +1,20 @@
 {
   "$schema": "https://on.cypress.io/cypress.schema.json",
   "chromeWebSecurity": false,
+
   "fixturesFolder": "tests/e2e/fixtures",
   "integrationFolder": "tests/e2e/integration",
   "pluginsFile": "tests/e2e/plugins/index.js",
   "supportFile": "tests/e2e/support/index.js",
+
+  "baseUrl": "http://localhost:4200",
+
   "screenshotsFolder": "output/e2e/screenshots",
   "videosFolder": "output/e2e/videos",
-  "baseUrl": "http://localhost:4200"
+
+  "pageLoadTimeout": 20000,
+  "defaultCommandTimeout": 10000,
+
+  "viewportWidth": 1280,
+  "viewportHeight": 720
 }
