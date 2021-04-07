@@ -3,6 +3,6 @@ export const environment = {
   // URL of development API
   apiUrl: 'http://localhost:3000',
   features: {
-    playground: false,
+    playground: true,
   },
 };
