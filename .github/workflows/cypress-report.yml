@@ -1,4 +1,4 @@
-name: Cypress_tests
+name: Tests_and_build
 
 on:
   push:

@@ -1,5 +1,7 @@
 # Application
 
+Status tests and deploy 🚀 [![Tests_and_build ](https://github.com/danj92/application/workflows/Tests_and_build/badge.svg)](https://github.com/danj92/application/actions)
+
 ## Run Front-end locally
 
 - Install the Angular CLI globally:
@@ -20,8 +22,6 @@ Run `npm run test` or `npm run test:ci` (headless) to execute the unit tests via
 ## Running end-to-end tests
 
 Run `npm run cy:open` or `npm run cy:run` (headless) to execute the end-to-end tests via [Cypress](https://www.cypress.io/).
-
-Status tests [![Cypress_tests ](https://github.com/danj92/application/workflows/Cypress_tests/badge.svg)](https://github.com/danj92/application/actions)
 
 ## WIKI
 
