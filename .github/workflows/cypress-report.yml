@@ -38,9 +38,6 @@ jobs:
       - name: Run tests
         run: npm run test:ci
 
-      - name: Build
-        run: npm run build:dev
-
   cypress-run:
     runs-on: ubuntu-latest
     steps:
