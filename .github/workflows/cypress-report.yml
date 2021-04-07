@@ -18,8 +18,8 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: npm start
-          wait-on: 'https://danj92.github.io/application/'
-          env: host=https://danj92.github.io/application/
+          wait-on: 'http://localhost:4200'
+          env: host=http://localhost:4200
 
   build:
     runs-on: ubuntu-latest
