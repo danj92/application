@@ -36,34 +36,34 @@ jobs:
       - name: Lint
         run: npm run lint
 
-  unit-test:
-    runs-on: ubuntu-latest
+  # unit-test:
+  #   runs-on: ubuntu-latest
 
-    env:
-      node-version: 14.x
+  #   env:
+  #     node-version: 14.x
 
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout 🛎️
+  #       uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ env.node-version }}
+  #     - name: Use Node.js ${{ env.node-version }}
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ env.node-version }}
 
-      - name: Cache Node.js modules
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+  #     - name: Cache Node.js modules
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: ~/.npm
+  #         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-node-
 
-      - name: Install Dependencies 🔧
-        run: npm ci
+  #     - name: Install Dependencies 🔧
+  #       run: npm ci
 
-      - name: Run unit tests
-        run: npm run test:ci
+  #     - name: Run unit tests
+  #       run: npm run test:ci
 
   cypress-e2e:
     runs-on: ubuntu-latest
