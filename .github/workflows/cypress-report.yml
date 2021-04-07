@@ -12,9 +12,10 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
+      - name: Install Dependencies
+        uses: npm ci
       - name: Lint
         run: npm run lint
-
       - name: Run tests
         run: npm run test:ci
 
