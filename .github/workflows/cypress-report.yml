@@ -16,6 +16,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          wait-on: 'http://localhost:4200'
 
   build:
     runs-on: ubuntu-latest
