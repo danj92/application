@@ -7,7 +7,11 @@
       "department": "DABA",
       "email": "ali.gator@company.com",
       "manager": true,
-      "roles": ["Manager", "Account Manager", "SPOC"],
+      "roles": [
+        "Manager",
+        "Account Manager",
+        "SPOC"
+      ],
       "id": 12355
     },
     {
@@ -17,7 +21,11 @@
       "department": "DABA",
       "email": "ali.gator@company.com",
       "manager": true,
-      "roles": ["Manager", "Account Manager", "SPOC"],
+      "roles": [
+        "Manager",
+        "Account Manager",
+        "SPOC"
+      ],
       "id": 12356
     },
     {
@@ -27,8 +35,26 @@
       "department": "DABA",
       "email": "ali.gator@company.com",
       "manager": true,
-      "roles": ["Manager", "Account Manager", "SPOC"],
+      "roles": [
+        "Manager",
+        "Account Manager",
+        "SPOC"
+      ],
       "id": 12357
+    },
+    {
+      "displayName": "Ali Gator (DABA)",
+      "name": "Ali",
+      "surname": "Gator",
+      "department": "DABA",
+      "email": "ali.gator@company.com",
+      "manager": true,
+      "roles": [
+        "Manager",
+        "Account Manager",
+        "SPOC"
+      ],
+      "id": 12358
     }
   ]
 }
