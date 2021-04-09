@@ -259,16 +259,10 @@ Apache-2.0
 @firebase/database
 Apache-2.0
 
-@firebase/firestore
-Apache-2.0
-
 @firebase/logger
 Apache-2.0
 
 @firebase/util
-Apache-2.0
-
-@firebase/webchannel-wrapper
 Apache-2.0
 
 firebase/app
@@ -276,8 +270,6 @@ firebase/app
 firebase/auth
 
 firebase/database
-
-firebase/firestore
 
 rxjs
 Apache-2.0
