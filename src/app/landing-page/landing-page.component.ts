@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { verifyHostBindings } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+
+import { FireBaseService } from 'app/core/fire-base.service';
 
 import { LandingPageApiService } from './landing-page-api-service';
 
@@ -7,8 +11,8 @@ import { LandingPageApiService } from './landing-page-api-service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent {
-  constructor(private api: LandingPageApiService) {}
+export class LandingPageComponent implements OnInit {
+  constructor(private api: LandingPageApiService, private fbs: FireBaseService) {}
 
   async getUsers() {
     const users = this.api.getUsers();
@@ -45,5 +49,44 @@ export class LandingPageComponent {
 
   deleteUser() {
     this.api.deleteUser(12354);
+  }
+
+  //  FIREBASE =====================================
+
+  ngOnInit() {
+    console.log();
+  }
+
+  createUser() {
+    const value = {
+      name: 'Stepan',
+      surname: 'Wasylowycz',
+    };
+
+    this.fbs.addUser(value).then(res => {
+      console.log('res1', res);
+    });
+  }
+
+  getMyUsers() {
+    this.fbs.getUsers().subscribe(actionArray => {
+      const users = actionArray.map(item => {
+        return { id: item.payload.doc.id, ...(item.payload.doc.data() as {}) };
+      });
+
+      console.log('Users', users);
+    });
+  }
+
+  updateUser() {
+    const value = {
+      name: 'Wojciech',
+      surname: 'Start',
+    };
+    this.fbs.updateUser('kP4VpXGmizBXgX6mcKE5', value);
+  }
+
+  deleteMyUser() {
+    this.fbs.deleteUser('kP4VpXGmizBXgX6mcKE5');
   }
 }
