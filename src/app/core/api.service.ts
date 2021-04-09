@@ -25,7 +25,7 @@ class HttpQueryEncoderCodec implements HttpParameterCodec {
 
 @Injectable()
 export class ApiService {
-  URL_PATH = environment.dbUrl;
+  URL_PATH = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

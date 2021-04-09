@@ -11,7 +11,7 @@ export class LandingPageComponent {
   constructor(private api: LandingPageApiService) {}
 
   async getUsers() {
-    const users = this.api.getUsers();
+    const users = await this.api.getUsers();
     // eslint-disable-next-line no-console
     console.log('users', users);
   }
