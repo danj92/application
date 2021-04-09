@@ -28,3 +28,5 @@ Run `npm run cy:open` or `npm run cy:run` (headless) to execute the end-to-end t
 You may find all project details in our [WIKI](https://github.com/danj92/application/wiki)
 
 script for fake data in `json-server generate.js`
+
+## Online Demo
