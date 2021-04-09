@@ -1,0 +1,21 @@
+@mixin blink($color) {
+  @keyframes blink-secondary {
+    from {
+      background-color: $color;
+    }
+    to {
+      background-color: transparent;
+    }
+  }
+  &:not(.ignore-error-blink) {
+    input {
+      animation: blink-secondary 0.5s linear;
+    }
+    .custom-checkbox {
+      animation: blink-secondary 0.5s linear;
+    }
+    .custom-radio {
+      animation: blink-secondary 0.5s linear;
+    }
+  }
+}

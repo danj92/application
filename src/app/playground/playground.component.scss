@@ -1,0 +1,51 @@
+:host {
+  .navigation-and-view {
+    display: flex;
+    margin: 20px 0;
+    .navigation {
+      width: 400px;
+      margin-left: 50px;
+    }
+    .view-container {
+      width: 100%;
+      margin: 0 50px;
+    }
+  }
+
+  table {
+    width: 100%;
+    tr {
+      text-align: left;
+    }
+  }
+
+  .sidebar-scroll-area {
+    display: flex;
+    flex-direction: column;
+    a {
+      padding: 10px;
+    }
+  }
+
+  .cell-1 {
+    --table-cell-width: 300px;
+  }
+
+  .active {
+    background: var(--primary);
+    color: var(--content-very-light);
+  }
+
+  .back {
+    a {
+      display: flex;
+      align-items: center;
+      color: var(--primary);
+      padding: 10px 0;
+      text-decoration: none;
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+}

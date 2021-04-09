@@ -1,0 +1,6 @@
+<app-toast
+  *ngFor="let toast of toasts.messages; index as i"
+  [toast]="toast"
+  [@slide]="''"
+  (click)="toasts.dismiss(i)"
+></app-toast>

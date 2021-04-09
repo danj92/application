@@ -1,0 +1,9 @@
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--content);
+  outline: none;
+  &::placeholder {
+    color: var(--content-dark);
+  }
+}

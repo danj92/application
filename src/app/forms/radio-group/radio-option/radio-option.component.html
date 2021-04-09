@@ -1,0 +1,10 @@
+<div
+  class="wrapper"
+  role="button"
+  [tabindex]="tabindex"
+  (click)="select()"
+  (keydown)="onKeyDown($event)"
+>
+  <div class="radio"></div>
+  <ng-content></ng-content>
+</div>

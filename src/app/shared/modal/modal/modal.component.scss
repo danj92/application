@@ -1,0 +1,33 @@
+:host {
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  padding: 20px;
+  background: var(--content-very-light);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  animation: scale-in 0.15s;
+
+  &[data-size='big'] {
+    width: 746px;
+  }
+  &[data-size='medium'] {
+    width: 530px;
+  }
+  &[data-size='small'] {
+    width: 480px;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    i {
+      cursor: pointer;
+    }
+  }
+}

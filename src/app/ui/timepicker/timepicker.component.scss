@@ -1,0 +1,75 @@
+:host {
+  --timepicker-height: 30px;
+  display: block;
+  margin-bottom: var(--input-bottom-space);
+  outline: none;
+  font-family: 'Roboto';
+  max-width: 300px;
+  label {
+    font-size: 11px;
+    color: var(--content-very-dark);
+    position: relative;
+    top: 2px;
+  }
+
+  .timepicker {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--divider-color);
+    app-custom-select {
+      width: 100%;
+      ::ng-deep .select-view {
+        input {
+          border-bottom: none;
+          padding: 0;
+          text-align: center;
+          width: 100%;
+          height: var(--timepicker-height);
+          margin-bottom: 0;
+          &:focus {
+            background: var(--content-light);
+          }
+          &:disabled {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+  .colon {
+    &.disabled {
+      color: rgba(0, 0, 0, 0.38);
+      height: var(--timepicker-height);
+      display: flex;
+      align-items: center;
+      cursor: default;
+    }
+  }
+  &.required {
+    label {
+      font-size: 11px;
+      color: var(--content-very-dark);
+      margin-bottom: 3px;
+      &:after {
+        color: var(--danger);
+        content: '*';
+        margin-left: 5px;
+      }
+    }
+  }
+  &.ng-invalid .ng-touched::ng-deep input {
+    &::placeholder {
+      color: var(--danger);
+    }
+  }
+
+  &.ng-invalid.ng-touched {
+    .timepicker {
+      border-bottom: 1px solid var(--danger);
+    }
+
+    .timepicker-label {
+      color: var(--danger);
+    }
+  }
+}

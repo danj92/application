@@ -1,0 +1,56 @@
+:host {
+  --radio-size: 19px;
+  --radio-color: var(--font-color);
+  --cursor: pointer;
+  --background: var(--input-background);
+  display: flex;
+  margin: 9px 0;
+  .wrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: var(--cursor);
+    outline: none;
+    color: var(--radio-color);
+  }
+  &:not(.disabled) .wrapper .radio {
+    &:hover,
+    &:focus {
+      border-width: 2px;
+    }
+  }
+
+  &.selected .radio {
+    --background: black;
+    &:before {
+      --radio-size: 9px;
+      content: '';
+      display: block;
+      width: var(--radio-size);
+      min-width: var(--radio-size);
+      height: var(--radio-size);
+      border-radius: 50%;
+      background: var(--content-very-light);
+    }
+  }
+
+  &.disabled .radio {
+    --radio-color: var(--content-dark);
+    --background: var(--content-dark);
+    --cursor: not-allowed;
+  }
+
+  .radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--radio-size);
+    min-width: var(--radio-size);
+    height: var(--radio-size);
+    border-radius: 50%;
+    margin-right: 14px;
+    border: 1px solid var(--radio-color);
+    background-color: var(--background);
+    outline: none;
+    transition: var(--btn-transition);
+  }
+}

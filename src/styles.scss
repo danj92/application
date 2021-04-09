@@ -1,0 +1,83 @@
+@import 'styles/button';
+@import 'styles/layout';
+@import 'styles/typography';
+@import 'styles/input';
+@import 'styles/select';
+@import 'styles/textarea';
+@import 'styles/checkbox';
+@import 'styles/table';
+@import 'styles/custom_overlay';
+
+@import '~material-design-icons/iconfont/material-icons.css';
+
+@import '../node_modules/@angular/cdk/overlay';
+
+@include cdk-overlay;
+
+:root {
+  --form-element: 35px;
+
+  --font-family: 'Lato', sans-serif;
+  --font-color-very-light: #9fadb5;
+  --font-color-light: #9fadb5;
+  --font-color: #000000;
+
+  --content-very-light: #ffffff;
+  --content-light: #f7f7f7;
+  --content: #a8a8a7;
+  --content-dark: #7c7c7b;
+
+  --primary-light: #3579cf;
+  --primary: #154a8d;
+  --primary-dark: #05336d;
+
+  --secondary-light: #56d48f;
+  --secondary: #36b56f;
+  --secondary-dark: #128043;
+
+  --warning-light: #ff993e;
+  --warning: #f47521;
+  --warning-dark: #d25603;
+
+  --danger-light: #ff4208;
+  --danger: #ed1c24;
+  --danger-dark: #b40007;
+
+  --divider-color: #dadfe4;
+  --shadow: #00000029;
+  --box-shadow: 0 3px 6px var(--shadow);
+
+  // scroll color
+  --scroll-track: #ededed;
+  --scroll-thumb: #bcbcbc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--font-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-color);
+  &.link {
+    cursor: pointer;
+    text-decoration: underline;
+    -webkit-text-decoration-color: var(--primary);
+    text-decoration-color: var(--primary);
+    color: var(--primary);
+  }
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+.error {
+  color: var(--danger);
+}

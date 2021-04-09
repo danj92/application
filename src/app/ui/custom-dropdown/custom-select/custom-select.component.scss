@@ -1,0 +1,80 @@
+:host {
+  display: block;
+  margin-bottom: var(--input-bottom-space);
+  width: 100%;
+  &.required {
+    label {
+      font-size: 11px;
+      color: var(--content-very-dark);
+      margin-bottom: 3px;
+      &:after {
+        color: var(--danger);
+        content: '*';
+        margin-left: 5px;
+      }
+    }
+  }
+  &.disabled {
+    .select-view {
+      cursor: default;
+      input {
+        color: rgba(0, 0, 0, 0.38);
+        cursor: default;
+      }
+      i {
+        background: var(--content-light);
+        opacity: 0.4;
+      }
+    }
+  }
+  &.ng-touched.ng-invalid {
+    .select-view {
+      input {
+        border-color: var(--danger);
+        &::placeholder {
+          color: var(--danger);
+        }
+      }
+      i {
+        color: var(--danger);
+      }
+    }
+  }
+  .select-view {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    input {
+      outline: none;
+      border: none;
+      width: 100%;
+      padding-left: 15px;
+      padding-bottom: 13px;
+      padding-top: 13px;
+      border-bottom: 1px solid var(--divider-color);
+      font-size: 15px;
+      cursor: pointer;
+      &.highlighted-selection {
+        box-shadow: var(--box-shadow);
+      }
+      &:disabled {
+        box-shadow: none;
+      }
+    }
+    i {
+      position: absolute;
+      right: 0;
+      color: var(--content-very-dark);
+      top: 20%;
+      background: var(--content-very-light);
+    }
+
+    input.highlighted-selection + mat-icon {
+      background: var(--content-light);
+    }
+  }
+  app-dropdown {
+    width: 100%;
+    position: relative;
+  }
+}

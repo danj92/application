@@ -1,0 +1,26 @@
+<div>
+  <label *ngIf="label">{{ label }}</label>
+  <div class="select-view">
+    <input
+      #input
+      readonly
+      [disabled]="disabledControl"
+      [value]="displayText"
+      placeholder="{{ placeholder }}"
+      (click)="showDropdown()"
+      (keydown)="onKeyDown($event)"
+      autocomplete="off"
+      tabindex="1"
+    />
+    <i *ngIf="showIcon" (click)="onDropMenuIconClick($event)" class="material-icons">
+      expand_more
+    </i>
+  </div>
+
+  <app-dropdown #dropdownRef [reference]="input" (hideDropdown)="onHideDropdown()">
+    <div class="triangle"></div>
+    <div class="wrapper-overlay" [ngClass]="overlayClass ? overlayClass : ''">
+      <ng-content></ng-content>
+    </div>
+  </app-dropdown>
+</div>

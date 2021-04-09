@@ -1,0 +1,49 @@
+<h1>Use controls</h1>
+<form [formGroup]="formGroup">
+  <div class="form-field">
+    <app-custom-input formControlName="name"> Name </app-custom-input>
+
+    <span
+      class="error"
+      *ngIf="
+        formGroup.get('name').invalid &&
+        (formGroup.get('name').dirty || formGroup.get('name').touched)
+      "
+    >
+      Pole jest wymagane
+    </span>
+  </div>
+  <app-radio-grp
+    name="my-name"
+    label="Wybierz radio"
+    [items]="items"
+    formControlName="radio"
+  ></app-radio-grp>
+
+  <app-timepicker tabindex="0" formControlName="time"></app-timepicker>
+
+  <app-custom-select
+    label="Label"
+    formControlName="select"
+    placeholder="Wybierz wartość"
+  >
+    <app-custom-select-option key="1" value="Sambir"></app-custom-select-option>
+    <app-custom-select-option key="2" value="Wrocław"></app-custom-select-option>
+    <app-custom-select-option key="4" value="USA"></app-custom-select-option>
+    <app-custom-select-option key="5" value="India"></app-custom-select-option>
+    <app-custom-select-option key="6" value="Rosja"></app-custom-select-option>
+  </app-custom-select>
+
+  <app-custom-checkbox formControlName="checkbox">
+    Form control name
+  </app-custom-checkbox>
+
+  <br />
+  <br />
+  <br />
+
+  <div>
+    <h3>Value:</h3>
+    <code>{{ formGroup.value | json }}</code>
+  </div>
+</form>

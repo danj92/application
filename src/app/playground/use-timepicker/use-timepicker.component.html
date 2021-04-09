@@ -1,0 +1,22 @@
+<h1>Timepicker</h1>
+
+<form [formGroup]="formGroup">
+  <app-timepicker tabindex="0" formControlName="time"></app-timepicker>
+  <div
+    class="error"
+    *ngIf="formGroup.get('time').hasError('required') && formGroup.get('time').touched"
+  >
+    Field is required (error).
+  </div>
+</form>
+<br />
+<br />
+<br />
+<br />
+<div class="action">
+  <button class="primary" (click)="patchSomeValue()">Patch value</button>
+  <button class="primary" (click)="patchEmptyValue()">Patch empty value</button>
+</div>
+
+<p>Value:</p>
+<p>{{ this.formGroup.value | json }}</p>

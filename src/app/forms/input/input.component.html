@@ -1,0 +1,17 @@
+<label>
+  <div *ngIf="label" class="label" [title]="label">
+    {{ label }}
+  </div>
+
+  <input
+    #input
+    class="input"
+    [type]="type"
+    [name]="name"
+    [formControl]="formControl"
+    [placeholder]="placeholder"
+    (focus)="emitFocus($event)"
+    (blur)="emitBlur($event)"
+  />
+</label>
+<app-form-errors *ngIf="isErrorVisible" [control]="formControl"> </app-form-errors>

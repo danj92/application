@@ -1,0 +1,57 @@
+<h1 class="header">ControlValueAccessor</h1>
+
+<form [formGroup]="formGroup">
+  <p>
+    <code>
+      div[.form-field] < app-custom-input [label] [formControlName]>
+    </code>
+  </p>
+
+  <div class="form-field">
+    <app-custom-input formControlName="name"> Bind form control name </app-custom-input>
+
+    <span
+      class="error"
+      *ngIf="
+        formGroup.get('name').invalid &&
+        (formGroup.get('name').dirty || formGroup.get('name').touched)
+      "
+    >
+      Pole jest wymagane
+    </span>
+  </div>
+
+  <br />
+  <br />
+
+  <p>[formControl]="myFormControl"</p>
+  <app-custom-input [formControl]="myFormControl"> Bind form control</app-custom-input>
+
+  <p>Value: {{ myFormControl.value | json }}</p>
+  <br />
+  <br />
+
+  <p>Disabled constrols - [value: '', disabled: true]</p>
+  <app-custom-input formControlName="lastname">Disabled constrols</app-custom-input>
+</form>
+
+<code>Value - {{ formGroup.value | json }}</code>
+
+<br />
+<br />
+<br />
+
+<h1 class="header">The old method</h1>
+
+<form [formGroup]="form">
+  <p>
+    <code>
+      < app-input [form], [label], [name] >
+    </code>
+  </p>
+
+  <app-input label="Name" type="text" name="name" [form]="form"> </app-input>
+</form>
+<code>Value - {{ form.value | json }}</code>
+
+<h1 class="header">The old method</h1>

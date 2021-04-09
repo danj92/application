@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 15px 10px;
+  a {
+    color: var(--content-very-light);
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 10px;
+    }
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    a {
+      margin-left: 10px;
+    }
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+}

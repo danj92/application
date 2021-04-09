@@ -1,0 +1,10 @@
+<section>
+  <h1>Drop down menu</h1>
+
+  <button class="primary" [appMenu]="tmpMenuItem">Menu</button>
+
+  <ng-template #tmpMenuItem>
+    <a appMenuItem routerLink="playground1">Page not found</a>
+    <a appMenuItem routerLink="playground" [itemDisabled]="true">playground</a>
+  </ng-template>
+</section>

@@ -1,0 +1,19 @@
+:host {
+  &.touched.invalid {
+    --input-border-color: var(--danger);
+  }
+
+  &.focused {
+    --input-border-color: var(--input-border-color-active);
+  }
+
+  &.required .label:after {
+    content: '*';
+    color: var(--danger);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}

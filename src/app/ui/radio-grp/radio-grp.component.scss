@@ -1,0 +1,73 @@
+:host {
+  display: block;
+  margin-bottom: var(--input-bottom-space);
+  &.disabled {
+    .container {
+      label {
+        cursor: not-allowed;
+        opacity: 0.6;
+        input:checked {
+          & + .custom-radio {
+            border-color: var(--content);
+          }
+          & + .custom-radio:before {
+            background: var(--content);
+          }
+        }
+      }
+    }
+  }
+  .radio-description {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .container {
+    display: inline-flex;
+    align-items: center;
+    .name {
+      margin-left: 10px;
+    }
+    label {
+      cursor: pointer;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        & + .custom-radio {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          background: var(--content-very-light);
+          border-radius: 50%;
+          border: 1px solid var(--content);
+        }
+      }
+
+      input:checked {
+        & + .custom-radio {
+          border-color: var(--primary);
+        }
+        & + .custom-radio:before {
+          content: '';
+          position: absolute;
+          display: inline-flex;
+          width: 10px;
+          height: 10px;
+          background: var(--primary);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
