@@ -1,6 +1,4 @@
-import { verifyHostBindings } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
 
 import { FireBaseService } from 'app/core/fire-base.service';
 
