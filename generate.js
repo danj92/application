@@ -1,7 +1,7 @@
 module.exports = function() {
   const faker = require('faker');
   const data = {
-    people: Array.from({ length: 4 }, (_, n) => {
+    people: Array.from({ length: 6 }, (_, n) => {
       return {
         id: n,
         name: faker.name.findName(),
