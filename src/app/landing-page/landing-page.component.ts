@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { LandingPageApiService } from './landing-page-api-service';
 
@@ -7,13 +7,22 @@ import { LandingPageApiService } from './landing-page-api-service';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
+  users: any;
   constructor(private api: LandingPageApiService) {}
 
-  async getUsers() {
+  async ngOnInit() {
     const users = await this.api.getUsers();
     // eslint-disable-next-line no-console
     console.log('users', users);
+
+    this.users = users;
+  }
+
+  async getUsers() {
+    const myusers = await this.api.getUsers();
+    // eslint-disable-next-line no-console
+    console.log('myusers', myusers);
   }
 
   postUser() {
@@ -45,5 +54,9 @@ export class LandingPageComponent {
 
   deleteUser() {
     this.api.deleteUser(12354);
+  }
+
+  selectedPage(value) {
+    console.log('LP-selected', value);
   }
 }

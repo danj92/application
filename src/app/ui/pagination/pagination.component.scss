@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  align-items: center;
+  span {
+    margin: 20px;
+    padding: 10px;
+    &:hover {
+      background: var(--primary);
+      color: var(--content-very-light);
+    }
+  }
+}
