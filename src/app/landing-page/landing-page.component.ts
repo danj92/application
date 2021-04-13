@@ -14,7 +14,7 @@ export class LandingPageComponent implements OnInit {
   async ngOnInit() {
     const users = await this.api.getUsers();
     // eslint-disable-next-line no-console
-    console.log('users', users);
+    // console.log('users', users);
 
     this.users = users;
   }

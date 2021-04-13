@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
@@ -6,58 +13,70 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit {
-  @Input() numberOFelements;
-  @Input() howMuchPagesToShow = 5;
-  @Output() selectedPage = new EventEmitter();
+  ngOnInit() {
+    const params = {
+      numberOfArticles: 223,
+      articlesPerPage: 12,
+      currentPage: 5,
+      numberOfButtons: 8,
+    };
 
-  pages = [];
+    const createPagination = params => {
+      const {
+        numberOfArticles,
+        articlesPerPage,
+        currentPage,
+        numberOfButtons,
+      } = params;
 
-  limitElement = 10;
+      const numberOfPages = Math.ceil(numberOfArticles / articlesPerPage);
 
-  constructor() {}
+      if (currentPage > numberOfPages || currentPage < 1)
+        return {
+          pagination: [],
+          currentPage,
+        };
 
-  ngOnInit(): void {
-    this.pages = Array.from({ length: 5 }, (_, i) => i + 1);
-  }
+      const buttons = Array(numberOfPages)
+        .fill(1)
+        .map((e, i) => e + i);
 
-  selectPage(value) {
-    this.selectedPage.emit(value);
-  }
+      const sideButtons =
+        numberOfButtons % 2 === 0 ? numberOfButtons / 2 : (numberOfButtons - 1) / 2;
 
-  previous() {
-    let previous;
+      const calculLeft = (rest = 0) => {
+        return {
+          array: buttons
+            .slice(0, currentPage - 1)
+            .reverse()
+            .slice(0, sideButtons + rest)
+            .reverse(),
+          rest() {
+            return sideButtons - this.array.length;
+          },
+        };
+      };
 
-    const newArr = [];
+      const calculRight = (rest = 0) => {
+        return {
+          array: buttons.slice(currentPage).slice(0, sideButtons + rest),
+          rest() {
+            return sideButtons - this.array.length;
+          },
+        };
+      };
 
-    this.pages.forEach(v => {
-      if (v !== '') {
-        previous = v;
-      }
-      if (v === '') {
-        newArr.push(previous + 1);
-      } else {
-        newArr.push(v - 5);
-      }
-    });
+      const leftButtons = calculLeft(calculRight().rest()).array;
+      const rightButtons = calculRight(calculLeft().rest()).array;
 
-    this.pages = newArr;
-  }
+      return {
+        pagination: [...leftButtons, { current: currentPage }, ...rightButtons],
+        currentPage,
+      };
+    };
 
-  next() {
-    this.pages = this.pages.map(a => {
-      const test = a + 5;
+    const pagination = createPagination(params);
 
-      if (test > 13) {
-        return '';
-      } else {
-        return a + 5;
-      }
-    });
-
-    // if (this.pages.includes(13)) {
-    //   const index = this.pages.findIndex(v => v === 13);
-
-    //   this.pages = this.pages.slice(0, index + 1);
-    // }
+    console.log('run', pagination);
   }
 }
