@@ -1,12 +1,21 @@
 :host {
   display: flex;
   align-items: center;
-  span {
-    margin: 20px;
-    padding: 10px;
-    &:hover {
-      background: var(--primary);
-      color: var(--content-very-light);
+  .page {
+    span {
+      padding: 10px;
+      &.active {
+        background: var(--primary);
+        color: var(--content-very-light);
+      }
     }
+  }
+  .cancel {
+    margin: 0 20px;
+    border: none;
+  }
+  .number-of-pages {
+    margin-left: 10px;
+    color: var(--content-dark);
   }
 }
