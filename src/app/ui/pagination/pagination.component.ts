@@ -14,7 +14,7 @@ export class PaginationComponent implements OnInit {
   @Input() numberOfItems: number;
   @Input() articlesPerPage = 5;
   @Input() currentPage = 1;
-  @Input() numberOfButtons = 3;
+  @Input() numberOfButtons: number;
   @Input() singlePagePagination = false;
   @Output() changePage = new EventEmitter();
 
@@ -47,6 +47,15 @@ export class PaginationComponent implements OnInit {
       .fill(1)
       .map((e, i) => e + i);
 
+    // if numberOfButtons is undefined to todi pokazuj wsi storinky
+    if (!this.numberOfButtons) {
+      this.numberOfButtons = this.numberOfPages;
+    }
+
+    if (this.singlePagePagination) {
+      this.numberOfButtons = 1;
+    }
+
     const sideButtons =
       this.numberOfButtons % 2 === 0
         ? this.numberOfButtons / 2
@@ -60,17 +69,14 @@ export class PaginationComponent implements OnInit {
         .reverse();
 
       this.numberOfPagesInLeftSide = pagesLeft.length;
-
-      const calcBtn = Math.ceil(this.numberOfButtons / 2);
-
-      if (this.articlesPerPage === this.numberOfButtons) {
-        this.threeDotsLeft = false;
-      } else {
-        if (pagesLeft.slice(-1)[0] >= calcBtn) {
-          this.threeDotsLeft = true;
-        } else {
+      if (buttons.slice(0, currentPage - 1).length > pagesLeft.length) {
+        if (this.numberOfButtons >= buttons.length || this.singlePagePagination) {
           this.threeDotsLeft = false;
+        } else {
+          this.threeDotsLeft = true;
         }
+      } else {
+        this.threeDotsLeft = false;
       }
 
       return {

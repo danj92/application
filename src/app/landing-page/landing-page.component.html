@@ -32,9 +32,24 @@
 <!-- singlePagePagination="true"
 [numberOfButtons]="'1'" -->
 
-<app-pagination
-  [numberOfItems]="users.length"
-  [numberOfButtons]="3"
-  [articlesPerPage]="7"
-  (changePage)="fetchCurrentPage($event)"
-></app-pagination>
+<!-- 3 -->
+<!-- 7 -->
+<!-- 20 -->
+
+<!--  jakszo numberOfButtons >  za dopustyme - to toże norm-->
+
+<!-- validate @input numberOfButtons wwodyty tilky neparni czysla  -->
+
+<!-- jakszo ne podawaty numberOfButtons to paginator pokaze wsi storinky jaki dostupni widnosno artykuliw na sorinku -->
+
+<div class="view">
+  <div *ngFor="let user of usersList">
+    <p>{{ user.id }} ){{ user.name }}</p>
+  </div>
+
+  <app-pagination
+    [numberOfItems]="users.length"
+    [articlesPerPage]="2"
+    (changePage)="fetchCurrentPage($event, 2)"
+  ></app-pagination>
+</div>

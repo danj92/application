@@ -13,12 +13,12 @@ import { LandingPageApiService } from './landing-page-api-service';
 export class LandingPageComponent implements OnInit {
   users: Users[];
 
+  usersList: Users[];
+
   constructor(private api: LandingPageApiService, private route: ActivatedRoute) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.users = this.route.snapshot.data.users;
-
-    console.log('ble', this.users.length);
   }
 
   async getUsers() {
@@ -62,12 +62,14 @@ export class LandingPageComponent implements OnInit {
     console.log('LP-selected', value);
   }
 
-  fetchCurrentPage(page) {
+  async fetchCurrentPage(_page: number, _limit: number) {
     const params = {
-      _page: page,
-      _limit: 3,
+      _page,
+      _limit,
     };
 
-    this.api.getUsers(params);
+    this.usersList = await this.api.getUsers(params);
+
+    // console.log('FF', this.usersList);
   }
 }
