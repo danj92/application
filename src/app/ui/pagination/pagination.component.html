@@ -2,7 +2,7 @@
   First page
 </button>
 
-<i class="material-icons" (click)="back()" [class.disabled]="currentPage === 1">
+<i class="material-icons arrow" (click)="back()" [class.disabled]="currentPage === 1">
   keyboard_arrow_left
 </i>
 
@@ -16,7 +16,7 @@
 <span *ngIf="threeDotsRight">...</span>
 
 <i
-  class="material-icons"
+  class="material-icons arrow"
   (click)="next()"
   [class.disabled]="numberOfPages === currentPage"
 >

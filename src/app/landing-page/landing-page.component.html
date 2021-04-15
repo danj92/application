@@ -10,6 +10,7 @@
       <li>index.ts</li>
       <li>squash comm</li>
       <li>search, pagination</li>
+      <li>wtyczka struktura proektu</li>
     </ul>
   </section>
 
@@ -28,8 +29,12 @@
   <br />
 </div>
 
+<!-- singlePagePagination="true"
+[numberOfButtons]="'1'" -->
+
 <app-pagination
-  [numberOfArticles]="'200'"
-  [numberOfButtons]="'7'"
-  [articlesPerPage]="'7'"
+  [numberOfItems]="users.length"
+  [numberOfButtons]="3"
+  [articlesPerPage]="7"
+  (changePage)="fetchCurrentPage($event)"
 ></app-pagination>

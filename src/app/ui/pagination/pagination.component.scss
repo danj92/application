@@ -4,6 +4,7 @@
   .page {
     span {
       padding: 10px;
+      cursor: pointer;
       &.active {
         background: var(--primary);
         color: var(--content-very-light);
@@ -17,5 +18,15 @@
   .number-of-pages {
     margin-left: 10px;
     color: var(--content-dark);
+  }
+
+  .arrow {
+    color: var(--primary);
+    margin: 0 20px;
+    cursor: pointer;
+    &.disabled {
+      color: var(--content);
+      cursor: not-allowed;
+    }
   }
 }

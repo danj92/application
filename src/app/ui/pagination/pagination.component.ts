@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export interface Pages {
   pagination: number[];
@@ -18,11 +11,12 @@ export interface Pages {
   styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit {
-  @Input() numberOfArticles: number;
+  @Input() numberOfItems: number;
   @Input() articlesPerPage = 5;
   @Input() currentPage = 1;
   @Input() numberOfButtons = 3;
   @Input() singlePagePagination = false;
+  @Output() changePage = new EventEmitter();
 
   numberOfPages: number;
 
@@ -39,8 +33,9 @@ export class PaginationComponent implements OnInit {
 
   createPagination = currentPage => {
     this.currentPage = currentPage;
+    this.changePage.emit(currentPage);
 
-    this.numberOfPages = Math.ceil(this.numberOfArticles / this.articlesPerPage);
+    this.numberOfPages = Math.ceil(this.numberOfItems / this.articlesPerPage);
 
     if (currentPage > this.numberOfPages || currentPage < 1)
       return {
@@ -66,10 +61,16 @@ export class PaginationComponent implements OnInit {
 
       this.numberOfPagesInLeftSide = pagesLeft.length;
 
-      if (pagesLeft[0] > 1) {
-        this.threeDotsLeft = true;
-      } else {
+      const calcBtn = Math.ceil(this.numberOfButtons / 2);
+
+      if (this.articlesPerPage === this.numberOfButtons) {
         this.threeDotsLeft = false;
+      } else {
+        if (pagesLeft.slice(-1)[0] >= calcBtn) {
+          this.threeDotsLeft = true;
+        } else {
+          this.threeDotsLeft = false;
+        }
       }
 
       return {
@@ -119,6 +120,10 @@ export class PaginationComponent implements OnInit {
   }
 
   next() {
+    if (this.numberOfPages === this.currentPage) {
+      return;
+    }
+
     const sideButtons =
       this.numberOfButtons % 2 === 0
         ? this.numberOfButtons / 2
@@ -140,6 +145,10 @@ export class PaginationComponent implements OnInit {
   }
 
   back() {
+    if (this.currentPage === 1) {
+      return;
+    }
+
     const sideButtons =
       this.numberOfButtons % 2 === 0
         ? this.numberOfButtons / 2

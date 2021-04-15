@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import { ApiService } from 'app/core/api.service';
-
-export interface Users {
-  name: string;
-}
+import { Users } from 'app/core/interfaces/user.interface';
 
 @Injectable()
 export class LandingPageApiService extends ApiService {
   private readonly usersUrl = '/users/';
 
-  getUsers(): Promise<Users[]> {
-    return super.get<Users[]>(`${this.usersUrl}`);
+  getUsers(params = {}): Promise<Users[]> {
+    return super.get<Users[]>(`${this.usersUrl}`, params);
   }
 
   postUser(body): Promise<Users[]> {

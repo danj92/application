@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Users } from 'app/core/interfaces/user.interface';
 
 import { LandingPageApiService } from './landing-page-api-service';
 
@@ -8,15 +11,14 @@ import { LandingPageApiService } from './landing-page-api-service';
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent implements OnInit {
-  users: any;
-  constructor(private api: LandingPageApiService) {}
+  users: Users[];
+
+  constructor(private api: LandingPageApiService, private route: ActivatedRoute) {}
 
   async ngOnInit() {
-    const users = await this.api.getUsers();
-    // eslint-disable-next-line no-console
-    // console.log('users', users);
+    this.users = this.route.snapshot.data.users;
 
-    this.users = users;
+    console.log('ble', this.users.length);
   }
 
   async getUsers() {
@@ -58,5 +60,14 @@ export class LandingPageComponent implements OnInit {
 
   selectedPage(value) {
     console.log('LP-selected', value);
+  }
+
+  fetchCurrentPage(page) {
+    const params = {
+      _page: page,
+      _limit: 3,
+    };
+
+    this.api.getUsers(params);
   }
 }
