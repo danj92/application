@@ -151,15 +151,18 @@ export class PaginationComponent implements OnInit {
     if (this.currentPage === 1) {
       return;
     }
-    //          19
-    //   (20           -   1) <  currentPage     =>  page(wsi storinky.length - skilky po bokach -1 ?)
-    //  (wsi storinky  - skilky po bokach)
 
     const sideButtons = this.calcSideButtons();
 
     if (this.numberOfPages - sideButtons <= this.currentPage) {
-      const activeCurrentPage =
-        this.numberOfPages - sideButtons * (sideButtons + 1) - 1;
+      let activeCurrentPage: number;
+
+      if (sideButtons !== 1) {
+        activeCurrentPage = this.numberOfPages - sideButtons * (sideButtons + 1) - 1;
+      } else {
+        activeCurrentPage = this.numberOfPages - sideButtons * (sideButtons + 1) - 2;
+      }
+
       this.pages = this.createPagination(activeCurrentPage);
     } else {
       const activeCurrentPage =
