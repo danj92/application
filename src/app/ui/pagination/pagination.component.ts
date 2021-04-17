@@ -23,7 +23,7 @@ export class PaginationComponent implements OnInit {
   threeDotsLeft = false;
   threeDotsRight = false;
 
-  numberOfPagesInLeftSide: number;
+  numbersOfPagesInLeftSide: number;
 
   pages: Pages;
 
@@ -47,19 +47,17 @@ export class PaginationComponent implements OnInit {
       .fill(1)
       .map((e, i) => e + i);
 
-    // if numberOfButtons is undefined to todi pokazuj wsi storinky
+    // default pagination, show all pages
     if (!this.numberOfButtons) {
       this.numberOfButtons = this.numberOfPages;
     }
 
+    // pagination on one page
     if (this.singlePagePagination) {
       this.numberOfButtons = 1;
     }
 
-    const sideButtons =
-      this.numberOfButtons % 2 === 0
-        ? this.numberOfButtons / 2
-        : (this.numberOfButtons - 1) / 2;
+    const sideButtons = this.calcSideButtons();
 
     const calculLeft = (rest = 0) => {
       const pagesLeft = buttons
@@ -68,7 +66,8 @@ export class PaginationComponent implements OnInit {
         .slice(0, sideButtons + rest)
         .reverse();
 
-      this.numberOfPagesInLeftSide = pagesLeft.length;
+      this.numbersOfPagesInLeftSide = pagesLeft.length;
+
       if (buttons.slice(0, currentPage - 1).length > pagesLeft.length) {
         if (this.numberOfButtons >= buttons.length || this.singlePagePagination) {
           this.threeDotsLeft = false;
@@ -130,22 +129,20 @@ export class PaginationComponent implements OnInit {
       return;
     }
 
-    const sideButtons =
-      this.numberOfButtons % 2 === 0
-        ? this.numberOfButtons / 2
-        : (this.numberOfButtons - 1) / 2;
+    const sideButtons = this.calcSideButtons();
 
-    if (this.currentPage === 1 + this.numberOfPagesInLeftSide) {
+    if (this.currentPage === 1 + this.numbersOfPagesInLeftSide) {
       this.pages = this.createPagination(
         this.pages.pagination.length + 1 + sideButtons,
       );
     } else {
-      const test = sideButtons + this.currentPage + this.numberOfPagesInLeftSide + 1;
+      const activeCurrentPage =
+        sideButtons + this.currentPage + this.numbersOfPagesInLeftSide + 1;
 
-      if (test > this.numberOfPages) {
+      if (activeCurrentPage > this.numberOfPages) {
         this.pages = this.createPagination(this.numberOfPages);
       } else {
-        this.pages = this.createPagination(test);
+        this.pages = this.createPagination(activeCurrentPage);
       }
     }
   }
@@ -154,18 +151,30 @@ export class PaginationComponent implements OnInit {
     if (this.currentPage === 1) {
       return;
     }
+    //          19
+    //   (20           -   1) <  currentPage     =>  page(wsi storinky.length - skilky po bokach -1 ?)
+    //  (wsi storinky  - skilky po bokach)
 
-    const sideButtons =
-      this.numberOfButtons % 2 === 0
-        ? this.numberOfButtons / 2
-        : (this.numberOfButtons - 1) / 2;
+    const sideButtons = this.calcSideButtons();
 
-    const test = this.currentPage - this.numberOfPagesInLeftSide - sideButtons - 1;
-
-    if (test < 1) {
-      this.pages = this.createPagination(1);
+    if (this.numberOfPages - sideButtons <= this.currentPage) {
+      const activeCurrentPage =
+        this.numberOfPages - sideButtons * (sideButtons + 1) - 1;
+      this.pages = this.createPagination(activeCurrentPage);
     } else {
-      this.pages = this.createPagination(test);
+      const activeCurrentPage =
+        this.currentPage - this.numbersOfPagesInLeftSide - sideButtons - 1;
+      if (activeCurrentPage < 1) {
+        this.pages = this.createPagination(1);
+      } else {
+        this.pages = this.createPagination(activeCurrentPage);
+      }
     }
+  }
+
+  calcSideButtons() {
+    return this.numberOfButtons % 2 === 0
+      ? this.numberOfButtons / 2
+      : (this.numberOfButtons - 1) / 2;
   }
 }

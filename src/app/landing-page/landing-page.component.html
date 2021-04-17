@@ -49,7 +49,8 @@
 
   <app-pagination
     [numberOfItems]="users.length"
-    [articlesPerPage]="2"
+    [articlesPerPage]="1"
+    [numberOfButtons]="5"
     (changePage)="fetchCurrentPage($event, 2)"
   ></app-pagination>
 </div>
