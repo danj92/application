@@ -8,7 +8,7 @@ module.exports = function() {
         avatar: faker.internet.avatar(),
       };
     }),
-    users: Array.from({ length: 20 }, (_, n) => {
+    users: Array.from({ length: 10 }, (_, n) => {
       return {
         id: n + 1,
         name: faker.name.findName(),

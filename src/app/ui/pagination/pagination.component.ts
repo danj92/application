@@ -12,7 +12,7 @@ export interface Pages {
 })
 export class PaginationComponent implements OnInit {
   @Input() numberOfItems: number;
-  @Input() articlesPerPage = 5;
+  @Input() articlesPerPage = 1;
   @Input() currentPage = 1;
   @Input() numberOfButtons: number;
   @Input() singlePagePagination = false;
@@ -33,7 +33,11 @@ export class PaginationComponent implements OnInit {
 
   createPagination = currentPage => {
     this.currentPage = currentPage;
-    this.changePage.emit(currentPage);
+    const fetchCurrentPageObj = {
+      currentPage,
+      articlesPerPage: this.articlesPerPage,
+    };
+    this.changePage.emit(fetchCurrentPageObj);
 
     this.numberOfPages = Math.ceil(this.numberOfItems / this.articlesPerPage);
 

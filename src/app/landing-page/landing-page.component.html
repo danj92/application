@@ -13,44 +13,4 @@
       <li>wtyczka struktura proektu</li>
     </ul>
   </section>
-
-  <button (click)="postUser()">Post user</button>
-  <button (click)="putUser()">Put user</button>
-  <button (click)="patchUser()">Patch User</button>
-
-  <button (click)="getUsers()">Get Users</button>
-  <button (click)="deleteUser()">Delete User</button>
-
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-</div>
-
-<!-- singlePagePagination="true"
-[numberOfButtons]="'1'" -->
-
-<!-- 3 -->
-<!-- 7 -->
-<!-- 20 -->
-
-<!--  jakszo numberOfButtons >  za dopustyme - to toże norm-->
-
-<!-- validate @input numberOfButtons wwodyty tilky neparni czysla  -->
-
-<!-- jakszo ne podawaty numberOfButtons to paginator pokaze wsi storinky jaki dostupni widnosno artykuliw na sorinku -->
-
-<div class="view">
-  <div *ngFor="let user of usersList">
-    <p>{{ user.id }} ){{ user.name }}</p>
-  </div>
-
-  <app-pagination
-    [numberOfItems]="users.length"
-    [articlesPerPage]="1"
-    [numberOfButtons]="5"
-    (changePage)="fetchCurrentPage($event, 2)"
-  ></app-pagination>
 </div>
