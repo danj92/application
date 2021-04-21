@@ -101,7 +101,6 @@ export class UsePaginationComponent implements OnInit, OnDestroy {
     this.articlesPerPage = _page.articlesPerPage;
 
     this.users = await this.api.getUsers(params);
-    console.log('fetchCurrentPage', this.users);
   }
 
   ngOnDestroy(): void {
