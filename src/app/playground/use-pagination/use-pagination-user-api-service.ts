@@ -16,15 +16,21 @@ export class UsePaginationUserApiService extends ApiService {
     return super.post<User[]>(this.usersUrl, body);
   }
 
-  patchUser(id, body) {
-    return super.patch<User[]>(`${this.usersUrl}${id}`, body);
+  patchUser(id, body): Promise<User> {
+    return super.patch<User>(`${this.usersUrl}${id}`, body);
   }
 
-  putUser(id, body): Promise<User[]> {
-    return super.put<User[]>(`${this.usersUrl}${id}`, body);
+  putUser(id, body): Promise<User> {
+    return super.put<User>(`${this.usersUrl}${id}`, body);
   }
 
   deleteUser(id: number) {
     return super.delete<User[]>(`${this.usersUrl}${id}`);
+  }
+
+  search(value) {
+    return super.get<User[]>(`${this.usersUrl}`, {
+      q: value,
+    });
   }
 }

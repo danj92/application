@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 
 export interface Pages {
   pagination: number[];
@@ -11,7 +19,18 @@ export interface Pages {
   styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit {
-  @Input() numberOfItems: number;
+  _numberOfItems;
+
+  @Input() set numberOfItems(value: number) {
+    this._numberOfItems = value;
+    this.pages = this.createPagination(this.currentPage);
+    console.log('numberOfItems @Input');
+  }
+
+  get numberOfItems() {
+    return this._numberOfItems;
+  }
+
   @Input() articlesPerPage = 1;
   @Input() currentPage = 1;
   @Input() numberOfButtons: number;
@@ -28,6 +47,7 @@ export class PaginationComponent implements OnInit {
   pages: Pages;
 
   ngOnInit() {
+    console.log('pagination componet');
     this.pages = this.createPagination(this.currentPage);
   }
 

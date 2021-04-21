@@ -27,20 +27,30 @@
     </a>
   </div>
 
+  <br />
+  <br />
+  <br />
+
+  <input type="text" [formControl]="search" placeholder="Search name" />
+
   <div class="view">
     <div *ngFor="let user of users">
       <p>{{ user.id }} ){{ user.name }}</p>
     </div>
 
-    <!-- <app-pagination
-      *ngIf="users"
-      [numberOfItems]="users.length"
-      [numberOfButtons]="5"
-      [articlesPerPage]="25"
+    <app-pagination
+      [numberOfItems]="numberOfUsers"
+      [numberOfButtons]="3"
+      [articlesPerPage]="2"
       (changePage)="fetchCurrentPage($event)"
-    ></app-pagination> -->
+    ></app-pagination>
   </div>
+
+  <br />
+  <br />
+  <br />
 
   <button (click)="createUser()">Create User</button>
   <button (click)="updateUser()">Update User</button>
+  <button (click)="deleteUser()">Delete User</button>
 </div>
