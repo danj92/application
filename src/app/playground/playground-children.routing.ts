@@ -10,6 +10,8 @@ import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.
 import { UseIconsComponent } from './use-icons/use-icons.component';
 import { UseMenuComponent } from './use-menu/use-menu.component';
 import { UseModalComponent } from './use-modal/use-modal.component';
+import { UsePaginationUsersResolve } from './use-pagination/use-pagination-users.resolver';
+import { UsePaginationComponent } from './use-pagination/use-pagination.component';
 import { UseRadioComponent } from './use-radio/use-radio.component';
 import { UseScheduleComponent } from './use-schedule/use-schedule.component';
 import { UseSpinnersComponent } from './use-spinners/use-spinners.component';
@@ -98,6 +100,14 @@ export const playgroundChildrenRoutes: Routes = [
     path: 'use-controls',
     component: UseControlsComponent,
   },
+  {
+    path: 'use-pagination',
+    component: UsePaginationComponent,
+    resolve: {
+      users: UsePaginationUsersResolve,
+    },
+  },
+
   {
     path: '',
     redirectTo: 'colors',

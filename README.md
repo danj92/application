@@ -13,6 +13,12 @@ Status tests and deploy 🚀 [![Tests_and_build ](https://github.com/danj92/appl
 
 ## Run Backend locally
 
+With fake data
+
+- `npm run json-server:faker`
+
+`optional` => with own database (find in the folder) `db.json`
+
 `npm run json-server`
 
 ## Running unit tests

@@ -1,0 +1,56 @@
+<div class="view">
+  <h1>Pagination</h1>
+  <div class="table table-grow-cells">
+    <div class="thead">
+      <div class="cell cell-1">[numberOfButtons]="5"</div>
+      <div class="cell cell-2">[articlesPerPage]="2"</div>
+      <div class="cell cell-3">singlePagePagination="true"</div>
+    </div>
+
+    <a class="row">
+      <div class="cell cell-1" data-header="numberOfButtons = 5">
+        <p>
+          Default => show all pages. Use non-even numbers, like ="3", ="5", ="7"
+        </p>
+      </div>
+
+      <div class="cell cell-2" data-header="articlesPerPage = 2">
+        <p>
+          Default => show 1 articles per Page
+        </p>
+      </div>
+      <div class="cell cell-3" data-header="singlePagePagination = true">
+        <p>
+          Pagination on one page
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <br />
+  <br />
+  <br />
+
+  <input type="text" [formControl]="search" placeholder="Search name" />
+
+  <div class="view">
+    <div *ngFor="let user of users">
+      <p>{{ user.id }} ){{ user.name }}</p>
+    </div>
+
+    <app-pagination
+      [numberOfItems]="numberOfUsers"
+      [numberOfButtons]="3"
+      [articlesPerPage]="2"
+      (changePage)="fetchCurrentPage($event)"
+    ></app-pagination>
+  </div>
+
+  <br />
+  <br />
+  <br />
+
+  <button (click)="createUser()">Create User</button>
+  <button (click)="updateUser()">Update User</button>
+  <button (click)="deleteUser()">Delete User</button>
+</div>

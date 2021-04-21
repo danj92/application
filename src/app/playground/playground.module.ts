@@ -17,6 +17,10 @@ import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.
 import { UseIconsComponent } from './use-icons/use-icons.component';
 import { UseMenuComponent } from './use-menu/use-menu.component';
 import { UseModalComponent } from './use-modal/use-modal.component';
+import { UsePaginationUserApiService } from './use-pagination/use-pagination-user-api-service';
+import { UsePaginationUserService } from './use-pagination/use-pagination-user.service';
+import { UsePaginationUsersResolve } from './use-pagination/use-pagination-users.resolver';
+import { UsePaginationComponent } from './use-pagination/use-pagination.component';
 import { UseRadioComponent } from './use-radio/use-radio.component';
 import { UseScheduleComponent } from './use-schedule/use-schedule.component';
 import { UseSpinnersComponent } from './use-spinners/use-spinners.component';
@@ -56,6 +60,12 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     UseCheckboxComponent,
     UseRadioComponent,
     UseControlsComponent,
+    UsePaginationComponent,
+  ],
+  providers: [
+    UsePaginationUsersResolve,
+    UsePaginationUserApiService,
+    UsePaginationUserService,
   ],
 })
 export class PlaygroundModule {}

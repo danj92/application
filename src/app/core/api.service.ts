@@ -1,6 +1,8 @@
 import { HttpClient, HttpParameterCodec, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import { environment } from 'environments/environment';
 
 // Default codec doesn't encode characters reserved in url format like '+' or '?'. This custom implementation uses native browser functions to encode the params.
@@ -57,6 +59,14 @@ export class ApiService {
       .toPromise();
   }
 
+  getObs<T>(url: string, params: any = {}): Observable<T> {
+    const searchParams = this.buildParams(params);
+
+    return this.http.get<T>(`${this.URL_PATH}${url}`, {
+      params: searchParams,
+    });
+  }
+
   post<T>(url: string, body: any = null, params: any = {}) {
     const searchParams = this.buildParams(params);
 
@@ -65,6 +75,14 @@ export class ApiService {
         params: searchParams,
       })
       .toPromise();
+  }
+
+  postObs<T>(url: string, body: any = null, params: any = {}) {
+    const searchParams = this.buildParams(params);
+
+    return this.http.post<T>(`${this.URL_PATH}${url}`, body, {
+      params: searchParams,
+    });
   }
 
   patch<T>(url: string, body: any) {
