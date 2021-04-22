@@ -12,6 +12,9 @@
 
 @import '../node_modules/@angular/cdk/overlay';
 
+// blink first invalid control.For ignore use (.ignore-error-blink)
+@import './blink';
+
 @include cdk-overlay;
 
 :root {

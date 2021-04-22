@@ -72,4 +72,10 @@
       color: var(--danger);
     }
   }
+
+  &.ignore-error-blink ::ng-deep {
+    .blink {
+      animation: none;
+    }
+  }
 }

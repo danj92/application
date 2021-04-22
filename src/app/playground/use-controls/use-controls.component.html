@@ -1,7 +1,9 @@
 <h1>Use controls</h1>
 <form [formGroup]="formGroup">
   <div class="form-field">
-    <app-custom-input formControlName="name"> Name </app-custom-input>
+    <app-custom-input formControlName="name">
+      Name
+    </app-custom-input>
 
     <span
       class="error"
@@ -22,7 +24,10 @@
 
   <app-timepicker tabindex="0" formControlName="time"></app-timepicker>
 
+  <p>custom-select => [.ignore-error-blink] ignore blink first invalid control</p>
+
   <app-custom-select
+    class="ignore-error-blink"
     label="Label"
     formControlName="select"
     placeholder="Wybierz wartość"
@@ -46,4 +51,10 @@
     <h3>Value:</h3>
     <code>{{ formGroup.value | json }}</code>
   </div>
+
+  <br />
+  <br />
+  <br />
+
+  <button class="secondary" type="submit" (click)="submit()">Submit</button>
 </form>

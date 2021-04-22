@@ -70,4 +70,11 @@
       }
     }
   }
+  &.ignore-error-blink {
+    .blink {
+      & + .custom-radio {
+        animation: none;
+      }
+    }
+  }
 }

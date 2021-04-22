@@ -43,4 +43,10 @@
       border-color: var(--danger);
     }
   }
+
+  &.ignore-error-blink {
+    .blink {
+      animation: none;
+    }
+  }
 }

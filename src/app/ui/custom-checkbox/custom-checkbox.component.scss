@@ -47,4 +47,11 @@
       }
     }
   }
+  &.ignore-error-blink {
+    .blink {
+      & + .custom-checkbox {
+        animation: none;
+      }
+    }
+  }
 }
