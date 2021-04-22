@@ -6,6 +6,7 @@ import {
   ElementRef,
   AfterViewInit,
   Injector,
+  Input,
 } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -29,6 +30,8 @@ import { isControlRequired } from '../custom-control-helper';
   ],
 })
 export class CustomInputComponent implements ControlValueAccessor, AfterViewInit {
+  @Input() placeholder: string;
+
   @HostBinding('class.required')
   public required = false;
 

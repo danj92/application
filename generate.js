@@ -5,7 +5,6 @@ module.exports = function() {
       return {
         id: n + 1,
         name: faker.name.findName(),
-        avatar: faker.internet.avatar(),
       };
     }),
     users: Array.from({ length: 10 }, (_, n) => {

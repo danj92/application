@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./no-results.component.scss'],
 })
 export class NoResultsComponent {
-  @Input() imagePath: string;
+  @Input() imagePath = 'assets/no-results.svg';
   @Input() message = 'No results';
   @Input() secondaryMessage: string;
 }

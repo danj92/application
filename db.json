@@ -1,10 +1,58 @@
 {
+  "people": [
+    { "id": 1, "name": "Andrzej" },
+    { "id": 2, "name": "Michał" },
+    { "id": 3, "name": "Jadwiga" },
+    { "id": 4, "name": "Pawel" },
+    { "id": 5, "name": "Wojtak" },
+    { "id": 6, "name": "Marta" },
+    { "id": 7, "name": "Józef" },
+    { "id": 8, "name": "Anatol" },
+    { "id": 9, "name": "Jasiu" },
+    { "id": 10, "name": "Michalina" },
+    { "id": 11, "name": "Patrycja" },
+    { "id": 12, "name": "Agata" }
+  ],
   "users": [
-    { "name": "Pawel1" },
-    { "name": "Pawel2" },
-    { "name": "Pawel3" },
-    { "name": "Pawel4" },
-    { "name": "Pawel5" },
-    { "name": "Pawel6" }
+    {
+      "id": 1,
+      "name": "Flossie Kuhn"
+    },
+    {
+      "id": 2,
+      "name": "Stella Marvin"
+    },
+    {
+      "id": 3,
+      "name": "Karlee Purdy IV"
+    },
+    {
+      "id": 4,
+      "name": "Darius Cruickshank"
+    },
+    {
+      "id": 5,
+      "name": "Mr. Zoe Hane"
+    },
+    {
+      "id": 6,
+      "name": "Valentina Konopelski"
+    },
+    {
+      "id": 7,
+      "name": "Alfonzo Feeney"
+    },
+    {
+      "id": 8,
+      "name": "Faye Hartmann"
+    },
+    {
+      "id": 9,
+      "name": "Jeanne King"
+    },
+    {
+      "id": 10,
+      "name": "Ed Klocko"
+    }
   ]
 }

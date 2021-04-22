@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 
 import { ApiService } from 'app/core/api.service';
 
-import { User } from './use-pagination-user.interface';
+import { User, People } from './use-pagination-user.interface';
 
 @Injectable()
 export class UsePaginationUserApiService extends ApiService {
   private readonly usersUrl = '/users/';
+  private readonly peopleUrl = '/people/';
 
+  // USERS
   getUsers(params = {}): Promise<User[]> {
     return super.get<User[]>(`${this.usersUrl}`, params);
   }
@@ -28,8 +30,13 @@ export class UsePaginationUserApiService extends ApiService {
     return super.delete<User[]>(`${this.usersUrl}${id}`);
   }
 
-  search(value) {
-    return super.get<User[]>(`${this.usersUrl}`, {
+  // PEOPLE
+  getPeoples(params = {}): Promise<People[]> {
+    return super.get<People[]>(`${this.peopleUrl}`, params);
+  }
+
+  searchPeoples(value) {
+    return super.get<People[]>(`${this.peopleUrl}`, {
       q: value,
     });
   }

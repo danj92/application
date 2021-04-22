@@ -1,7 +1,6 @@
-// @mixin blink($color) {
 @keyframes blink-secondary {
   from {
-    background-color: red;
+    background-color: var(--danger);
   }
   to {
     background-color: transparent;
@@ -17,13 +16,3 @@
     animation: blink-secondary 0.5s linear;
   }
 }
-
-// .blink {
-//   animation: blink-secondary 0.5s linear;
-//   & + .custom-checkbox {
-//     animation: blink-secondary 0.5s linear;
-//   }
-//   & + .custom-radio {
-//     animation: blink-secondary 0.5s linear;
-//   }
-// }

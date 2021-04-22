@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import { UsePaginationUserApiService } from './use-pagination-user-api-service';
-import { User } from './use-pagination-user.interface';
+import { People, User } from './use-pagination-user.interface';
 import { UsePaginationUserService } from './use-pagination-user.service';
 
 @Component({
@@ -16,6 +16,8 @@ import { UsePaginationUserService } from './use-pagination-user.service';
 })
 export class UsePaginationComponent implements OnInit, OnDestroy {
   users: User[];
+
+  peoples: People[];
 
   numberOfUsers: number;
 
@@ -28,6 +30,8 @@ export class UsePaginationComponent implements OnInit, OnDestroy {
   search: FormControl = new FormControl();
 
   DEBOUNCE_TIME = 300;
+
+  loading = false;
 
   constructor(
     private api: UsePaginationUserApiService,
@@ -54,19 +58,31 @@ export class UsePaginationComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.search.valueChanges
         .pipe(debounceTime(this.DEBOUNCE_TIME), distinctUntilChanged())
-        .subscribe(val => this.getUser(val)),
+        .subscribe(val => this.searchPeoples(val)),
     );
+
+    this.getPeoples();
   }
 
-  async getUser(value: string) {
-    if (value === '') {
-      try {
-        this.users = await this.api.getUsers();
-      } catch (e) {}
-    } else {
-      try {
-        this.users = await this.api.search(value);
-      } catch (e) {}
+  async getPeoples() {
+    const params = {
+      _sort: 'name',
+      _order: 'asc',
+    };
+    this.peoples = await this.api.getPeoples(params);
+  }
+
+  async searchPeoples(value: string) {
+    try {
+      this.loading = true;
+      if (value === '') {
+        this.peoples = await this.api.getPeoples();
+      } else {
+        this.peoples = await this.api.searchPeoples(value);
+      }
+    } catch (e) {
+    } finally {
+      this.loading = false;
     }
   }
 
@@ -105,5 +121,29 @@ export class UsePaginationComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  sortUp() {
+    this.peoples.sort((a, b) =>
+      a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }),
+    );
+  }
+
+  sortDown() {
+    this.peoples.sort((a, b) =>
+      b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }),
+    );
+  }
+
+  sortNumUp() {
+    this.peoples.sort(function(a, b) {
+      return a.id === b.id ? 0 : +(a.id > b.id) || -1;
+    });
+  }
+
+  sortNumDown() {
+    this.peoples.sort(function(a, b) {
+      return a.id === b.id ? 0 : +(a.id < b.id) || -1;
+    });
   }
 }

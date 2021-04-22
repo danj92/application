@@ -60,7 +60,7 @@
     .cell {
       display: grid;
       grid-template-columns: auto 1fr;
-      align-items: initial;
+      align-items: center;
       margin-top: 4px;
       margin-bottom: 4px;
       min-width: 100%;
@@ -72,7 +72,14 @@
       &:before {
         content: attr(data-header);
         margin-right: var(--mobile-gap-column);
+        color: var(--primary);
       }
+    }
+  }
+
+  @include mobile-only {
+    .cell {
+      grid-template-columns: 1fr;
     }
   }
 }
