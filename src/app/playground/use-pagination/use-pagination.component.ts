@@ -123,27 +123,15 @@ export class UsePaginationComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  sortUp() {
-    this.peoples.sort((a, b) =>
-      a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }),
-    );
-  }
-
-  sortDown() {
-    this.peoples.sort((a, b) =>
-      b.name.localeCompare(a.name, 'en', { sensitivity: 'base' }),
-    );
-  }
-
-  sortNumUp() {
+  sortUp(key) {
     this.peoples.sort(function(a, b) {
-      return a.id === b.id ? 0 : +(a.id > b.id) || -1;
+      return a[key] === b[key] ? 0 : +(a[key] > b[key]) || -1;
     });
   }
 
-  sortNumDown() {
+  sortDown(key) {
     this.peoples.sort(function(a, b) {
-      return a.id === b.id ? 0 : +(a.id < b.id) || -1;
+      return a[key] === b[key] ? 0 : +(a[key] < b[key]) || -1;
     });
   }
 }
