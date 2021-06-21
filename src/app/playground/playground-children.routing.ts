@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { UseButtonsComponent } from './use-buttons/use-buttons.component';
 import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
 import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
@@ -99,6 +100,10 @@ export const playgroundChildrenRoutes: Routes = [
   {
     path: 'use-controls',
     component: UseControlsComponent,
+  },
+  {
+    path: 'autocomplete',
+    component: AutocompleteComponent,
   },
   {
     path: 'use-pagination',

@@ -131,7 +131,7 @@ export class UsePaginationComponent implements OnInit, OnDestroy {
 
   sortDown(key) {
     this.peoples.sort(function(a, b) {
-      return a[key] === b[key] ? 0 : +(a[key] < b[key]) || -1;
+      return a[key] === b[key] ? 0 : +(a[key] > b[key]) || -1;
     });
   }
 }

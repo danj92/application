@@ -30,6 +30,7 @@ import { UseTabsComponent } from './use-tabs/use-tabs.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 
 @NgModule({
   imports: [
@@ -61,6 +62,7 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     UseRadioComponent,
     UseControlsComponent,
     UsePaginationComponent,
+    AutocompleteComponent,
   ],
   providers: [
     UsePaginationUsersResolve,
