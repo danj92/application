@@ -1,15 +1,12 @@
 <div class="wrapper">
   <div class="control" [class.is-loading]="isLoading">
     <input type="text" #searchInput class="input" />
-    <!-- (paste)="onPaste($event)" -->
-    <!-- #searchInput -->
     <!-- [formControl]="autocomplete" -->
-    <!-- (keydown)="onKeyDown($event)" -->
     <!-- (input)="inputValue($event.target.value)" -->
   </div>
   <ng-container *ngIf="lists?.length !== 0">
     <div *ngFor="let list of lists" class="list is-hoverable">
-      <div class="list-item" (click)="select(list)">{{ list.name }}</div>
+      <div class="list-item" (click)="select($event)">{{ list.name }}</div>
     </div>
   </ng-container>
 </div>

@@ -1,16 +1,14 @@
-/* eslint-disable @angular-eslint/no-output-on-prefix */
 import { HttpClient } from '@angular/common/http';
 import {
   Component,
-  OnInit,
   Output,
   EventEmitter,
-  OnDestroy,
   ElementRef,
   ViewChild,
   AfterViewInit,
+  Renderer2,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+// import { FormControl } from '@angular/forms';
 
 import { fromEvent, merge, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
@@ -20,7 +18,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss'],
 })
-export class AutocompleteComponent implements OnInit, OnDestroy, AfterViewInit {
+export class AutocompleteComponent implements AfterViewInit {
   DEBOUNCE_TIME = 500;
 
   isLoading = false;
@@ -29,33 +27,33 @@ export class AutocompleteComponent implements OnInit, OnDestroy, AfterViewInit {
 
   URL_PATH = 'http://localhost:3000/';
 
-  @Output() public onSelect = new EventEmitter<string>();
+  @Output() public selectOutput = new EventEmitter<string>();
 
-  autocomplete = new FormControl();
+  // autocomplete = new FormControl();
 
   // subscription = new Subscription();
 
-  searchChangeObserver;
+  // searchChangeObserver;
 
   private subscription: Subscription;
 
   @ViewChild('searchInput')
   input: ElementRef;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private renderer: Renderer2) {}
 
-  ngOnInit(): void {
-    // this.subscription.add(
-    //   this.autocomplete.valueChanges
-    //     .pipe(debounceTime(this.DEBOUNCE_TIME), distinctUntilChanged())
-    //     .subscribe(value => {
-    //       if (value.length === 0) {
-    //         this.lists = [];
-    //       }
-    //       this.fetchData(value);
-    //     }),
-    // );
-  }
+  // ngOnInit(): void {
+  // this.subscription.add(
+  //   this.autocomplete.valueChanges
+  //     .pipe(debounceTime(this.DEBOUNCE_TIME), distinctUntilChanged())
+  //     .subscribe(value => {
+  //       if (value.length === 0) {
+  //         this.lists = [];
+  //       }
+  //       this.fetchData(value);
+  //     }),
+  // );
+  // }
 
   ngAfterViewInit() {
     const keyup$ = fromEvent<any>(this.input.nativeElement, 'keyup').pipe(
@@ -68,7 +66,7 @@ export class AutocompleteComponent implements OnInit, OnDestroy, AfterViewInit {
 
     const paste$ = fromEvent<any>(this.input.nativeElement, 'paste').pipe(
       map(event => {
-        return event.clipboardData.getData('text');
+        return event.clipboardData.getData('text').toLowerCase();
       }),
     );
 
@@ -89,8 +87,8 @@ export class AutocompleteComponent implements OnInit, OnDestroy, AfterViewInit {
 
   async fetchData(value: string) {
     if (!!value && value.length > 0) {
-      this.isLoading = true;
       try {
+        this.isLoading = true;
         this.lists = await this.get('items', value);
         this.isLoading = false;
       } catch (e) {
@@ -99,8 +97,14 @@ export class AutocompleteComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  select(value: string) {
-    this.onSelect.next(value);
+  select(event) {
+    this.selectOutput.next(event.srcElement.innerText);
+    this.lists = [];
+    this.renderer.setProperty(
+      this.input?.nativeElement,
+      'value',
+      event.srcElement.innerText,
+    );
   }
 
   // inputValue(searchValue: string) {
@@ -114,11 +118,7 @@ export class AutocompleteComponent implements OnInit, OnDestroy, AfterViewInit {
   //   this.searchChangeObserver.next(searchValue);
   // }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
-  // onPaste(event) {
-  //   console.log('event', event.clipboardData.getData('text'));
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
   // }
 }
