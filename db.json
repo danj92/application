@@ -68,5 +68,77 @@
     {
       "name": "Macedonia"
     }
+  ],
+  "comments": [
+    {
+      "id": "123",
+      "username": "User 1",
+      "message": "Cool product 1"
+    },
+    {
+      "id": "456",
+      "username": "User 2",
+      "message": "Dindt like this much 2"
+    },
+    {
+      "id": "123",
+      "username": "User 3",
+      "message": "Cool product 3"
+    },
+    {
+      "id": "456",
+      "username": "User 4",
+      "message": "Dindt like this much 4"
+    },
+    {
+      "id": "123",
+      "username": "User 5",
+      "message": "Cool product 5"
+    },
+    {
+      "id": "456",
+      "username": "User 6",
+      "message": "Dindt like this much 6"
+    },
+    {
+      "id": "123",
+      "username": "User 7",
+      "message": "Cool product 7"
+    },
+    {
+      "id": "456",
+      "username": "User 8",
+      "message": "Dindt like this much 8"
+    },
+    {
+      "id": "123",
+      "username": "User 9",
+      "message": "Cool product 9"
+    },
+    {
+      "id": "456",
+      "username": "User 10",
+      "message": "Dindt like this much 10"
+    },
+    {
+      "id": "123",
+      "username": "User 1",
+      "message": "Cool product!"
+    },
+    {
+      "id": "456",
+      "username": "User 2",
+      "message": "Dindt like this much"
+    },
+    {
+      "id": "123",
+      "username": "User 1",
+      "message": "Cool product!"
+    },
+    {
+      "id": "456",
+      "username": "User 2",
+      "message": "Dindt like this much"
+    }
   ]
 }

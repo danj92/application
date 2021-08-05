@@ -1,12 +1,10 @@
-<section>
-  <h1>Icons</h1>
-  <a href="https://material.io/resources/icons/?style=baseline" target="_blank"
-    >material.io</a
-  >
-  <p>
-    <code>< i class="material-icons"> face < /i ></code>
-    <i class="material-icons">face</i>
-  </p>
-</section>
-
-<h1>ddd</h1>
+<div class="row" *ngFor="let items of arrays; let i = index">
+  <div class="cell" *ngFor="let item of items; let j = index">
+    <span class="cell" *ngIf="!item" (click)="changeValue(i, j, item)">
+      <!-- {{ changePlayer === true ? 'X' : 'O' }} -->
+    </span>
+    <span class="cell" *ngIf="item" (click)="changeValue(i, j, item)">{{
+      item === true ? 'X' : 'O'
+    }}</span>
+  </div>
+</div>
