@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
 import { AppFormsModule } from '../forms';
@@ -41,7 +43,9 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     AppFormsModule,
     RouterModule.forChild(playgrounRoutes),
     UIModule,
+    MatFormFieldModule,
     MatChipsModule,
+    MatIconModule,
   ],
   declarations: [
     PlaygroundComponent,
