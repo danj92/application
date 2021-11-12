@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatChipsModule } from '@angular/material/chips';
 import { RouterModule } from '@angular/router';
 
 import { AppFormsModule } from '../forms';
@@ -6,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
 import { UIModule } from '../ui/ui.module';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { CustomMatChipListComponent } from './custom-mat-chip-list/custom-mat-chip-list.component';
 import { PlaygroundComponent } from './playground.component';
 import { playgrounRoutes } from './playground.routing';
 import { UseButtonsComponent } from './use-buttons/use-buttons.component';
@@ -39,6 +41,7 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     AppFormsModule,
     RouterModule.forChild(playgrounRoutes),
     UIModule,
+    MatChipsModule,
   ],
   declarations: [
     PlaygroundComponent,
@@ -63,6 +66,7 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     UseControlsComponent,
     UsePaginationComponent,
     AutocompleteComponent,
+    CustomMatChipListComponent,
   ],
   providers: [
     UsePaginationUsersResolve,
