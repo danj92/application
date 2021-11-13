@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
-import { CustomMatChipListComponent } from './custom-mat-chip-list/custom-mat-chip-list.component';
+import { UseCustomMatChipListComponent } from './use-custom-mat-chip-list/use-custom-mat-chip-list.component';
 import { UseButtonsComponent } from './use-buttons/use-buttons.component';
 import { UseCheckboxComponent } from './use-checkbox/use-checkbox.component';
 import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsable-text.component';
@@ -108,7 +108,7 @@ export const playgroundChildrenRoutes: Routes = [
   },
   {
     path: 'chip-list',
-    component: CustomMatChipListComponent,
+    component: UseCustomMatChipListComponent,
   },
   {
     path: 'use-pagination',

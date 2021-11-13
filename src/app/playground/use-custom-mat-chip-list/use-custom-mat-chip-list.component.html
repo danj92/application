@@ -1,0 +1,13 @@
+<form [formGroup]="formGroup">
+    <app-custom-mat-chip-list formControlName="fruitsControl"></app-custom-mat-chip-list>
+
+    <label>ValueChangesEvent:</label>
+    <div>
+        <label *ngFor="let fruit of fruits" class="fruit-label">{{fruit.name}}</label>
+    </div>
+    <br>
+    <label>formGroup.controls['fruitsControl']?.value:</label>
+    <div>
+        <label *ngFor="let fruit of formGroup.controls['fruitsControl']?.value"  class="fruit-label">{{fruit.name}}</label>
+    </div>
+</form>
