@@ -18,6 +18,7 @@ import { UseCollapsableTextComponent } from './use-collapsable-text/use-collapsa
 import { UseColorsComponent } from './use-colors/use-colors.component';
 import { UseControlsComponent } from './use-controls/use-controls.component';
 import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
+import { UseCustomMatChipListComponent } from './use-custom-mat-chip-list/use-custom-mat-chip-list.component';
 import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
 import { UseIconsComponent } from './use-icons/use-icons.component';
 import { UseMenuComponent } from './use-menu/use-menu.component';
@@ -71,6 +72,7 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     UsePaginationComponent,
     AutocompleteComponent,
     CustomMatChipListComponent,
+    UseCustomMatChipListComponent,
   ],
   providers: [
     UsePaginationUsersResolve,
