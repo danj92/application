@@ -1,0 +1,37 @@
+.row {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  .name {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 50px;
+    text-align: right;
+  }
+  .value {
+    margin-right: 10px;
+    font-weight: bold;
+    width: 40px;
+  }
+  .container {
+    width: 300px;
+    display: flex;
+
+    &.start {
+      justify-content: start;
+    }
+    &.center {
+      justify-content: center;
+    }
+    &.end {
+      justify-content: end;
+    }
+
+    .funnel {
+      background: #154a8d;
+      height: 30px;
+    }
+  }
+}

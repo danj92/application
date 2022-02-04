@@ -23,6 +23,7 @@ import { UseTabsComponent } from './use-tabs/use-tabs.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
+import { UseFunnelComponent } from './use-funnel/use-funnel.component';
 
 export const playgroundChildrenRoutes: Routes = [
   {
@@ -116,6 +117,10 @@ export const playgroundChildrenRoutes: Routes = [
     resolve: {
       users: UsePaginationUsersResolve,
     },
+  },
+  {
+    path: 'use-funnel',
+    component: UseFunnelComponent,
   },
 
   {

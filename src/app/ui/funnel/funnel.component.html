@@ -1,0 +1,18 @@
+<div *ngFor="let item of data">
+  <div class="row">
+    <div class="name">
+      {{ item.name }}
+    </div>
+    <div class="value">
+      {{ item.value }}
+    </div>
+    <div class="container {{ position }}">
+      <div
+        class="funnel"
+        *ngIf="item.width > 0; else empty"
+        style.width="{{ item.width }}%"
+      ></div>
+      <ng-template #empty> - </ng-template>
+    </div>
+  </div>
+</div>

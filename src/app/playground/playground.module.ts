@@ -10,6 +10,7 @@ import { SimpleMenuModule } from '../simple-menu/simple-menu.module';
 import { UIModule } from '../ui/ui.module';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { CustomMatChipListComponent } from './custom-mat-chip-list/custom-mat-chip-list.component';
+
 import { PlaygroundComponent } from './playground.component';
 import { playgrounRoutes } from './playground.routing';
 import { UseButtonsComponent } from './use-buttons/use-buttons.component';
@@ -20,6 +21,7 @@ import { UseControlsComponent } from './use-controls/use-controls.component';
 import { UseCustomInputComponent } from './use-custom-input/use-custom-input.component';
 import { UseCustomMatChipListComponent } from './use-custom-mat-chip-list/use-custom-mat-chip-list.component';
 import { UseCustomSelectComponent } from './use-custom-select/use-custom-select.component';
+import { UseFunnelComponent } from './use-funnel/use-funnel.component';
 import { UseIconsComponent } from './use-icons/use-icons.component';
 import { UseMenuComponent } from './use-menu/use-menu.component';
 import { UseModalComponent } from './use-modal/use-modal.component';
@@ -37,6 +39,34 @@ import { UseTimepickerComponent } from './use-timepicker/use-timepicker.componen
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
 
+const components = [
+  PlaygroundComponent,
+  UseModalComponent,
+  UseColorsComponent,
+  UseButtonsComponent,
+  UseIconsComponent,
+  UseMenuComponent,
+  UseSpinnersComponent,
+  UseTypographyComponent,
+  UseTabsComponent,
+  UseTableComponent,
+  UseStepperComponent,
+  UseScheduleComponent,
+  UseCustomSelectComponent,
+  UseCollapsableTextComponent,
+  UseTooltipComponent,
+  UseTimepickerComponent,
+  UseCustomInputComponent,
+  UseCheckboxComponent,
+  UseRadioComponent,
+  UseControlsComponent,
+  UsePaginationComponent,
+  AutocompleteComponent,
+  CustomMatChipListComponent,
+  UseCustomMatChipListComponent,
+  UseFunnelComponent,
+];
+
 @NgModule({
   imports: [
     SharedModule,
@@ -48,36 +78,12 @@ import { UseTypographyComponent } from './use-typography/use-typography.componen
     MatChipsModule,
     MatIconModule,
   ],
-  declarations: [
-    PlaygroundComponent,
-    UseModalComponent,
-    UseColorsComponent,
-    UseButtonsComponent,
-    UseIconsComponent,
-    UseMenuComponent,
-    UseSpinnersComponent,
-    UseTypographyComponent,
-    UseTabsComponent,
-    UseTableComponent,
-    UseStepperComponent,
-    UseScheduleComponent,
-    UseCustomSelectComponent,
-    UseCollapsableTextComponent,
-    UseTooltipComponent,
-    UseTimepickerComponent,
-    UseCustomInputComponent,
-    UseCheckboxComponent,
-    UseRadioComponent,
-    UseControlsComponent,
-    UsePaginationComponent,
-    AutocompleteComponent,
-    CustomMatChipListComponent,
-    UseCustomMatChipListComponent,
-  ],
+  declarations: [components],
   providers: [
     UsePaginationUsersResolve,
     UsePaginationUserApiService,
     UsePaginationUserService,
   ],
+  exports: [components],
 })
 export class PlaygroundModule {}

@@ -13,6 +13,7 @@ import { CustomSelectComponent } from './custom-dropdown/custom-select/custom-se
 import { DropdownComponent } from './custom-dropdown/dropdown/dropdown.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { FooterComponent } from './footer/footer.component';
+import { FunnelComponent } from './funnel/funnel.component';
 import { NoResultsComponent } from './no-results/no-results.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
@@ -45,6 +46,7 @@ const COMPONENTS = [
   CustomCheckboxComponent,
   RadioGrpComponent,
   PaginationComponent,
+  FunnelComponent,
 ];
 
 @NgModule({
