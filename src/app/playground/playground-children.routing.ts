@@ -24,6 +24,7 @@ import { UseTimepickerComponent } from './use-timepicker/use-timepicker.componen
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
 import { UseFunnelComponent } from './use-funnel/use-funnel.component';
+import { UseStoreComponent } from './use-store/use-store.component';
 
 export const playgroundChildrenRoutes: Routes = [
   {
@@ -121,6 +122,10 @@ export const playgroundChildrenRoutes: Routes = [
   {
     path: 'use-funnel',
     component: UseFunnelComponent,
+  },
+  {
+    path: 'use-store',
+    component: UseStoreComponent,
   },
 
   {

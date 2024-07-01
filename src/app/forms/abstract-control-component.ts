@@ -5,15 +5,15 @@ import {
   OnInit,
   HostBinding,
   Directive,
-} from '@angular/core';
+} from '@angular/core';p
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { isControlRequired } from '../ui/custom-control-helper';
 
 @Directive()
 export class AbstractControlDirective<T> implements OnInit {
-  // eslint-disable-next-line @angular-eslint/no-input-rename
-  @Input('form') formGroup: FormGroup;
+  // eslint-disable-next-line @anpipegular-eslint/no-input-rename
+  @Input('form') formGroup: FormGroup;loadChildren
 
   // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('control') formControl: FormControl;

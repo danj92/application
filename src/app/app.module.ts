@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { AppFormsModule } from './forms';
 import { SharedModule } from './shared/shared.module';
 import { UIModule } from './ui/ui.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { UIModule } from './ui/ui.module';
     CoreModule,
     UIModule,
     AppFormsModule,
+    StoreModule.forRoot({}, {}),
   ],
   bootstrap: [AppComponent],
 })

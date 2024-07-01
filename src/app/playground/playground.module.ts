@@ -3,6 +3,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { AppFormsModule } from '../forms';
 import { SharedModule } from '../shared/shared.module';
@@ -38,6 +39,7 @@ import { UseTabsComponent } from './use-tabs/use-tabs.component';
 import { UseTimepickerComponent } from './use-timepicker/use-timepicker.component';
 import { UseTooltipComponent } from './use-tooltip/use-tooltip.component';
 import { UseTypographyComponent } from './use-typography/use-typography.component';
+import { UseStoreComponent } from './use-store/use-store.component';
 
 const components = [
   PlaygroundComponent,
@@ -77,8 +79,9 @@ const components = [
     MatFormFieldModule,
     MatChipsModule,
     MatIconModule,
+    CommonModule,
   ],
-  declarations: [components],
+  declarations: [components, UseStoreComponent],
   providers: [
     UsePaginationUsersResolve,
     UsePaginationUserApiService,
